@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private final String SECRET = "secret123";
+    private static final String SECRET = "700588e86264e8c60462538e9ddfac415270717609a2a35706aadc8022527cdb";
 
     public String generateToken(String email) {
         return Jwts.builder()
