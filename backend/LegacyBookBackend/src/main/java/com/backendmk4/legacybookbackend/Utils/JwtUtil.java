@@ -1,12 +1,31 @@
 package com.backendmk4.legacybookbackend.Utils;
 
 import io.jsonwebtoken.*;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
+
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Date;
+import java.nio.file.*;
+
 
 @Component
 public class JwtUtil {
-    private static final String SECRET = "700588e86264e8c60462538e9ddfac415270717609a2a35706aadc8022527cdb";
+    private static String SECRET = "";
+
+
+    @PostConstruct
+    public void init() {
+        try {
+            Path path = Paths.get("secret/secret.txt"); // in project root
+            String secretLine = Files.readString(path).trim();
+            SECRET = secretLine.split("=")[1].replaceAll("[\"; ]", "");
+        }
+        catch(IOException e) {
+            System.out.println("Reading secret error");
+        }
+    }
 
     public String generateToken(String email) {
         return Jwts.builder()

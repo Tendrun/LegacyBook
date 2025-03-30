@@ -1,26 +1,24 @@
 package com.legacybook.Activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.LinearLayout;
-import android.view.Gravity;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.legacybook.R;
+import com.legacybook.Service.ApiClient;
+import com.legacybook.Service.ApiService;
 
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setGravity(Gravity.CENTER);
+        SharedPreferences prefs = getSharedPreferences("myPrefs", MODE_PRIVATE);
+        String token = prefs.getString("token", "");
 
-        TextView textView = new TextView(this);
-        textView.setText("Hello, LegacyBook!");
-        textView.setTextSize(24);
-
-        layout.addView(textView);
-        setContentView(layout);
+        ApiService apiService = ApiClient.getClient(token).create(ApiService.class);
+        // Make authenticated API calls here
     }
 }

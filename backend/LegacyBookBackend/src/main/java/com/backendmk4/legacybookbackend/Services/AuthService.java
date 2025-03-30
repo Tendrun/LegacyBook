@@ -19,6 +19,8 @@ public class AuthService {
     }
 
     public String register(RegisterRequest request) {
+        System.out.println(request.getPassword());
+
         if (userRepo.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already registered");
         }
