@@ -1,0 +1,34 @@
+# === Docker Command Guide for LegacyBook Backend ===
+
+## 1. Navigate to project root (where docker-compose.yml is located)
+cd path/to/LegacyBook
+
+## 2. Start MySQL container in background
+docker-compose up -d
+
+## 3. Check running containers
+docker ps
+
+## 4. View logs from the container (optional)
+docker logs legacybook-mysql
+
+## 5. Connect to MySQL shell (optional)
+docker exec -it legacybook-mysql mysql -u legacyuser -p
+# Enter password: legacy123
+
+## 6. Stop the container
+docker-compose down
+
+## 7. Remove all containers (be careful!)
+docker system prune -a
+
+## 8. View Docker volumes
+docker volume ls
+
+## 9. Remove unused volumes (optional cleanup)
+docker volume prune
+
+# === Notes ===
+# - You must have Docker Desktop installed and running.
+# - Use these commands inside the project root (LegacyBook/).
+# - The database data is stored in a volume, so it's safe between restarts.
