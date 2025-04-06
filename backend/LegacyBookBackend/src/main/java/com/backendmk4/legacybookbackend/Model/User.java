@@ -2,6 +2,8 @@ package com.backendmk4.legacybookbackend.Model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -13,6 +15,14 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_group_link",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "group_id")
+    )
+    private List<FamilyGroup> familyGroups;
 
     public User() {}
 
