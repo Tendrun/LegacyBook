@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface FamilyGroupRepository extends JpaRepository<FamilyGroup, Long> {
-    List<FamilyGroup> findByUsers_Id(Long userId);
+    @Query("SELECT m.familyGroup FROM UserGroupMembership m WHERE m.user.id = :userId")
+    List<FamilyGroup> findGroupsByUserId(@Param("userId") Long userId);
+
 
     List<FamilyGroup> findByFamilyName(String FamilyGroupName);
 
