@@ -52,17 +52,23 @@ public class AuthController {
     public ResponseEntity<String> addMemberFamilyGroup(@RequestBody AddMemberRequest request) {
         String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
 
+
+        // Check if user already exists as member in family
+        boolean userAlreadyExists = familyGroupService.userExistInFamily(request.getUserEmailToAdd(), request.getGroupId());
+
+        if(userAlreadyExists)
+            return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body("User already exist in this group");
+
         // Check if User is at least Owner or Admin
-        boolean userIsAllowed = familyGroupService.isUserAllowedToAddMember(userEmail, request.getGroupId());
+        boolean userIsAllowed = familyGroupService.hasHighLevelAccess(userEmail, request.getGroupId());
 
         if (!userIsAllowed) {
             return ResponseEntity
                     .status(HttpStatus.FORBIDDEN)
                     .body("Access denied: you are not allowed to add members to this group.");
         }
-
-        // Check if user already exists as member in family
-
         // Add Member to Group
         else {
             familyGroupService.addMemberToFamily(request.getUserEmailToAdd(), request.getGroupId());
@@ -75,7 +81,15 @@ public class AuthController {
         String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
 
         // Check if User is at least Owner or Admin
-        boolean userIsAllowed = familyGroupService.isUserAllowedToAddMember(userEmail, request.getGroupId());
+        boolean userIsAllowed = familyGroupService.hasHighLevelAccess(userEmail, request.getGroupId());
+
+        // Check if user exists as member in family
+        boolean userAlreadyExists = familyGroupService.userExistInFamily(request.getUserEmailToDelete(), request.getGroupId());
+
+        if(!userAlreadyExists)
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("User doesn't exist in this group");
 
         if (!userIsAllowed) {
             return ResponseEntity

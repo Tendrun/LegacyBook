@@ -24,7 +24,7 @@ public class FamilyGroupService {
         this.userGroupMembershipRepository = userGroupMembershipRepository;
     }
 
-    public boolean isUserAllowedToAddMember(String userEmail, long GroupID){
+    public boolean hasHighLevelAccess(String userEmail, long GroupID){
         Optional<User> existingUser = userRepository.findByEmail(userEmail);
 
         try {
@@ -90,5 +90,16 @@ public class FamilyGroupService {
 
 
         userGroupMembershipRepository.save(membership);
+    }
+
+    public boolean userExistInFamily(String userEmail, long groupId) {
+        User user = userRepository.findByEmail(userEmail).orElseThrow(() -> new RuntimeException("User not Found"));
+        FamilyGroup familyGroup = familyGroupRepository.findById(groupId).orElseThrow(
+                () -> new RuntimeException("Family group not Found"));
+
+        Optional<UserGroupMembership> membership = userGroupMembershipRepository
+                .findByUserAndFamilyGroup(user, familyGroup);
+
+        return membership.isPresent();
     }
 }
