@@ -1,5 +1,7 @@
 package com.backend.legacybookbackend.Services;
 
+import com.backend.legacybookbackend.Exception.FamilyGroupNotFoundException;
+import com.backend.legacybookbackend.Exception.UserNotFoundException;
 import com.backend.legacybookbackend.Model.*;
 import com.backend.legacybookbackend.DTO.FamilyGroup.CreateGroupRequest;
 import org.springframework.stereotype.Service;
@@ -45,9 +47,11 @@ public class FamilyGroupService {
     }
 
     public void addMemberToFamily(String userEmail, long groupId) {
-        User user = userRepository.findByEmail(userEmail).orElseThrow(() -> new RuntimeException("User not Found"));
-        FamilyGroup familyGroup = familyGroupRepository.findById(groupId).orElseThrow(
-                () -> new RuntimeException("Family group not Found"));
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        FamilyGroup familyGroup = familyGroupRepository.findById(groupId)
+                .orElseThrow(() -> new FamilyGroupNotFoundException("Family group not found"));
 
         UserGroupMembership membership = new UserGroupMembership();
 
@@ -60,9 +64,11 @@ public class FamilyGroupService {
     }
 
     public void deleteMemberToFamily(String userEmail, long groupId) {
-        User user = userRepository.findByEmail(userEmail).orElseThrow(() -> new RuntimeException("User not Found"));
-        FamilyGroup familyGroup = familyGroupRepository.findById(groupId).orElseThrow(
-                () -> new RuntimeException("Family group not Found"));
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        FamilyGroup familyGroup = familyGroupRepository.findById(groupId)
+                .orElseThrow(() -> new FamilyGroupNotFoundException("Family group not found"));
 
         UserGroupMembership membership = userGroupMembershipRepository
                 .findByUserAndFamilyGroup(user, familyGroup)
@@ -74,7 +80,7 @@ public class FamilyGroupService {
     @Transactional
     public void createFamilyGroup(CreateGroupRequest request, String userEmail) {
         User user = userRepository.findByEmail(userEmail)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
 
         FamilyGroup group = new FamilyGroup();                // Create new group
         group.setFamilyName(request.getFamilyName());         // Set the name for group
@@ -93,9 +99,11 @@ public class FamilyGroupService {
     }
 
     public boolean userExistInFamily(String userEmail, long groupId) {
-        User user = userRepository.findByEmail(userEmail).orElseThrow(() -> new RuntimeException("User not Found"));
-        FamilyGroup familyGroup = familyGroupRepository.findById(groupId).orElseThrow(
-                () -> new RuntimeException("Family group not Found"));
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+
+        FamilyGroup familyGroup = familyGroupRepository.findById(groupId)
+                .orElseThrow(() -> new FamilyGroupNotFoundException("Family group not found"));
 
         Optional<UserGroupMembership> membership = userGroupMembershipRepository
                 .findByUserAndFamilyGroup(user, familyGroup);
