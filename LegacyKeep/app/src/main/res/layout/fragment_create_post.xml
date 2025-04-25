@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE8AD"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_legacykeep_cropped"
+            android:contentDescription="@string/app_name"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Post"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#5C3B1E"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Upload Photo Button -->
+        <Button
+            android:id="@+id/buttonUploadPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_add_photo"
+            android:text="UPLOAD PHOTO"
+            android:backgroundTint="#FFE8AD"
+            android:textColor="#5C3B1E"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Record Voice Button -->
+        <Button
+            android:id="@+id/buttonRecordVoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_btn_speak_now"
+            android:text="RECORD VOICE"
+            android:backgroundTint="#FFE8AD"
+            android:textColor="#5C3B1E"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Description Field -->
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:background="@drawable/edittext_background"
+            android:textColorHint="#9C8068"
+            android:textColor="#000000"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Pick Location Button -->
+        <Button
+            android:id="@+id/buttonPickLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_menu_mylocation"
+            android:text="PICK LOCATION"
+            android:backgroundTint="#FFE8AD"
+            android:textColor="#5C3B1E"
+            android:textAllCaps="true"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmitPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT POST"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFA600"/>
+    </LinearLayout>
+</ScrollView>

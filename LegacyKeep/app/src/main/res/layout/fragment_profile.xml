@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEFC1"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/profileTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="24sp"
+            android:textColor="#5C3B1E"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Profile Image + Edit -->
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_profile"
+                android:scaleType="centerCrop"
+                android:background="@drawable/circle_background"
+                android:padding="16dp"
+                android:contentDescription="@string/profile_icon" />
+
+            <TextView
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EDIT"
+                android:textColor="#5C3B1E"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:background="@drawable/edit_button_bg"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp" />
+        </FrameLayout>
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="John Doe"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#5C3B1E" />
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/profileEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="johndoe@example.com"
+            android:textSize="14sp"
+            android:textColor="#7D5C3B"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Language -->
+        <LinearLayout
+            style="@style/ProfileRow"
+            android:id="@+id/languageRow">
+            <ImageView
+                android:src="@drawable/ic_language"
+                android:contentDescription="@string/language_icon"
+                style="@style/ProfileIcon" />
+            <TextView
+                android:text="Language"
+                style="@style/ProfileLabel" />
+            <TextView
+                android:id="@+id/currentLanguage"
+                android:text="English"
+                style="@style/ProfileValue" />
+        </LinearLayout>
+
+        <!-- Dark Mode -->
+        <LinearLayout
+            style="@style/ProfileRow"
+            android:id="@+id/darkModeRow">
+            <ImageView
+                android:src="@drawable/ic_dark_mode"
+                android:contentDescription="@string/dark_mode_icon"
+                style="@style/ProfileIcon" />
+            <TextView
+                android:text="Dark Mode"
+                style="@style/ProfileLabel" />
+            <Switch
+                android:id="@+id/darkModeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <!-- Bluetooth Share -->
+        <LinearLayout
+            style="@style/ProfileRow"
+            android:id="@+id/bluetoothShareRow">
+            <ImageView
+                android:src="@drawable/ic_bluetooth"
+                android:contentDescription="@string/bluetooth_icon"
+                style="@style/ProfileIcon" />
+            <TextView
+                android:text="Bluetooth Share"
+                style="@style/ProfileLabel" />
+        </LinearLayout>
+
+        <!-- About -->
+        <LinearLayout
+            style="@style/ProfileRow"
+            android:id="@+id/aboutRow">
+            <ImageView
+                android:src="@drawable/ic_info"
+                android:contentDescription="@string/about_icon"
+                style="@style/ProfileIcon" />
+            <TextView
+                android:text="About"
+                style="@style/ProfileLabel" />
+        </LinearLayout>
+
+        <!-- Logout -->
+        <LinearLayout
+            style="@style/ProfileRow"
+            android:id="@+id/logoutRow">
+            <ImageView
+                android:src="@drawable/ic_logout"
+                android:contentDescription="@string/logout_icon"
+                style="@style/ProfileIcon" />
+            <TextView
+                android:text="Logout"
+                style="@style/ProfileLabel" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
