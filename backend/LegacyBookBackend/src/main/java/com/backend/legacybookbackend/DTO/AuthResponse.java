@@ -1,4 +1,4 @@
-package com.backendmk4.legacybookbackend.DTO;
+package com.backend.legacybookbackend.DTO;
 
 public class AuthResponse {
     private String token;

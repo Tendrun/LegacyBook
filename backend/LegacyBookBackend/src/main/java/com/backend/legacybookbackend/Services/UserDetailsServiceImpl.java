@@ -1,7 +1,7 @@
-package com.backendmk4.legacybookbackend.Services;
+package com.backend.legacybookbackend.Services;
 
-import com.backendmk4.legacybookbackend.Model.User;
-import com.backendmk4.legacybookbackend.Model.UserRepository;
+import com.backend.legacybookbackend.Model.User;
+import com.backend.legacybookbackend.Model.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

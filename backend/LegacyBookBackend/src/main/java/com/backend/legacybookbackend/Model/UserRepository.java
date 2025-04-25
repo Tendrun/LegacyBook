@@ -1,6 +1,5 @@
-package com.backendmk4.legacybookbackend.Model;
+package com.backend.legacybookbackend.Model;
 
-import com.backendmk4.legacybookbackend.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 

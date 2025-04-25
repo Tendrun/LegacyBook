@@ -1,4 +1,4 @@
-package com.backendmk4.legacybookbackend;
+package com.backend.legacybookbackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

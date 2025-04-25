@@ -1,7 +1,7 @@
-package com.backendmk4.legacybookbackend.Filter;
+package com.backend.legacybookbackend.Filter;
 
-import com.backendmk4.legacybookbackend.Services.UserDetailsServiceImpl;
-import com.backendmk4.legacybookbackend.Utils.JwtUtil;
+import com.backend.legacybookbackend.Services.UserDetailsServiceImpl;
+import com.backend.legacybookbackend.Utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

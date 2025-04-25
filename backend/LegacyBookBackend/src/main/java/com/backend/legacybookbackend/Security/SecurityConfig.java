@@ -1,8 +1,8 @@
-package com.backendmk4.legacybookbackend.Security;
+package com.backend.legacybookbackend.Security;
 
 
-import com.backendmk4.legacybookbackend.Filter.JwtAuthFilter;
-import com.backendmk4.legacybookbackend.Services.UserDetailsServiceImpl;
+import com.backend.legacybookbackend.Services.UserDetailsServiceImpl;
+import com.backend.legacybookbackend.Filter.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

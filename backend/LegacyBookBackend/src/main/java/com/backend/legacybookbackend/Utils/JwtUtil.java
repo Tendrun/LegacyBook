@@ -1,4 +1,4 @@
-package com.backendmk4.legacybookbackend.Utils;
+package com.backend.legacybookbackend.Utils;
 
 import io.jsonwebtoken.*;
 import jakarta.annotation.PostConstruct;

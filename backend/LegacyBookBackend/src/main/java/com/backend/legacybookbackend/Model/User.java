@@ -1,4 +1,4 @@
-package com.backendmk4.legacybookbackend.Model;
+package com.backend.legacybookbackend.Model;
 
 import jakarta.persistence.*;
 

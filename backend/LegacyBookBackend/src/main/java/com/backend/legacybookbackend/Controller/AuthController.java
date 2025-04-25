@@ -1,10 +1,9 @@
-package com.backendmk4.legacybookbackend.Controller;
+package com.backend.legacybookbackend.Controller;
 
-import com.backendmk4.legacybookbackend.DTO.RegisterRequest;
-import com.backendmk4.legacybookbackend.DTO.AuthResponse;
-import com.backendmk4.legacybookbackend.DTO.LoginRequest;
-import com.backendmk4.legacybookbackend.Services.AuthService;
-import org.apache.coyote.Response;
+import com.backend.legacybookbackend.DTO.RegisterRequest;
+import com.backend.legacybookbackend.DTO.AuthResponse;
+import com.backend.legacybookbackend.DTO.LoginRequest;
+import com.backend.legacybookbackend.Services.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

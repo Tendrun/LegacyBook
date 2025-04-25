@@ -1,9 +1,11 @@
-package com.backendmk4.legacybookbackend.Services;
+package com.backend.legacybookbackend.Services;
 
-import com.backendmk4.legacybookbackend.DTO.*;
-import com.backendmk4.legacybookbackend.Model.User;
-import com.backendmk4.legacybookbackend.Model.UserRepository;
-import com.backendmk4.legacybookbackend.Utils.JwtUtil;
+import com.backend.legacybookbackend.DTO.LoginRequest;
+import com.backend.legacybookbackend.DTO.RegisterRequest;
+import com.backend.legacybookbackend.DTO.*;
+import com.backend.legacybookbackend.Model.User;
+import com.backend.legacybookbackend.Model.UserRepository;
+import com.backend.legacybookbackend.Utils.JwtUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 @Service
