@@ -3,6 +3,7 @@ package com.backend.legacybookbackend.Controller;
 import com.backend.legacybookbackend.DTO.AuthResponse;
 import com.backend.legacybookbackend.DTO.FamilyGroup.AddMemberRequest;
 import com.backend.legacybookbackend.DTO.FamilyGroup.CreateGroupRequest;
+import com.backend.legacybookbackend.DTO.FamilyGroup.DeleteFamilyRequest;
 import com.backend.legacybookbackend.DTO.FamilyGroup.DeleteMemberRequest;
 import com.backend.legacybookbackend.DTO.LoginRequest;
 import com.backend.legacybookbackend.Services.AuthService;
@@ -101,6 +102,27 @@ public class AuthController {
         else {
             familyGroupService.deleteMemberToFamily(request.getUserEmailToDelete(), request.getGroupId());
             return ResponseEntity.ok("Member deleted to group");
+        }
+    }
+
+    @PostMapping("/DeleteFamily")
+    public ResponseEntity<String> DeleteFamily(@RequestBody DeleteFamilyRequest request) {
+        String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        // Check if User is at least Owner or Admin
+        boolean userIsAllowed = familyGroupService.UserIsFamilyOwner(userEmail, request.getGroupId());
+
+
+        if (!userIsAllowed) {
+            return ResponseEntity
+                    .status(HttpStatus.FORBIDDEN)
+                    .body("Access denied: you are not allowed to delete Family in this group!!");
+        }
+
+        // Delete Member to Group
+        else {
+            familyGroupService.deleteFamily(request.getGroupId());
+            return ResponseEntity.ok("Family deleted successfully!!!");
         }
     }
 }

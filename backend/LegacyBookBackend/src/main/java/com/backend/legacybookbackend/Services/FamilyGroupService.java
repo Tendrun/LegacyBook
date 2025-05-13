@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
@@ -44,6 +45,38 @@ public class FamilyGroupService {
         }
 
         return false;
+    }
+
+    public boolean UserIsFamilyOwner(String userEmail, long GroupID){
+        Optional<User> existingUser = userRepository.findByEmail(userEmail);
+
+        try {
+            User userEntity = existingUser.get();
+            long UserID = userEntity.getId();
+            String UserRole = userGroupMembershipRepository.getRole(GroupID, UserID);
+
+            System.out.println("UserRole = " + UserRole);
+
+            if(Objects.equals(UserRole, "Owner"))
+                return true;
+
+        } catch (NoSuchElementException e){
+            return false;
+        }
+
+        return false;
+    }
+    @Transactional
+    public void deleteFamily(long groupID){
+        FamilyGroup group = familyGroupRepository.findById(groupID)
+                .orElseThrow(() -> new RuntimeException("Group not found"));
+
+        // Usuń wszystkie memberships ręcznie
+        List<UserGroupMembership> memberships = userGroupMembershipRepository.findAllByFamilyGroup(group);
+        userGroupMembershipRepository.deleteAll(memberships);
+
+        // Teraz możesz bezpiecznie usunąć grupę
+        familyGroupRepository.delete(group);
     }
 
     public void addMemberToFamily(String userEmail, long groupId) {

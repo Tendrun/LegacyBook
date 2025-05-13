@@ -25,6 +25,7 @@ public class FamilyGroup {
 
     public Long getId() { return id; }
     public String getFamilyName() { return familyName; }
+    @OneToMany(mappedBy = "familyGroup", cascade = CascadeType.ALL, orphanRemoval = true)
     public List<UserGroupMembership> getMemberships(){
         return memberships;
     }
