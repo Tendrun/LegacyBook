@@ -1,0 +1,73 @@
+<resources>
+
+    <!-- App -->
+    <string name="app_name">LegacyKeep</string>
+    <string name="logo_description">LegacyKeep logo</string>
+
+    <!-- Auth -->
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+
+    <!-- Navigation -->
+    <string name="nav_feed">Feed</string>
+    <string name="nav_create">Post</string>
+    <string name="nav_family">Family</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_notifications">Alerts</string>
+
+    <!-- Family Group -->
+    <string name="family_group">Family Group</string>
+    <string name="hint_add_member">Add Member</string>
+    <string name="qr_scan">Scan QR code</string>
+    <string name="profile_icon">Profile icon</string>
+    <string name="dropdown_icon">Dropdown icon</string>
+
+    <!-- Post -->
+    <string name="post_image_desc">Post image</string>
+    <string name="sample_post_description">This is a sample post description.</string>
+    <string name="sample_location">Location</string>
+    <string name="location_icon_desc">Location icon</string>
+    <string name="like_button_desc">Like post</string>
+    <string name="comment_button_desc">Comment on post</string>
+    <string name="share_button_desc">Share post</string>
+
+    <!-- Profile Screen -->
+    <string name="profile_title">Profile</string>
+    <string name="edit">EDIT</string>
+    <string name="profile_name">John Doe</string>
+    <string name="profile_email">johndoe@example.com</string>
+    <string name="language">Language</string>
+    <string name="current_language">English</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="about">About</string>
+    <string name="logout">Logout</string>
+    <string name="bluetooth_share">Bluetooth Share</string>
+
+    <!-- Accessibility: Content Descriptions -->
+    <string name="desc_profile_picture">User profile picture</string>
+    <string name="language_icon">Language icon</string>
+    <string name="dark_mode_icon">Dark mode icon</string>
+    <string name="about_icon">Information icon</string>
+    <string name="logout_icon">Logout icon</string>
+    <string name="bluetooth_icon">Bluetooth share icon</string>
+
+    <string name="notification_icon">Notification bell icon</string>
+
+
+    <!-- Family Roles -->
+    <string-array name="roles_array">
+        <item>Grandfather</item>
+        <item>Grandmother</item>
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Son</item>
+        <item>Daughter</item>
+    </string-array>
+
+    <!-- Supported Languages -->
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Polish</item>
+    </string-array>
+
+</resources>
