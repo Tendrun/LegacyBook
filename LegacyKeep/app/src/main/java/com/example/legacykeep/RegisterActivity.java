@@ -47,6 +47,10 @@ public class RegisterActivity extends AppCompatActivity {
         // Handle register button click
         registerButton.setOnClickListener(v -> registerUser());
     }
+    private boolean isValidEmail(String email) {
+        String emailPattern = "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$";
+        return email.matches(emailPattern);
+    }
 
     private void registerUser() {
         String name = nameInput.getText().toString().trim();
@@ -61,6 +65,11 @@ public class RegisterActivity extends AppCompatActivity {
         // Validate inputs
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show();
             return;
         }
 
