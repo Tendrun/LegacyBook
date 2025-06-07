@@ -46,8 +46,8 @@
 31        <!-- Welcome screen is the entry point -->
 32        <activity
 32-->G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:17:9-23:20
-33            android:name="com.example.legacykeep.MainActivity"
-33-->G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:17:19-47
+33            android:name="com.example.legacykeep.WelcomeActivity"
+33-->G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:17:19-50
 34            android:exported="true" >
 34-->G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:13-36
 35            <intent-filter>

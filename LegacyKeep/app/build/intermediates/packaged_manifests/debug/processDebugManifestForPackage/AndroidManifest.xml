@@ -30,7 +30,7 @@
 
         <!-- Welcome screen is the entry point -->
         <activity
-            android:name="com.example.legacykeep.MainActivity"
+            android:name="com.example.legacykeep.WelcomeActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
