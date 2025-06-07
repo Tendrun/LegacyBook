@@ -79,6 +79,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     SharedPreferences sharedPreferences = getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("username", response.body().getUsername()); // Assuming the server returns the username
+                    editor.putString("email", request.getEmail()); // Save the email from the login request
                     editor.putString("authToken", response.body().getToken());
                     editor.apply();
 

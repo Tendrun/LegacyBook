@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,10 +21,19 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        // Find the logout row
-        LinearLayout logoutRow = view.findViewById(R.id.logoutRow);
+        // Retrieve username and email from SharedPreferences
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "Guest");
+        String email = sharedPreferences.getString("email", "No email available");
 
-        // Set click listener for logout
+        // Set username and email in TextViews
+        TextView profileName = view.findViewById(R.id.profileName);
+        TextView profileEmail = view.findViewById(R.id.profileEmail);
+        profileName.setText(username);
+        profileEmail.setText(email);
+
+        // Handle logout
+        LinearLayout logoutRow = view.findViewById(R.id.logoutRow);
         logoutRow.setOnClickListener(v -> logout());
 
         return view;
