@@ -31,21 +31,18 @@ public class FeedFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onViewCreated(@NonNull View v, @Nullable Bundle b) {
+        super.onViewCreated(v, b);
 
-        recyclerView = view.findViewById(R.id.recyclerViewFeed);
+        recyclerView = v.findViewById(R.id.recyclerViewFeed);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Pobranie Shared ViewModel z zakresu Activity
         viewModel = new ViewModelProvider(requireActivity())
                 .get(SharedPostViewModel.class);
 
-        // Adapter z początkowo pustą listą
-        postAdapter = new PostAdapter(new ArrayList<>());
+        postAdapter = new PostAdapter(requireContext(), new ArrayList<>());
         recyclerView.setAdapter(postAdapter);
 
-        // Obserwacja zmian listy postów
         viewModel.getPosts().observe(getViewLifecycleOwner(), posts -> {
             postAdapter.updateList(posts);
             recyclerView.scrollToPosition(0);
