@@ -31,6 +31,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="4a09f420-3c28-4865-ace5-9c569412fdb9" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/legacykeep/DTO/FamilyGroup.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/legacykeep/DTO/UserGroupMembership.java" afterDir="false" />
@@ -213,6 +214,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend/LegacyBookBackend/src/main/java/com/backend/legacybookbackend/Controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/LegacyBookBackend/src/main/java/com/backend/legacybookbackend/Controller/AuthController.java" afterDir="false" />
     </list>
+=======
+    <list default="true" id="4a09f420-3c28-4865-ace5-9c569412fdb9" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
