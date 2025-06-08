@@ -61,7 +61,15 @@
             android:contentDescription="@string/qr_scan"
             android:padding="8dp" />
     </LinearLayout>
-
+    <Button
+        android:id="@+id/createFamilyGroupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_family_group"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#5C3B1E"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center_horizontal" />
     <!-- RecyclerView: List of Members -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/familyRecyclerView"

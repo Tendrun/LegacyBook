@@ -143,4 +143,10 @@ public class FamilyGroupService {
 
         return membership.isPresent();
     }
+
+    public List<FamilyGroup> getUserFamilies(String userEmail) {
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new UserNotFoundException("User not found"));
+        return familyGroupRepository.findGroupsByUserId(user.getId());
+    }
 }

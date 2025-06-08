@@ -3175,6 +3175,7 @@ id cos
 id counterclockwise
 id cradle
 id createAccountButton
+id createFamilyGroupButton
 id currentLanguage
 id custom
 id customPanel
@@ -3829,6 +3830,7 @@ string character_counter_pattern
 string clear_text_end_icon_content_description
 string comment_button_desc
 string create_account
+string create_family_group
 string current_language
 string dark_mode
 string dark_mode_icon

@@ -5,12 +5,16 @@ import com.example.legacykeep.DTO.AuthResponse;
 import com.example.legacykeep.DTO.CreateGroupRequest;
 import com.example.legacykeep.DTO.DeleteFamilyRequest;
 import com.example.legacykeep.DTO.DeleteMemberRequest;
+import com.example.legacykeep.DTO.FamilyGroup;
 import com.example.legacykeep.DTO.LoginRequest;
 import com.example.legacykeep.DTO.RegisterRequest;
 import com.example.legacykeep.DTO.RegisterResponse;
 import com.example.legacykeep.DTO.SetFamilyRoleRequest;
 import com.example.legacykeep.DTO.SetRoleRequest;
 
+import java.util.List;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -28,7 +32,7 @@ public interface ApiService {
     Call<String> getHello(@Header("Authorization") String token);
 
     @POST("/api/auth/CreateFamilyGroup")
-    Call<String> createFamilyGroup(@Header("Authorization") String token, @Body CreateGroupRequest request);
+    Call<ResponseBody> createFamilyGroup(@Header("Authorization") String token, @Body CreateGroupRequest request);
 
     @POST("/api/auth/AddMemberToFamilyGroup")
     Call<String> addMemberToFamilyGroup(@Header("Authorization") String token, @Body AddMemberRequest request);
@@ -45,4 +49,6 @@ public interface ApiService {
     @POST("/api/auth/SetRole")
     Call<String> setRole(@Header("Authorization") String token, @Body SetRoleRequest request);
 
+    @GET("/api/auth/GetUserFamilies")
+    Call<List<FamilyGroup>> getUserFamilies(@Header("Authorization") String token);
 }

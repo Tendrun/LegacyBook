@@ -54,6 +54,7 @@ id buttonUploadPhoto
 id commentButton
 id confirmPasswordInput
 id createAccountButton
+id createFamilyGroupButton
 id currentLanguage
 id darkModeRow
 id darkModeSwitch
@@ -131,6 +132,7 @@ string bluetooth_icon
 string bluetooth_share
 string comment_button_desc
 string create_account
+string create_family_group
 string current_language
 string dark_mode
 string dark_mode_icon

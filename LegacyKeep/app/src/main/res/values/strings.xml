@@ -50,6 +50,7 @@
     <string name="about_icon">Information icon</string>
     <string name="logout_icon">Logout icon</string>
     <string name="bluetooth_icon">Bluetooth share icon</string>
+    <string name="create_family_group">Create</string>
 
     <string name="notification_icon">Notification bell icon</string>
 

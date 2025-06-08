@@ -3,6 +3,7 @@ package com.backend.legacybookbackend.Controller;
 import com.backend.legacybookbackend.DTO.AuthResponse;
 import com.backend.legacybookbackend.DTO.FamilyGroup.*;
 import com.backend.legacybookbackend.DTO.LoginRequest;
+import com.backend.legacybookbackend.Model.FamilyGroup;
 import com.backend.legacybookbackend.Services.AuthService;
 import com.backend.legacybookbackend.Services.FamilyGroupService;
 import com.backend.legacybookbackend.DTO.RegisterRequest;
@@ -11,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -180,5 +183,11 @@ public class AuthController {
             userGroupMembershipService.setRole(request.getUserEmailRole(), request.getGroupId(), request.getRole());
             return ResponseEntity.ok("You set role successfully!!!");
         }
+    }
+    @GetMapping("/GetUserFamilies")
+    public ResponseEntity<List<FamilyGroup>> getUserFamilies() {
+        String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        List<FamilyGroup> families = familyGroupService.getUserFamilies(userEmail);
+        return ResponseEntity.ok(families);
     }
 }

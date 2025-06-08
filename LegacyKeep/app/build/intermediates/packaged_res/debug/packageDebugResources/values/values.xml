@@ -35,6 +35,7 @@
     <string name="bluetooth_share">Bluetooth Share</string>
     <string name="comment_button_desc">Comment on post</string>
     <string name="create_account">Create Account</string>
+    <string name="create_family_group">Create</string>
     <string name="current_language">English</string>
     <string name="dark_mode">Dark Mode</string>
     <string name="dark_mode_icon">Dark mode icon</string>
