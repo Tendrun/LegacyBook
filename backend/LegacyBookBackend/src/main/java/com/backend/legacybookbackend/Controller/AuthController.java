@@ -190,4 +190,10 @@ public class AuthController {
         List<FamilyGroup> families = familyGroupService.getUserFamilies(userEmail);
         return ResponseEntity.ok(families);
     }
+
+    @GetMapping("/GetFamilyGroupDetails")
+    public ResponseEntity<FamilyGroup> getFamilyGroupDetails(@RequestParam long groupId) {
+        FamilyGroup familyGroup = familyGroupService.getFamilyGroupById(groupId);
+        return ResponseEntity.ok(familyGroup);
+    }
 }

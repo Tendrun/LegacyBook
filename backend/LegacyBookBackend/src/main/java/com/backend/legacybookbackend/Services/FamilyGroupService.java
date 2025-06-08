@@ -149,4 +149,8 @@ public class FamilyGroupService {
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
         return familyGroupRepository.findGroupsByUserId(user.getId());
     }
+    public FamilyGroup getFamilyGroupById(long groupId) {
+        return familyGroupRepository.findById(groupId)
+                .orElseThrow(() -> new FamilyGroupNotFoundException("Family group not found"));
+    }
 }

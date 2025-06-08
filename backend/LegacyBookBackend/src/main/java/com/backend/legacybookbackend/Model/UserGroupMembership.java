@@ -46,4 +46,12 @@ public class UserGroupMembership {
     public void setFamilyRole(FamilyRole familyRole){
         this.familyRole = familyRole;
     }
+
+    public String getUserName() {
+        return user.getName();
+    }
+
+    public String getUserEmail() {
+        return user.getEmail();
+    }
 }
