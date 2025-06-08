@@ -1,11 +1,17 @@
 package com.example.legacykeep.DTO;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class FamilyGroup {
     private long id;
     private String familyName;
     private List<UserGroupMembership> memberships;
+
+    // Add any additional fields returned by the API
+    @SerializedName("extraField")
+    private String extraField; // Example field
 
     public long getId() {
         return id;
@@ -29,5 +35,13 @@ public class FamilyGroup {
 
     public void setMemberships(List<UserGroupMembership> memberships) {
         this.memberships = memberships;
+    }
+
+    public String getExtraField() {
+        return extraField;
+    }
+
+    public void setExtraField(String extraField) {
+        this.extraField = extraField;
     }
 }

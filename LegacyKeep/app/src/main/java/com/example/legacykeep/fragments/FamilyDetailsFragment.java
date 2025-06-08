@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.legacykeep.API.ApiClient;
 import com.example.legacykeep.API.ApiService;
+import com.example.legacykeep.DTO.AddMemberRequest;
 import com.example.legacykeep.DTO.FamilyGroup;
 import com.example.legacykeep.DTO.UserGroupMembership;
 import com.example.legacykeep.R;
@@ -66,7 +68,8 @@ public class FamilyDetailsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         membersRecyclerView = view.findViewById(R.id.familyMembersRecyclerView);
-        addMemberButton = view.findViewById(R.id.addMemberButton);
+        EditText addMemberEmailInput = view.findViewById(R.id.addMemberEmailInput);
+        Button addMemberConfirmButton = view.findViewById(R.id.addMemberConfirmButton);
 
         membersRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         membersList = new ArrayList<>();
@@ -75,9 +78,47 @@ public class FamilyDetailsFragment extends Fragment {
 
         fetchFamilyMembers();
 
-        addMemberButton.setOnClickListener(v -> {
-            // Handle adding a new member (e.g., open a dialog or navigate to another fragment)
-            Toast.makeText(requireContext(), "Add Member clicked", Toast.LENGTH_SHORT).show();
+        addMemberConfirmButton.setOnClickListener(v -> {
+            String email = addMemberEmailInput.getText().toString().trim();
+            if (!email.isEmpty()) {
+                addMemberToFamilyGroup(email);
+            } else {
+                Toast.makeText(requireContext(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void addMemberToFamilyGroup(String email) {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String authToken = sharedPreferences.getString("authToken", null);
+
+        if (authToken == null) {
+            Toast.makeText(requireContext(), "You must be logged in to add members", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ApiService apiService = ApiClient.getApiService();
+        AddMemberRequest request = new AddMemberRequest();
+        request.setUserEmailToAdd(email);
+        request.setGroupId(familyGroupId);
+
+        Call<String> call = apiService.addMemberToFamilyGroup("Bearer " + authToken, request);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(requireContext(), "Member added successfully", Toast.LENGTH_SHORT).show();
+                    // Fetch updated family members list
+                    fetchFamilyMembers();
+                } else {
+                    Toast.makeText(requireContext(), "Failed to add member: ", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
         });
     }
 

@@ -43,7 +43,8 @@ drawable nav_item_selector
 drawable notification_background
 drawable spinner_background
 id aboutRow
-id addMemberButton
+id addMemberConfirmButton
+id addMemberEmailInput
 id addMemberInput
 id addPhotoButton
 id bluetoothShareRow
