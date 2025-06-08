@@ -3116,6 +3116,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addMemberButton
 id addMemberInput
 id addPhotoButton
 id alertTitle
@@ -3227,8 +3228,11 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fade
+id familyDetailsTitle
 id familyGroupLogo
+id familyGroupName
 id familyGroupTitle
+id familyMembersRecyclerView
 id familyRecyclerView
 id feedTitle
 id fill
@@ -3702,12 +3706,14 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_create_post
+layout fragment_family_details
 layout fragment_family_group
 layout fragment_feed
 layout fragment_notifications
 layout fragment_profile
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_family_group
 layout item_family_member
 layout item_post
 layout m3_alert_dialog

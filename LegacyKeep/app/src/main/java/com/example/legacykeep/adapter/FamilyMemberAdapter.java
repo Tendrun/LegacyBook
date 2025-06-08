@@ -48,19 +48,6 @@ public class FamilyMemberAdapter extends RecyclerView.Adapter<FamilyMemberAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         FamilyMemberModel member = members.get(position);
         holder.nameText.setText(member.getName());
-
-        // Custom adapter using two different views
-        ArrayAdapter<CharSequence> adapter = new ArrayAdapter<>(
-                context,
-                R.layout.spinner_item, // Collapsed view (with dropdown icon)
-                context.getResources().getStringArray(R.array.roles_array)
-        );
-
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item); // Expanded view (no icon)
-        holder.roleSpinner.setAdapter(adapter);
-
-        int spinnerPosition = adapter.getPosition(member.getRole());
-        holder.roleSpinner.setSelection(spinnerPosition);
     }
 
     @Override

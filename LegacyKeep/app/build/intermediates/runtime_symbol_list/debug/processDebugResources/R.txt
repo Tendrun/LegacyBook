@@ -3115,6 +3115,7 @@ int id action_text 0x7f090041
 int id actions 0x7f090042
 int id activity_chooser_view_content 0x7f090043
 int id add 0x7f090044
+int id addMemberButton 0x7f090207
 int id addMemberInput 0x7f090045
 int id addPhotoButton 0x7f090046
 int id alertTitle 0x7f090047
@@ -3226,8 +3227,11 @@ int id exitUntilCollapsed 0x7f0900b0
 int id expand_activities_button 0x7f0900b1
 int id expanded_menu 0x7f0900b2
 int id fade 0x7f0900b3
+int id familyDetailsTitle 0x7f090208
 int id familyGroupLogo 0x7f0900b4
+int id familyGroupName 0x7f090209
 int id familyGroupTitle 0x7f0900b5
+int id familyMembersRecyclerView 0x7f09020a
 int id familyRecyclerView 0x7f0900b6
 int id feedTitle 0x7f0900b7
 int id fill 0x7f0900b8
@@ -3701,12 +3705,14 @@ int layout design_navigation_menu_item 0x7f0c002e
 int layout design_text_input_end_icon 0x7f0c002f
 int layout design_text_input_start_icon 0x7f0c0030
 int layout fragment_create_post 0x7f0c0031
+int layout fragment_family_details 0x7f0c0079
 int layout fragment_family_group 0x7f0c0032
 int layout fragment_feed 0x7f0c0033
 int layout fragment_notifications 0x7f0c0034
 int layout fragment_profile 0x7f0c0035
 int layout ime_base_split_test_activity 0x7f0c0036
 int layout ime_secondary_split_test_activity 0x7f0c0037
+int layout item_family_group 0x7f0c007a
 int layout item_family_member 0x7f0c0038
 int layout item_post 0x7f0c0039
 int layout m3_alert_dialog 0x7f0c003a

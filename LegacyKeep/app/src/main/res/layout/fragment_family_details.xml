@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFE8AD">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/familyDetailsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Family Details"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#5C3B1E"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- RecyclerView for family members -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/familyMembersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Add member button -->
+    <Button
+        android:id="@+id/addMemberButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Member"
+        android:backgroundTint="#5C3B1E"
+        android:textColor="#FFFFFF" />
+</LinearLayout>

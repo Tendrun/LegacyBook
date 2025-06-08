@@ -43,6 +43,7 @@ drawable nav_item_selector
 drawable notification_background
 drawable spinner_background
 id aboutRow
+id addMemberButton
 id addMemberInput
 id addPhotoButton
 id bluetoothShareRow
@@ -61,8 +62,11 @@ id darkModeSwitch
 id editButton
 id editTextDescription
 id emailInput
+id familyDetailsTitle
 id familyGroupLogo
+id familyGroupName
 id familyGroupTitle
+id familyMembersRecyclerView
 id familyRecyclerView
 id feedTitle
 id forgotEmailInput
@@ -114,10 +118,12 @@ layout activity_main
 layout activity_register
 layout activity_welcome
 layout fragment_create_post
+layout fragment_family_details
 layout fragment_family_group
 layout fragment_feed
 layout fragment_notifications
 layout fragment_profile
+layout item_family_group
 layout item_family_member
 layout item_post
 layout spinner_dropdown_item

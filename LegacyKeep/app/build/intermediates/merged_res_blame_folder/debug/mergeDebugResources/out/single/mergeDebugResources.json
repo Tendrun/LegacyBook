@@ -1,218 +1,226 @@
 [
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_info.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_info.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_bluetooth.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_bluetooth.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_google.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_google.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_create.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_create.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_activity_register.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/activity_register.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_logout.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_logout.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_spinner_background.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\spinner_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/xml_network_security_config.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/xml/network_security_config.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_edittext_background.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\edittext_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_edittext_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/edittext_background.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\activity_register.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_language.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_language.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_item_post.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/item_post.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\activity_forgot_password.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_notifications_inactive.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_notifications_inactive.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\fragment_notifications.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_info.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_info.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_fragment_family_group.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/fragment_family_group.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.legacykeep.app-debug-31:/layout_fragment_family_details.xml.flat",
+        "source": "com.example.legacykeep.app-main-33:/layout/fragment_family_details.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_logout.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_logout.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_fragment_feed.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\fragment_feed.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_fragment_create_post.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/fragment_create_post.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_spinner_item.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\spinner_item.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_edit_button_bg.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\edit_button_bg.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/menu/bottom_nav_menu.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_spinner_item.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/spinner_item.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_facebook.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_facebook.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_add_photo.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_add_photo.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_fragment_feed.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/fragment_feed.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_item_post.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\item_post.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_feed.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_feed.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_spinner_dropdown_item.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/spinner_dropdown_item.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_logo_legacykeep_cropped.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\logo_legacykeep_cropped.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_item_family_member.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/item_family_member.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_fragment_create_post.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\fragment_create_post.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_notification_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/notification_background.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_logo_legacykeep.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/logo_legacykeep.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_activity_main.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_fragment_profile.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/fragment_profile.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_spinner_dropdown_item.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\spinner_dropdown_item.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_activity_welcome.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/activity_welcome.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_logo_legacykeep_cropped.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/logo_legacykeep_cropped.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_logo_legacykeep.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\logo_legacykeep.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_profile.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_profile.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_fragment_profile.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\fragment_profile.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_spinner_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/spinner_background.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_fragment_family_group.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\fragment_family_group.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_add_photo.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_add_photo.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_bluetooth.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_bluetooth.png"
+        "merged": "com.example.legacykeep.app-debug-31:/layout_item_family_group.xml.flat",
+        "source": "com.example.legacykeep.app-main-33:/layout/item_family_group.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_notifications_active.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_notifications_active.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_activity_welcome.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\activity_welcome.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_nav_item_selector.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/nav_item_selector.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\xml\\network_security_config.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_fragment_notifications.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/fragment_notifications.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_facebook.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_facebook.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_notification_background.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\notification_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_edit_button_bg.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/edit_button_bg.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/xml_backup_rules.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_google.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_google.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_create.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_create.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_dark_mode.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_dark_mode.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_circle_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/circle_background.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_feed.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_feed.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\layout_item_family_member.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\layout\\item_family_member.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_dark_mode.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_dark_mode.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_notifications_inactive.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_notifications_inactive.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_family.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_family.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_family.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_family.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/drawable_ic_notifications_active.png.flat",
-        "source": "com.example.legacykeep.app-main-33:/drawable/ic_notifications_active.png"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_activity_forgot_password.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/activity_forgot_password.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_nav_item_selector.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\nav_item_selector.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/layout_activity_login.xml.flat",
-        "source": "com.example.legacykeep.app-main-33:/layout/activity_login.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_profile.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_profile.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_ic_language.png.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\ic_language.png"
+    },
+    {
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-31:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-33:\\drawable\\circle_background.xml"
     }
 ]
