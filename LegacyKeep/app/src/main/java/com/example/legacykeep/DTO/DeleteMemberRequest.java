@@ -1,14 +1,8 @@
 package com.example.legacykeep.DTO;
 
-
 public class DeleteMemberRequest {
     private String userEmailToDelete;
     private long groupId;
-
-    public DeleteMemberRequest(String userEmailToDelete, long groupId) {
-        this.userEmailToDelete = userEmailToDelete;
-        this.groupId = groupId;
-    }
 
     public String getUserEmailToDelete() {
         return userEmailToDelete;

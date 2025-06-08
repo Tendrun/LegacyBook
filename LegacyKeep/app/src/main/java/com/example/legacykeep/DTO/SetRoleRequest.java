@@ -5,12 +5,6 @@ public class SetRoleRequest {
     private String role;
     private long groupId;
 
-    public SetRoleRequest(String userEmailRole, String role, long groupId) {
-        this.userEmailRole = userEmailRole;
-        this.role = role;
-        this.groupId = groupId;
-    }
-
     public String getUserEmailRole() {
         return userEmailRole;
     }

@@ -1,13 +1,9 @@
 package com.example.legacykeep.DTO;
 
+
 public class AddMemberRequest {
     private String userEmailToAdd;
     private long groupId;
-
-    public AddMemberRequest(String userEmailToAdd, long groupId) {
-        this.userEmailToAdd = userEmailToAdd;
-        this.groupId = groupId;
-    }
 
     public String getUserEmailToAdd() {
         return userEmailToAdd;

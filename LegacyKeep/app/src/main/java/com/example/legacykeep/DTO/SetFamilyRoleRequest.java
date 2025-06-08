@@ -5,12 +5,6 @@ public class SetFamilyRoleRequest {
     private String familyRole;
     private long groupId;
 
-    public SetFamilyRoleRequest(String userEmailRole, String familyRole, long groupId) {
-        this.userEmailRole = userEmailRole;
-        this.familyRole = familyRole;
-        this.groupId = groupId;
-    }
-
     public String getUserEmailRole() {
         return userEmailRole;
     }
