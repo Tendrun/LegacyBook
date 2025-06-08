@@ -5182,6 +5182,7 @@ com.example.legacykeep:attr/behavior_autoHide = 0x7f040063
 com.example.legacykeep:attr/transitionEasing = 0x7f040465
 com.example.legacykeep:attr/compatShadowEnabled = 0x7f040119
 com.example.legacykeep:color/m3_ref_palette_neutral12 = 0x7f06010a
+com.example.legacykeep:xml/network_security_config = 0x7f140002
 com.example.legacykeep:style/Base.V14.ThemeOverlay.Material3.SideSheetDialog = 0x7f12009b
 com.example.legacykeep:dimen/m3_comp_search_view_full_screen_header_container_height = 0x7f070175
 com.example.legacykeep:attr/textAppearanceHeadline1 = 0x7f0403f5

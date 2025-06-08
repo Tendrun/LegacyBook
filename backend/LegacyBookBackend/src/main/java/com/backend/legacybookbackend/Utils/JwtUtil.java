@@ -18,16 +18,28 @@ public class JwtUtil {
     @PostConstruct
     public void init() {
         try {
-            Path path = Paths.get("secret/secret.txt"); // in project root
+            Path path = Paths.get("secret/secret.txt");
+            if (!Files.exists(path)) {
+                throw new IOException("Plik secret.txt nie został znaleziony: " + path.toAbsolutePath());
+            }
             String secretLine = Files.readString(path).trim();
-            SECRET = secretLine.split("=")[1].replaceAll("[\"; ]", "");
-        }
-        catch(IOException e) {
-            System.out.println("Reading secret error");
+            if (secretLine.isEmpty() || !secretLine.contains("=")) {
+                throw new IllegalArgumentException("Nieprawidłowy format pliku secret.txt");
+            }
+            SECRET = secretLine.split("=")[1].trim();
+            if (SECRET.isEmpty()) {
+                throw new IllegalArgumentException("Klucz SECRET nie może być pusty");
+            }
+        } catch (IOException | IllegalArgumentException e) {
+            System.err.println("Błąd inicjalizacji SECRET: " + e.getMessage());
+            throw new RuntimeException("Nie można zainicjalizować klucza SECRET", e);
         }
     }
 
     public String generateToken(String email) {
+        if (SECRET == null || SECRET.isEmpty()) {
+            throw new IllegalStateException("Klucz SECRET nie został zainicjalizowany");
+        }
         return Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(new Date())

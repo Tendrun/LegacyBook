@@ -1,5 +1,6 @@
 package com.backend.legacybookbackend.Services;
 
+import com.backend.legacybookbackend.DTO.AuthResponse;
 import com.backend.legacybookbackend.DTO.LoginRequest;
 import com.backend.legacybookbackend.DTO.RegisterRequest;
 import com.backend.legacybookbackend.Model.User;
@@ -20,8 +21,6 @@ public class AuthService {
     }
 
     public String register(RegisterRequest request) {
-        System.out.println(request.getPassword());
-
         if (userRepo.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already registered");
         }
@@ -30,12 +29,13 @@ public class AuthService {
         return jwtUtil.generateToken(user.getEmail());
     }
 
-    public String login(LoginRequest request) {
+    public AuthResponse login(LoginRequest request) {
         User user = userRepo.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new RuntimeException("Invalid credentials");
         }
-        return jwtUtil.generateToken(user.getEmail());
+        String token = jwtUtil.generateToken(user.getEmail());
+        return new AuthResponse(token, user.getName()); // Include username
     }
 }

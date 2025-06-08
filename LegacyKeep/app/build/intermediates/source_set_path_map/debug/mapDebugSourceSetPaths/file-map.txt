@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com.example.legacykeep.app-pngs-0 C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\build\generated\res\pngs\debug
 com.example.legacykeep.app-resValues-1 C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\build\generated\res\resValues\debug
 com.example.legacykeep.app-packageDebugResources-2 C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
@@ -33,3 +34,39 @@ com.example.legacykeep.app-recyclerview-1.1.0-31 C:\Users\Admin\.gradle\caches\t
 com.example.legacykeep.app-lifecycle-livedata-core-2.6.2-32 C:\Users\Admin\.gradle\caches\transforms-4\eb7cda8a4b28f5acf3bf4b1d9e75c3d2\transformed\lifecycle-livedata-core-2.6.2\res
 com.example.legacykeep.app-appcompat-1.7.0-33 C:\Users\Admin\.gradle\caches\transforms-4\f4c27dc37d4108b51df892657a88d0aa\transformed\appcompat-1.7.0\res
 com.example.legacykeep.app-startup-runtime-1.1.1-34 C:\Users\Admin\.gradle\caches\transforms-4\f9165af6c9c149684e3d5b22f5c58418\transformed\startup-runtime-1.1.1\res
+=======
+com.example.legacykeep.app-lifecycle-viewmodel-2.6.2-0 C:\Users\Marcin\.gradle\caches\transforms-4\0053b7a0b4c427b7793e302c343114a1\transformed\lifecycle-viewmodel-2.6.2\res
+com.example.legacykeep.app-emoji2-1.3.0-1 C:\Users\Marcin\.gradle\caches\transforms-4\023a212ba0dbc2d5ae473e38f51a821c\transformed\emoji2-1.3.0\res
+com.example.legacykeep.app-constraintlayout-2.0.1-2 C:\Users\Marcin\.gradle\caches\transforms-4\0ac6eaff760ea623dc2cc1adb8f841fd\transformed\constraintlayout-2.0.1\res
+com.example.legacykeep.app-material-1.12.0-3 C:\Users\Marcin\.gradle\caches\transforms-4\0fd06cb57bf36634f17db7788a4a061f\transformed\material-1.12.0\res
+com.example.legacykeep.app-drawerlayout-1.1.1-4 C:\Users\Marcin\.gradle\caches\transforms-4\1864759b821df7a68fdc8e685097abce\transformed\drawerlayout-1.1.1\res
+com.example.legacykeep.app-savedstate-1.2.1-5 C:\Users\Marcin\.gradle\caches\transforms-4\1d780926ee6f1ee2f9cf42b9f632093a\transformed\savedstate-1.2.1\res
+com.example.legacykeep.app-coordinatorlayout-1.1.0-6 C:\Users\Marcin\.gradle\caches\transforms-4\2a3d1bdd14184bae184c9187c8642cf5\transformed\coordinatorlayout-1.1.0\res
+com.example.legacykeep.app-appcompat-resources-1.7.0-7 C:\Users\Marcin\.gradle\caches\transforms-4\32f58f8a8a834fed6b7c45260ee8a88b\transformed\appcompat-resources-1.7.0\res
+com.example.legacykeep.app-core-runtime-2.2.0-8 C:\Users\Marcin\.gradle\caches\transforms-4\43ae05c465624b03909ff4be9dcb7ecc\transformed\core-runtime-2.2.0\res
+com.example.legacykeep.app-cardview-1.0.0-9 C:\Users\Marcin\.gradle\caches\transforms-4\4cec7482fc6668af414a6d2535c9af78\transformed\cardview-1.0.0\res
+com.example.legacykeep.app-profileinstaller-1.3.1-10 C:\Users\Marcin\.gradle\caches\transforms-4\4eec65992d00cdf8f6b169a6b9044c66\transformed\profileinstaller-1.3.1\res
+com.example.legacykeep.app-core-1.13.0-11 C:\Users\Marcin\.gradle\caches\transforms-4\522fe99d61c08bb2b6125d1c33572577\transformed\core-1.13.0\res
+com.example.legacykeep.app-transition-1.5.0-12 C:\Users\Marcin\.gradle\caches\transforms-4\5e78534daa83e5704272096603106aea\transformed\transition-1.5.0\res
+com.example.legacykeep.app-activity-1.8.0-13 C:\Users\Marcin\.gradle\caches\transforms-4\5f7c3542629dea3ba43c51b2851ccd07\transformed\activity-1.8.0\res
+com.example.legacykeep.app-lifecycle-process-2.6.2-14 C:\Users\Marcin\.gradle\caches\transforms-4\60e8effc869defc5eeab8ea966655a2a\transformed\lifecycle-process-2.6.2\res
+com.example.legacykeep.app-viewpager2-1.0.0-15 C:\Users\Marcin\.gradle\caches\transforms-4\6bb1809d4c22f8b9c9747dc554b65c1d\transformed\viewpager2-1.0.0\res
+com.example.legacykeep.app-lifecycle-livedata-2.6.2-16 C:\Users\Marcin\.gradle\caches\transforms-4\6f27209ac27541263c7789bc1b68e51b\transformed\lifecycle-livedata-2.6.2\res
+com.example.legacykeep.app-lifecycle-runtime-2.6.2-17 C:\Users\Marcin\.gradle\caches\transforms-4\9b7d3158abff4b5cd7a5120e0152d0ab\transformed\lifecycle-runtime-2.6.2\res
+com.example.legacykeep.app-core-ktx-1.13.0-18 C:\Users\Marcin\.gradle\caches\transforms-4\9fa5e7f8528745f1e5acf685bff25431\transformed\core-ktx-1.13.0\res
+com.example.legacykeep.app-annotation-experimental-1.4.0-19 C:\Users\Marcin\.gradle\caches\transforms-4\a8998aa06fcf3da7dcea88d37e5bbe43\transformed\annotation-experimental-1.4.0\res
+com.example.legacykeep.app-fragment-1.5.4-20 C:\Users\Marcin\.gradle\caches\transforms-4\c43720d277b945a4b8e794be7bdcac62\transformed\fragment-1.5.4\res
+com.example.legacykeep.app-lifecycle-viewmodel-savedstate-2.6.2-21 C:\Users\Marcin\.gradle\caches\transforms-4\ce47829b91d0a0e0de12f9b250592dd4\transformed\lifecycle-viewmodel-savedstate-2.6.2\res
+com.example.legacykeep.app-emoji2-views-helper-1.3.0-22 C:\Users\Marcin\.gradle\caches\transforms-4\d81e41cf956d04b12f83efe57d4d84a6\transformed\emoji2-views-helper-1.3.0\res
+com.example.legacykeep.app-recyclerview-1.1.0-23 C:\Users\Marcin\.gradle\caches\transforms-4\d9cef304adcfa25b88d23f759e737241\transformed\recyclerview-1.1.0\res
+com.example.legacykeep.app-lifecycle-livedata-core-2.6.2-24 C:\Users\Marcin\.gradle\caches\transforms-4\eb7cda8a4b28f5acf3bf4b1d9e75c3d2\transformed\lifecycle-livedata-core-2.6.2\res
+com.example.legacykeep.app-appcompat-1.7.0-25 C:\Users\Marcin\.gradle\caches\transforms-4\f4c27dc37d4108b51df892657a88d0aa\transformed\appcompat-1.7.0\res
+com.example.legacykeep.app-startup-runtime-1.1.1-26 C:\Users\Marcin\.gradle\caches\transforms-4\f9165af6c9c149684e3d5b22f5c58418\transformed\startup-runtime-1.1.1\res
+com.example.legacykeep.app-pngs-27 G:\Projekt Android\LegacyBook\LegacyKeep\app\build\generated\res\pngs\debug
+com.example.legacykeep.app-resValues-28 G:\Projekt Android\LegacyBook\LegacyKeep\app\build\generated\res\resValues\debug
+com.example.legacykeep.app-packageDebugResources-29 G:\Projekt Android\LegacyBook\LegacyKeep\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.legacykeep.app-packageDebugResources-30 G:\Projekt Android\LegacyBook\LegacyKeep\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.legacykeep.app-debug-31 G:\Projekt Android\LegacyBook\LegacyKeep\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.legacykeep.app-debug-32 G:\Projekt Android\LegacyBook\LegacyKeep\app\src\debug\res
+com.example.legacykeep.app-main-33 G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\res
+>>>>>>> origin/TestowBranch
