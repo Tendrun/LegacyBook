@@ -17,16 +17,23 @@ import java.util.List;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
-    private final List<PostModel> postList;
+    private List<PostModel> postList;
 
     public PostAdapter(List<PostModel> postList) {
         this.postList = postList;
     }
 
+    /** Odświeża całą listę i powiadamia adapter */
+    public void updateList(List<PostModel> newList) {
+        this.postList = newList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_post, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_post, parent, false);
         return new PostViewHolder(view);
     }
 
@@ -43,19 +50,19 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return postList.size();
     }
 
-    public static class PostViewHolder extends RecyclerView.ViewHolder {
+    static class PostViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView description, location;
         ImageButton likeButton, commentButton, shareButton;
 
-        public PostViewHolder(@NonNull View itemView) {
+        PostViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.postImage);
-            description = itemView.findViewById(R.id.postDescription);
-            location = itemView.findViewById(R.id.postLocation);
-            likeButton = itemView.findViewById(R.id.likeButton);
-            commentButton = itemView.findViewById(R.id.commentButton);
-            shareButton = itemView.findViewById(R.id.shareButton);
+            imageView      = itemView.findViewById(R.id.postImage);
+            description    = itemView.findViewById(R.id.postDescription);
+            location       = itemView.findViewById(R.id.postLocation);
+            likeButton     = itemView.findViewById(R.id.likeButton);
+            commentButton  = itemView.findViewById(R.id.commentButton);
+            shareButton    = itemView.findViewById(R.id.shareButton);
         }
     }
 }

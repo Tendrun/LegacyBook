@@ -1,3 +1,4 @@
+// app/src/main/java/com/example/legacykeep/fragments/FeedFragment.java
 package com.example.legacykeep.fragments;
 
 import android.os.Bundle;
@@ -8,21 +9,21 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.legacykeep.R;
 import com.example.legacykeep.adapter.PostAdapter;
-import com.example.legacykeep.model.PostModel;
+import com.example.legacykeep.viewmodel.SharedPostViewModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class FeedFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private PostAdapter postAdapter;
-    private List<PostModel> postList;
+    private SharedPostViewModel viewModel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,16 +37,18 @@ public class FeedFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewFeed);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        postList = new ArrayList<>();
-        loadMockPosts();
+        // Pobranie Shared ViewModel z zakresu Activity
+        viewModel = new ViewModelProvider(requireActivity())
+                .get(SharedPostViewModel.class);
 
-        postAdapter = new PostAdapter(postList);
+        // Adapter z początkowo pustą listą
+        postAdapter = new PostAdapter(new ArrayList<>());
         recyclerView.setAdapter(postAdapter);
-    }
 
-    private void loadMockPosts() {
-        postList.add(new PostModel(R.drawable.logo_legacykeep, "Grandpa planting the tree", "Kraków"));
-        postList.add(new PostModel(R.drawable.logo_legacykeep, "Family picnic 2001", "Warszawa"));
-        postList.add(new PostModel(R.drawable.logo_legacykeep, "Sailing trip with dad", "Mazury"));
+        // Obserwacja zmian listy postów
+        viewModel.getPosts().observe(getViewLifecycleOwner(), posts -> {
+            postAdapter.updateList(posts);
+            recyclerView.scrollToPosition(0);
+        });
     }
 }
