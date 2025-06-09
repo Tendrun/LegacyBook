@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.legacykeep.API.ApiClient;
 import com.example.legacykeep.API.ApiService;
 import com.example.legacykeep.DTO.CreateGroupRequest;
+import com.example.legacykeep.DTO.DeleteFamilyRequest;
 import com.example.legacykeep.DTO.FamilyGroup;
 import com.example.legacykeep.R;
 import com.example.legacykeep.adapter.FamilyGroupAdapter;
@@ -52,12 +53,11 @@ public class FamilyGroupFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         familyGroupList = new ArrayList<>();
-        adapter = new FamilyGroupAdapter(requireContext(), familyGroupList, this::onFamilyGroupClick);
+        adapter = new FamilyGroupAdapter(requireContext(), familyGroupList, this::onFamilyGroupClick, this::onDeleteFamilyGroup);
         recyclerView.setAdapter(adapter);
 
         fetchUserFamilies();
 
-        // Obsługa przycisku "Create Family Group"
         Button createFamilyGroupButton = view.findViewById(R.id.createFamilyGroupButton);
         createFamilyGroupButton.setOnClickListener(v -> showCreateGroupDialog());
     }
@@ -160,5 +160,37 @@ public class FamilyGroupFragment extends Fragment {
                 .replace(R.id.fragment_container, fragment)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    private void onDeleteFamilyGroup(FamilyGroup familyGroup) {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String authToken = sharedPreferences.getString("authToken", null);
+
+        if (authToken == null) {
+            Toast.makeText(requireContext(), "You must be logged in to delete a family group", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ApiService apiService = ApiClient.getApiService();
+        DeleteFamilyRequest request = new DeleteFamilyRequest();
+        request.setGroupId(familyGroup.getId());
+
+        Call<String> call = apiService.deleteFamily("Bearer " + authToken, request);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(requireContext(), "Family group deleted successfully", Toast.LENGTH_SHORT).show();
+                    fetchUserFamilies(); // Refresh the list
+                } else {
+                    Toast.makeText(requireContext(), "Failed to delete family group", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
