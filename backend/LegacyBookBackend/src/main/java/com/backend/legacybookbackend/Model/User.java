@@ -14,6 +14,7 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+    private String profilePicture;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserGroupMembership> memberships;
@@ -41,5 +42,12 @@ public class User {
     public void setMemberships(List<UserGroupMembership> memberships) {
         this.memberships = memberships;
     }
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
 }
 

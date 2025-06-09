@@ -4,6 +4,7 @@ import com.backend.legacybookbackend.DTO.AuthResponse;
 import com.backend.legacybookbackend.DTO.FamilyGroup.*;
 import com.backend.legacybookbackend.DTO.LoginRequest;
 import com.backend.legacybookbackend.Model.FamilyGroup;
+import com.backend.legacybookbackend.Model.UserRepository;
 import com.backend.legacybookbackend.Services.AuthService;
 import com.backend.legacybookbackend.Services.FamilyGroupService;
 import com.backend.legacybookbackend.DTO.RegisterRequest;
@@ -12,7 +13,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import com.backend.legacybookbackend.Model.User;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -21,11 +28,13 @@ public class AuthController {
     private final AuthService authService;
     private final FamilyGroupService familyGroupService;
     private final UserGroupMembershipService userGroupMembershipService;
+    private final UserRepository userRepository;
 
-    public AuthController(AuthService authService, FamilyGroupService familyGroupService, UserGroupMembershipService userGroupMembershipService) {
+    public AuthController(AuthService authService, FamilyGroupService familyGroupService, UserGroupMembershipService userGroupMembershipService, UserRepository userRepository) {
         this.authService = authService;
         this.familyGroupService = familyGroupService;
         this.userGroupMembershipService = userGroupMembershipService;
+        this.userRepository = userRepository;
     }
 
     @PostMapping("/register")
@@ -195,5 +204,42 @@ public class AuthController {
     public ResponseEntity<FamilyGroup> getFamilyGroupDetails(@RequestParam long groupId) {
         FamilyGroup familyGroup = familyGroupService.getFamilyGroupById(groupId);
         return ResponseEntity.ok(familyGroup);
+    }
+
+    @PostMapping(value = "/updateProfilePicture", consumes = "multipart/form-data")
+    public ResponseEntity<String> updateProfilePicture(
+            @RequestPart("profilePicture") MultipartFile profilePicture,
+            @RequestHeader("Authorization") String token) {
+        String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        try {
+            // Zapisz plik na serwerze lub w chmurze
+            String filePath = saveProfilePicture(profilePicture);
+
+            // Zaktualizuj ścieżkę w bazie danych
+            user.setProfilePicture(filePath);
+            userRepository.save(user);
+
+            return ResponseEntity.ok("Profile picture updated successfully");
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to upload profile picture");
+        }
+    }
+    private String saveProfilePicture(MultipartFile file) throws IOException {
+        // Przykładowa ścieżka zapisu pliku
+        String uploadDir = "uploads/profile_pictures/";
+        Path uploadPath = Paths.get(uploadDir);
+
+        if (!Files.exists(uploadPath)) {
+            Files.createDirectories(uploadPath);
+        }
+
+        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
+        Path filePath = uploadPath.resolve(fileName);
+        Files.copy(file.getInputStream(), filePath);
+
+        return filePath.toString();
     }
 }
