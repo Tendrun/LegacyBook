@@ -3,6 +3,7 @@ package com.example.legacykeep.API;
 import com.example.legacykeep.DTO.AddMemberRequest;
 import com.example.legacykeep.DTO.AuthResponse;
 import com.example.legacykeep.DTO.CreateGroupRequest;
+import com.example.legacykeep.DTO.CreatePostRequest;
 import com.example.legacykeep.DTO.DeleteFamilyRequest;
 import com.example.legacykeep.DTO.DeleteMemberRequest;
 import com.example.legacykeep.DTO.FamilyGroup;
@@ -11,15 +12,18 @@ import com.example.legacykeep.DTO.RegisterRequest;
 import com.example.legacykeep.DTO.RegisterResponse;
 import com.example.legacykeep.DTO.SetFamilyRoleRequest;
 import com.example.legacykeep.DTO.SetRoleRequest;
+import com.example.legacykeep.model.PostModel;
 
 import java.util.List;
 
 import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
@@ -60,4 +64,16 @@ public interface ApiService {
 
     @POST("/api/auth/updateProfilePicture")
     Call<String> updateProfilePicture(@Header("Authorization") String token, @Part MultipartBody.Part profilePicture);
+
+    @Multipart
+    @POST("/api/posts")
+    Call<PostModel> createPost(
+            @Header("Authorization") String token,
+            @Part("post") RequestBody postRequest,
+            @Part MultipartBody.Part image,
+            @Part MultipartBody.Part audio
+    );
+
+    @GET("/api/posts")
+    Call<List<PostModel>> getPosts(@Header("Authorization") String token);
 }

@@ -47,6 +47,7 @@ id addMemberConfirmButton
 id addMemberEmailInput
 id addMemberInput
 id addPhotoButton
+id audioButton
 id bluetoothShareRow
 id bottom_navigation
 id buttonPickLocation
@@ -94,6 +95,7 @@ id nav_profile
 id notificationsLogo
 id notificationsTitle
 id passwordInput
+id postCreatedAt
 id postDescription
 id postImage
 id postLocation
@@ -135,6 +137,7 @@ mipmap ic_launcher_round
 string about
 string about_icon
 string app_name
+string audio_button_desc
 string bluetooth_icon
 string bluetooth_share
 string comment_button_desc

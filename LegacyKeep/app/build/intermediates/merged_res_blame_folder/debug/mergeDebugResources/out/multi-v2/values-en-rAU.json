@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.legacykeep.app-mergeDebugResources-29:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.example.legacykeep.app-mergeDebugResources-30:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Marcin\\.gradle\\caches\\transforms-4\\f4c27dc37d4108b51df892657a88d0aa\\transformed\\appcompat-1.7.0\\res\\values-en-rAU\\values-en-rAU.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.legacykeep.app-mergeDebugResources-29:/values-v17/values-v17.xml",
+            "outputFile": "com.example.legacykeep.app-mergeDebugResources-30:/values-v17/values-v17.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Marcin\\.gradle\\caches\\transforms-4\\f4c27dc37d4108b51df892657a88d0aa\\transformed\\appcompat-1.7.0\\res\\values-v17\\values-v17.xml",

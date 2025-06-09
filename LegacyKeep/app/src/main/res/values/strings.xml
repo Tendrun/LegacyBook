@@ -42,7 +42,7 @@
     <string name="about">About</string>
     <string name="logout">Logout</string>
     <string name="bluetooth_share">Bluetooth Share</string>
-
+    <string name="audio_button_desc">Play audio</string>
     <!-- Accessibility: Content Descriptions -->
     <string name="desc_profile_picture">User profile picture</string>
     <string name="language_icon">Language icon</string>

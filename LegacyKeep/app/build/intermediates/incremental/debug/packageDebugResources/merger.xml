@@ -9,7 +9,7 @@
     </string-array><string-array name="languages_array">
         <item>English</item>
         <item>Polish</item>
-    </string-array></file><file path="G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\res\values\styles.xml" qualifiers=""><style name="ProfileRow">
+    </string-array><string name="audio_button_desc">Play audio</string></file><file path="G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\res\values\styles.xml" qualifiers=""><style name="ProfileRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>

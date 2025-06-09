@@ -23,7 +23,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         this.postList = postList;
     }
 
-    /** Odświeża całą listę i powiadamia adapter */
     public void updateList(List<PostModel> newList) {
         this.postList = newList;
         notifyDataSetChanged();
@@ -40,9 +39,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
         PostModel post = postList.get(position);
-        holder.imageView.setImageResource(post.getImageResId());
-        holder.description.setText(post.getDescription());
-        holder.location.setText(post.getLocation());
+        holder.description.setText(post.getContent());
+        holder.location.setText(post.getAuthorName());
+        holder.createdAt.setText(post.getCreatedAt());
     }
 
     @Override
@@ -50,19 +49,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return postList.size();
     }
 
-    static class PostViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
-        TextView description, location;
-        ImageButton likeButton, commentButton, shareButton;
+    public static class PostViewHolder extends RecyclerView.ViewHolder {
+        public ImageView imageView;
+        public TextView description, location, createdAt;
+        public ImageButton audioButton;
 
-        PostViewHolder(@NonNull View itemView) {
+        public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView      = itemView.findViewById(R.id.postImage);
-            description    = itemView.findViewById(R.id.postDescription);
-            location       = itemView.findViewById(R.id.postLocation);
-            likeButton     = itemView.findViewById(R.id.likeButton);
-            commentButton  = itemView.findViewById(R.id.commentButton);
-            shareButton    = itemView.findViewById(R.id.shareButton);
+            imageView = itemView.findViewById(R.id.postImage);
+            description = itemView.findViewById(R.id.postDescription);
+            location = itemView.findViewById(R.id.postLocation);
+            createdAt = itemView.findViewById(R.id.postCreatedAt);
+            audioButton = itemView.findViewById(R.id.audioButton);
         }
     }
 }

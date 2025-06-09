@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="wrap_content">
     android:orientation="vertical"
     android:background="#FFFFFF"
     android:layout_marginTop="8dp"
@@ -57,6 +57,16 @@
             android:textSize="12sp" />
     </LinearLayout>
 
+    <!-- Created At -->
+    <TextView
+        android:id="@+id/postCreatedAt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Created at: 2023-01-01"
+        android:textColor="#5C3B1E"
+        android:textSize="12sp"
+        android:paddingTop="4dp" />
+
     <!-- Action Buttons -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -95,5 +105,15 @@
             android:contentDescription="@string/share_button_desc"
             app:tint="#5C3B1E"
             android:src="@android:drawable/ic_menu_share" />
+
+        <ImageButton
+            android:id="@+id/audioButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/audio_button_desc"
+            app:tint="#5C3B1E"
+            android:src="@android:drawable/ic_btn_speak_now" />
     </LinearLayout>
 </LinearLayout>
