@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.legacykeep.API.ApiClient;
 import com.example.legacykeep.API.ApiService;
 import com.example.legacykeep.DTO.AddMemberRequest;
+import com.example.legacykeep.DTO.DeleteMemberRequest;
 import com.example.legacykeep.DTO.FamilyGroup;
 import com.example.legacykeep.DTO.UserGroupMembership;
 import com.example.legacykeep.R;
@@ -73,7 +74,7 @@ public class FamilyDetailsFragment extends Fragment {
 
         membersRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         membersList = new ArrayList<>();
-        adapter = new FamilyMemberAdapter(requireContext(), membersList);
+        adapter = new FamilyMemberAdapter(requireContext(), membersList, this::onDeleteMember);
         membersRecyclerView.setAdapter(adapter);
 
         fetchFamilyMembers();
@@ -158,4 +159,36 @@ public class FamilyDetailsFragment extends Fragment {
         });
     }
 
+    private void onDeleteMember(FamilyMemberModel member) {
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String authToken = sharedPreferences.getString("authToken", null);
+
+        if (authToken == null) {
+            Toast.makeText(requireContext(), "You must be logged in to remove a member", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ApiService apiService = ApiClient.getApiService();
+        DeleteMemberRequest request = new DeleteMemberRequest();
+        request.setUserEmailToDelete(member.getName()); // Assuming name is the email
+        request.setGroupId(familyGroupId);
+
+        Call<String> call = apiService.deleteMemberFromFamilyGroup("Bearer " + authToken, request);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (response.isSuccessful()) {
+                    Toast.makeText(requireContext(), "Member removed successfully", Toast.LENGTH_SHORT).show();
+                    fetchFamilyMembers(); // Refresh the list
+                } else {
+                    Toast.makeText(requireContext(), "Failed to remove member", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

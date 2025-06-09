@@ -55,4 +55,6 @@ public interface ApiService {
 
     @GET("/api/auth/GetFamilyGroupDetails")
     Call<FamilyGroup> getFamilyGroupDetails(@Header("Authorization") String token, @Query("groupId") long groupId);
+
+
 }
