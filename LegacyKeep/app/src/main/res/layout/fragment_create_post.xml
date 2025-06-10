@@ -95,5 +95,15 @@
             android:layout_marginBottom="16dp"
             android:scaleType="centerCrop"
             android:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonPlayAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PLAY AUDIO"
+            android:backgroundTint="#FFE8AD"
+            android:textColor="#5C3B1E"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"/>
     </LinearLayout>
 </ScrollView>

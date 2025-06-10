@@ -51,6 +51,7 @@ id audioButton
 id bluetoothShareRow
 id bottom_navigation
 id buttonPickLocation
+id buttonPlayAudio
 id buttonRecordVoice
 id buttonSubmitPost
 id buttonUploadPhoto

@@ -52,16 +52,16 @@
         "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\layout_spinner_dropdown_item.xml.flat",
-        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\layout\\spinner_dropdown_item.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\xml\\data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\drawable_ic_create.png.flat",
         "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\drawable\\ic_create.png"
     },
     {
-        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\layout_spinner_dropdown_item.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\layout\\spinner_dropdown_item.xml"
     },
     {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\drawable_ic_language.png.flat",
@@ -76,16 +76,20 @@
         "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_create_post.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_create_post.xml"
+    },
+    {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\layout_spinner_item.xml.flat",
         "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\layout\\spinner_item.xml"
     },
     {
-        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\layout_fragment_create_post.xml.flat",
-        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\layout\\fragment_create_post.xml"
-    },
-    {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\drawable_ic_notifications_inactive.png.flat",
         "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\drawable\\ic_notifications_inactive.png"
+    },
+    {
+        "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\layout_fragment_create_post.xml.flat",
+        "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\layout\\fragment_create_post.xml"
     },
     {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\drawable_ic_google.png.flat",
@@ -150,10 +154,6 @@
     {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-main-34:\\mipmap-hdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "com.example.legacykeep.app-debug-32:/layout_item_post.xml.flat",
-        "source": "com.example.legacykeep.app-main-34:/layout/item_post.xml"
     },
     {
         "merged": "C:\\Users\\Marcin\\.gradle\\daemon\\8.7\\com.example.legacykeep.app-debug-32:\\drawable_ic_launcher_foreground.xml.flat",

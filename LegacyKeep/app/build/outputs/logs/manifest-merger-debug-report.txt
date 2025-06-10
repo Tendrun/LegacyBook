@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-53:12
-INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-53:12
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-54:12
+INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:2:1-54:12
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Marcin\.gradle\caches\transforms-4\ac94a554af9c6f69927f22d6e3148a28\transformed\glide-4.15.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Marcin\.gradle\caches\transforms-4\0fd06cb57bf36634f17db7788a4a061f\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\Marcin\.gradle\caches\transforms-4\32f58f8a8a834fed6b7c45260ee8a88b\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
@@ -78,21 +78,27 @@ uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:8:5-80
 	android:name
 		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:8:22-77
+uses-feature#android.hardware.camera
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:9:5-85
+	android:required
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:9:58-82
+	android:name
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:9:19-57
 uses-permission#android.permission.CAMERA
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:9:5-65
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:5-65
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:9:22-62
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:22-62
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:5-71
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:5-71
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:22-68
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:22-68
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:5-81
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:22-78
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:12:22-78
 application
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:14:5-51:19
-INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:14:5-51:19
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:5-52:19
+INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:5-52:19
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Marcin\.gradle\caches\transforms-4\ac94a554af9c6f69927f22d6e3148a28\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [com.github.bumptech.glide:glide:4.15.1] C:\Users\Marcin\.gradle\caches\transforms-4\ac94a554af9c6f69927f22d6e3148a28\transformed\glide-4.15.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\Marcin\.gradle\caches\transforms-4\0fd06cb57bf36634f17db7788a4a061f\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
@@ -118,63 +124,63 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ma
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] C:\Users\Marcin\.gradle\caches\transforms-4\522fe99d61c08bb2b6125d1c33572577\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:21:9-35
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:22:9-35
 	android:label
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:9-41
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:9-41
 	android:fullBackupContent
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:17:9-54
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:9-54
 	android:roundIcon
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:9-54
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:21:9-54
 	tools:targetApi
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:24:9-29
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:25:9-29
 	android:icon
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:9-43
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:22:9-48
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:23:9-48
 	android:networkSecurityConfig
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:23:9-69
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:24:9-69
 	android:dataExtractionRules
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:16:9-65
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:17:9-65
 activity#com.example.legacykeep.WelcomeActivity
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:27:9-33:20
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:28:9-34:20
 	android:exported
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:28:13-36
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:13-36
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:27:19-50
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:28:19-50
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:13-32:29
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:17-69
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:25-66
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.example.legacykeep.LoginActivity
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:36:9-38:39
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:37:9-39:39
 	android:exported
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:13-36
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:39:13-36
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:37:13-42
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:13-42
 activity#com.example.legacykeep.RegisterActivity
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:41:9-43:39
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:42:9-44:39
 	android:exported
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:13-36
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:44:13-36
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:42:13-45
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:13-45
 activity#com.example.legacykeep.ForgotPasswordActivity
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:45:9-47:39
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:46:9-48:39
 	android:exported
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:47:13-36
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:46:13-51
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:47:13-51
 activity#com.example.legacykeep.MainActivity
-ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:9-50
+ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:9-50
 	android:name
-		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:19-47
+		ADDED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:19-47
 uses-sdk
 INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\Projekt Android\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml

@@ -3144,6 +3144,7 @@ int id bottom_navigation 0x7f09005e
 int id bounce 0x7f09005f
 int id buttonPanel 0x7f090060
 int id buttonPickLocation 0x7f090061
+int id buttonPlayAudio 0x7f090211
 int id buttonRecordVoice 0x7f090062
 int id buttonSubmitPost 0x7f090063
 int id buttonUploadPhoto 0x7f090064

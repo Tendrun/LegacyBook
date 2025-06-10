@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -47,8 +48,12 @@ public class CreatePostFragment extends Fragment {
     private EditText descriptionField;
     private Button uploadPhotoButton, recordVoiceButton, pickLocationButton, submitPostButton;
     private static final int GALLERY_REQUEST_CODE = 1001;
+    private static final int AUDIO_REQUEST_CODE = 2001;
     private Uri selectedImageUri = null;
     private Uri selectedAudioUri = null;
+    private Button playAudioButton;
+    private MediaPlayer mediaPlayer;
+    private Uri recordedAudioUri = null;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -64,12 +69,16 @@ public class CreatePostFragment extends Fragment {
         uploadPhotoButton = view.findViewById(R.id.buttonUploadPhoto);
         recordVoiceButton = view.findViewById(R.id.buttonRecordVoice);
         submitPostButton = view.findViewById(R.id.buttonSubmitPost);
-
+        recordVoiceButton = view.findViewById(R.id.buttonRecordVoice);
+        playAudioButton = view.findViewById(R.id.buttonPlayAudio);
+        submitPostButton = view.findViewById(R.id.buttonSubmitPost);
         // Handle photo upload
         uploadPhotoButton.setOnClickListener(v -> openGallery());
 
         // Handle audio recording
         recordVoiceButton.setOnClickListener(v -> startAudioRecording());
+        playAudioButton.setOnClickListener(v -> playRecordedAudio());
+        submitPostButton.setOnClickListener(v -> submitPost());
 
         // Handle post submission
         submitPostButton.setOnClickListener(v -> submitPost());
@@ -80,9 +89,7 @@ public class CreatePostFragment extends Fragment {
         startActivityForResult(intent, GALLERY_REQUEST_CODE);
     }
 
-    private void startAudioRecording() {
-        // Implement audio recording logic
-    }
+
 
     private void submitPost() {
         String content = descriptionField.getText().toString().trim();
@@ -115,8 +122,8 @@ public class CreatePostFragment extends Fragment {
 
         // Prepare audio part
         MultipartBody.Part audioPart = null;
-        if (selectedAudioUri != null) {
-            audioPart = prepareFilePart("audio", selectedAudioUri);
+        if (recordedAudioUri != null) {
+            audioPart = prepareFilePart("audio", recordedAudioUri);
         }
 
         ApiService apiService = ApiClient.getApiService();
@@ -181,5 +188,37 @@ public class CreatePostFragment extends Fragment {
                 imageView.setImageURI(selectedImageUri);
             }
         }
+        if (requestCode == AUDIO_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            recordedAudioUri = data.getData();
+            Toast.makeText(requireContext(), "Audio recorded successfully", Toast.LENGTH_SHORT).show();
+        }
     }
+
+    private void startAudioRecording() {
+        Intent intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+        if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+            startActivityForResult(intent, AUDIO_REQUEST_CODE);
+        } else {
+            Toast.makeText(requireContext(), "No app available to record audio", Toast.LENGTH_SHORT).show();
+        }
+    }
+    private void playRecordedAudio() {
+        if (recordedAudioUri != null) {
+            if (mediaPlayer == null) {
+                mediaPlayer = MediaPlayer.create(requireContext(), recordedAudioUri);
+            }
+            mediaPlayer.start();
+        } else {
+            Toast.makeText(requireContext(), "No audio recorded", Toast.LENGTH_SHORT).show();
+        }
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
 }

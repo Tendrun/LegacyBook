@@ -3145,6 +3145,7 @@ id bottom_navigation
 id bounce
 id buttonPanel
 id buttonPickLocation
+id buttonPlayAudio
 id buttonRecordVoice
 id buttonSubmitPost
 id buttonUploadPhoto
