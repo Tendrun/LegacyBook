@@ -3147,6 +3147,7 @@ id buttonPanel
 id buttonPickLocation
 id buttonPlayAudio
 id buttonRecordVoice
+id buttonStopRecording
 id buttonSubmitPost
 id buttonUploadPhoto
 id cancel_button

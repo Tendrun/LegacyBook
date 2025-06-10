@@ -53,6 +53,7 @@ id bottom_navigation
 id buttonPickLocation
 id buttonPlayAudio
 id buttonRecordVoice
+id buttonStopRecording
 id buttonSubmitPost
 id buttonUploadPhoto
 id commentButton

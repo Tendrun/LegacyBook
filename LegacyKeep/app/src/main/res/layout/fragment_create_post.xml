@@ -105,5 +105,15 @@
             android:textColor="#5C3B1E"
             android:textAllCaps="true"
             android:layout_marginBottom="12dp"/>
+        <Button
+            android:id="@+id/buttonStopRecording"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STOP RECORDING"
+            android:backgroundTint="#FFE8AD"
+            android:textColor="#5C3B1E"
+            android:textAllCaps="true"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
     </LinearLayout>
 </ScrollView>

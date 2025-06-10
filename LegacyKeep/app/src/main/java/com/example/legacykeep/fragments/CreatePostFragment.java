@@ -22,7 +22,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
+import android.media.MediaRecorder;
+import java.io.File;
+import java.io.IOException;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.example.legacykeep.API.ApiClient;
 import com.example.legacykeep.API.ApiService;
 import com.example.legacykeep.DTO.CreatePostRequest;
@@ -49,11 +55,15 @@ public class CreatePostFragment extends Fragment {
     private Button uploadPhotoButton, recordVoiceButton, pickLocationButton, submitPostButton;
     private static final int GALLERY_REQUEST_CODE = 1001;
     private static final int AUDIO_REQUEST_CODE = 2001;
+    private static final int REQUEST_MICROPHONE_PERMISSION = 3001;
+    private MediaRecorder mediaRecorder;
+    private File audioFile;
     private Uri selectedImageUri = null;
     private Uri selectedAudioUri = null;
     private Button playAudioButton;
     private MediaPlayer mediaPlayer;
     private Uri recordedAudioUri = null;
+    private Button stopRecordingButton;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -68,15 +78,16 @@ public class CreatePostFragment extends Fragment {
         descriptionField = view.findViewById(R.id.editTextDescription);
         uploadPhotoButton = view.findViewById(R.id.buttonUploadPhoto);
         recordVoiceButton = view.findViewById(R.id.buttonRecordVoice);
-        submitPostButton = view.findViewById(R.id.buttonSubmitPost);
-        recordVoiceButton = view.findViewById(R.id.buttonRecordVoice);
         playAudioButton = view.findViewById(R.id.buttonPlayAudio);
         submitPostButton = view.findViewById(R.id.buttonSubmitPost);
+        stopRecordingButton = view.findViewById(R.id.buttonStopRecording); // Ensure this is initialized
+
         // Handle photo upload
         uploadPhotoButton.setOnClickListener(v -> openGallery());
 
         // Handle audio recording
         recordVoiceButton.setOnClickListener(v -> startAudioRecording());
+        stopRecordingButton.setOnClickListener(v -> stopAudioRecording());
         playAudioButton.setOnClickListener(v -> playRecordedAudio());
         submitPostButton.setOnClickListener(v -> submitPost());
 
@@ -195,19 +206,50 @@ public class CreatePostFragment extends Fragment {
     }
 
     private void startAudioRecording() {
-        Intent intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
-        if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
-            startActivityForResult(intent, AUDIO_REQUEST_CODE);
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(),
+                    new String[]{Manifest.permission.RECORD_AUDIO},
+                    REQUEST_MICROPHONE_PERMISSION);
         } else {
-            Toast.makeText(requireContext(), "No app available to record audio", Toast.LENGTH_SHORT).show();
+            try {
+                // Create a file to save the audio
+                File outputDir = requireContext().getCacheDir(); // Use cache directory
+                audioFile = File.createTempFile("audio_record", ".3gp", outputDir);
+
+                // Initialize MediaRecorder
+                mediaRecorder = new MediaRecorder();
+                mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+                mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+                mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+                mediaRecorder.setOutputFile(audioFile.getAbsolutePath());
+
+                // Start recording
+                mediaRecorder.prepare();
+                mediaRecorder.start();
+                Toast.makeText(requireContext(), "Recording started", Toast.LENGTH_SHORT).show();
+                stopRecordingButton.setVisibility(View.VISIBLE);
+                recordVoiceButton.setVisibility(View.GONE);
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(requireContext(), "Failed to start recording", Toast.LENGTH_SHORT).show();
+            }
         }
     }
     private void playRecordedAudio() {
         if (recordedAudioUri != null) {
-            if (mediaPlayer == null) {
-                mediaPlayer = MediaPlayer.create(requireContext(), recordedAudioUri);
+            try {
+                if (mediaPlayer == null) {
+                    mediaPlayer = new MediaPlayer();
+                    mediaPlayer.setDataSource(recordedAudioUri.getPath());
+                    mediaPlayer.prepare();
+                }
+                mediaPlayer.start();
+                Toast.makeText(requireContext(), "Playing audio", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(requireContext(), "Failed to play audio", Toast.LENGTH_SHORT).show();
             }
-            mediaPlayer.start();
         } else {
             Toast.makeText(requireContext(), "No audio recorded", Toast.LENGTH_SHORT).show();
         }
@@ -220,5 +262,41 @@ public class CreatePostFragment extends Fragment {
             mediaPlayer = null;
         }
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == REQUEST_MICROPHONE_PERMISSION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Uprawnienia zostały nadane
+                launchAudioRecorder();
+            } else {
+                // Uprawnienia zostały odrzucone
+                Toast.makeText(requireContext(), "Microphone permission is required to record audio", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private void launchAudioRecorder() {
+        Intent intent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+        if (intent.resolveActivity(requireContext().getPackageManager()) != null) {
+            startActivityForResult(intent, AUDIO_REQUEST_CODE);
+        } else {
+            Toast.makeText(requireContext(), "No app available to record audio", Toast.LENGTH_SHORT).show();
+        }
+    }
 
+    private void stopAudioRecording() {
+        if (mediaRecorder != null) {
+            mediaRecorder.stop();
+            mediaRecorder.release();
+            mediaRecorder = null;
+
+            // Save the recorded audio URI
+            recordedAudioUri = Uri.fromFile(audioFile);
+            Toast.makeText(requireContext(), "Recording saved: " + audioFile.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+
+            // Update button visibility
+            stopRecordingButton.setVisibility(View.GONE);
+            recordVoiceButton.setVisibility(View.VISIBLE);
+        }
+    }
 }
