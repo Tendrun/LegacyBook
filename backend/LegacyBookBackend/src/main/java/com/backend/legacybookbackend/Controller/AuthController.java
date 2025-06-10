@@ -228,7 +228,6 @@ public class AuthController {
         }
     }
     private String saveProfilePicture(MultipartFile file) throws IOException {
-        // Przykładowa ścieżka zapisu pliku
         String uploadDir = "uploads/profile_pictures/";
         Path uploadPath = Paths.get(uploadDir);
 
@@ -240,6 +239,21 @@ public class AuthController {
         Path filePath = uploadPath.resolve(fileName);
         Files.copy(file.getInputStream(), filePath);
 
-        return filePath.toString();
+        // Zwróć publiczny URL
+        return "/profile_pictures/" + fileName;
+    }
+
+    @GetMapping("/GetUserProfile")
+    public ResponseEntity<UserProfileDTO> getUserProfile() {
+        String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        // Dodaj pełny URL do pola profilePicture
+        String baseUrl = "http://10.0.2.2:8080";
+        String profilePictureUrl = user.getProfilePicture() != null ? baseUrl + user.getProfilePicture() : null;
+
+        UserProfileDTO userProfileDTO = new UserProfileDTO(user.getName(), user.getEmail(), profilePictureUrl);
+        return ResponseEntity.ok(userProfileDTO);
     }
 }

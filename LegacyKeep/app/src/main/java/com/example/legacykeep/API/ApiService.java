@@ -12,6 +12,7 @@ import com.example.legacykeep.DTO.RegisterRequest;
 import com.example.legacykeep.DTO.RegisterResponse;
 import com.example.legacykeep.DTO.SetFamilyRoleRequest;
 import com.example.legacykeep.DTO.SetRoleRequest;
+import com.example.legacykeep.DTO.UserProfileDTO;
 import com.example.legacykeep.model.PostModel;
 
 import java.util.List;
@@ -62,8 +63,12 @@ public interface ApiService {
     @GET("/api/auth/GetFamilyGroupDetails")
     Call<FamilyGroup> getFamilyGroupDetails(@Header("Authorization") String token, @Query("groupId") long groupId);
 
+    @Multipart
     @POST("/api/auth/updateProfilePicture")
-    Call<String> updateProfilePicture(@Header("Authorization") String token, @Part MultipartBody.Part profilePicture);
+    Call<String> updateProfilePicture(
+            @Header("Authorization") String token,
+            @Part MultipartBody.Part profilePicture
+    );
 
     @Multipart
     @POST("/api/posts")
@@ -76,4 +81,7 @@ public interface ApiService {
 
     @GET("/api/posts")
     Call<List<PostModel>> getPosts(@Header("Authorization") String token);
+
+    @GET("/api/auth/GetUserProfile")
+    Call<UserProfileDTO> getUserProfile(@Header("Authorization") String token);
 }
