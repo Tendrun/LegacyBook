@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.bumptech.glide.Glide;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +42,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         PostModel post = postList.get(position);
         holder.description.setText(post.getContent());
         holder.location.setText(post.getAuthorName());
-        holder.createdAt.setText(post.getCreatedAt());
+
+        if (post.getImagePath() != null) {
+            Glide.with(holder.itemView.getContext())
+                    .load(post.getImagePath())
+                    .into(holder.imageView);
+        }
     }
 
     @Override
@@ -56,11 +62,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.postImage);
             description = itemView.findViewById(R.id.postDescription);
             location = itemView.findViewById(R.id.postLocation);
             createdAt = itemView.findViewById(R.id.postCreatedAt);
             audioButton = itemView.findViewById(R.id.audioButton);
+            imageView = itemView.findViewById(R.id.postImageView); // Ensure this matches the ID in `item_post.xml`
         }
     }
 }

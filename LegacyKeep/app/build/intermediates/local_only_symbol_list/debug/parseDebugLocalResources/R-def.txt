@@ -97,7 +97,7 @@ id notificationsTitle
 id passwordInput
 id postCreatedAt
 id postDescription
-id postImage
+id postImageView
 id postLocation
 id profileDropdownRow
 id profileEmail
@@ -111,6 +111,7 @@ id registerHeader
 id resetConfirmationMessage
 id roleSpinner
 id scanQR
+id selectedImageView
 id sendResetButton
 id shareButton
 id spinnerText

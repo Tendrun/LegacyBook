@@ -3420,7 +3420,7 @@ id pin
 id position
 id postCreatedAt
 id postDescription
-id postImage
+id postImageView
 id postLayout
 id postLocation
 id pressed
@@ -3471,6 +3471,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id selectedImageView
 id selection_type
 id sendResetButton
 id shareButton

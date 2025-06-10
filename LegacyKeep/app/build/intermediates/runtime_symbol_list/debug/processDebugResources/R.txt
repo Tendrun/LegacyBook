@@ -3419,7 +3419,7 @@ int id pin 0x7f090171
 int id position 0x7f090172
 int id postCreatedAt 0x7f090173
 int id postDescription 0x7f090174
-int id postImage 0x7f090175
+int id postImageView 0x7f090210
 int id postLayout 0x7f090176
 int id postLocation 0x7f090177
 int id pressed 0x7f090178
@@ -3470,6 +3470,7 @@ int id search_src_text 0x7f0901a4
 int id search_voice_btn 0x7f0901a5
 int id select_dialog_listview 0x7f0901a6
 int id selected 0x7f0901a7
+int id selectedImageView 0x7f09020f
 int id selection_type 0x7f0901a8
 int id sendResetButton 0x7f0901a9
 int id shareButton 0x7f0901aa

@@ -12,17 +12,12 @@
     android:padding="16dp"
     android:backgroundTint="#FFF2D2"
     android:elevation="2dp">
-
-    <!-- Post Image -->
     <ImageView
-        android:id="@+id/postImage"
+        android:id="@+id/postImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
+        android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/logo_legacykeep"
         android:contentDescription="@string/post_image_desc" />
-
     <!-- Description -->
     <TextView
         android:id="@+id/postDescription"

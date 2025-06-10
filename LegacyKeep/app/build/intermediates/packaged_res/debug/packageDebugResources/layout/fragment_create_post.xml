@@ -88,5 +88,12 @@
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FFA600"/>
+        <ImageView
+            android:id="@+id/selectedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
     </LinearLayout>
 </ScrollView>

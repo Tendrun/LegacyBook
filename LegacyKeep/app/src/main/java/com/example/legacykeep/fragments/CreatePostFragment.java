@@ -1,6 +1,8 @@
 // app/src/main/java/com/example/legacykeep/fragments/CreatePostFragment.java
 package com.example.legacykeep.fragments;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.content.Context;
 import androidx.annotation.NonNull;
@@ -118,7 +121,6 @@ public class CreatePostFragment extends Fragment {
 
         ApiService apiService = ApiClient.getApiService();
         Call<PostModel> call = apiService.createPost("Bearer " + authToken, postRequestBody, imagePart, audioPart);
-
         call.enqueue(new Callback<PostModel>() {
             @Override
             public void onResponse(Call<PostModel> call, Response<PostModel> response) {
@@ -167,5 +169,17 @@ public class CreatePostFragment extends Fragment {
             byteBuffer.write(buffer, 0, len);
         }
         return byteBuffer.toByteArray();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            selectedImageUri = data.getData(); // Pobierz URI wybranego zdjęcia
+            if (selectedImageUri != null) {
+                ImageView imageView = getView().findViewById(R.id.selectedImageView); // Dodaj podgląd
+                imageView.setImageURI(selectedImageUri);
+            }
+        }
     }
 }

@@ -33,7 +33,8 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/login", "/api/auth/register").permitAll()
-                        .requestMatchers("/profile_pictures/**").permitAll() // Ignorowanie ścieżek
+                        .requestMatchers("/profile_pictures/**").permitAll()
+                        .requestMatchers("/posts/**").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 

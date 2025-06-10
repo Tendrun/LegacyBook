@@ -2,7 +2,6 @@ package com.backend.legacybookbackend.Controller;
 
 import com.backend.legacybookbackend.DTO.CreatePostRequest;
 import com.backend.legacybookbackend.DTO.PostResponse;
-import com.backend.legacybookbackend.Model.Post;
 import com.backend.legacybookbackend.Services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,30 +18,19 @@ public class PostController {
 
     @Autowired private PostService postService;
 
-
-
     @PostMapping(consumes = {"multipart/form-data"})
-    public ResponseEntity<Post> addPost(
+    public ResponseEntity<PostResponse> addPost(
             @RequestPart("post") CreatePostRequest req,
             @RequestPart(value = "image", required = false) MultipartFile image,
             @RequestPart(value = "audio", required = false) MultipartFile audio,
             Authentication authentication) throws IOException {
         String userEmail = authentication.getName();
-        Post saved = postService.createPost(userEmail, req, image, audio);
-        return ResponseEntity.ok(saved);
+        postService.createPost(userEmail, req, image, audio);
+        return ResponseEntity.ok().build();
     }
+
     @GetMapping
     public ResponseEntity<List<PostResponse>> getFeed() {
-        List<PostResponse> posts = postService.getMainFeed().stream().map(post -> {
-            PostResponse response = new PostResponse();
-            response.setId(post.getId());
-            response.setContent(post.getContent());
-            response.setImagePath(post.getImagePath());
-            response.setAudioPath(post.getAudioPath());
-            response.setAuthorName(post.getAuthor().getName());
-            response.setCreatedAt(post.getCreatedAt().toString());
-            return response;
-        }).toList();
-        return ResponseEntity.ok(posts);
+        return ResponseEntity.ok(postService.getMainFeed());
     }
 }

@@ -1,5 +1,6 @@
 package com.backend.legacybookbackend.Services;
 
+import com.backend.legacybookbackend.DTO.PostResponse;
 import com.backend.legacybookbackend.Model.Post;
 import com.backend.legacybookbackend.Model.PostRepository;
 import com.backend.legacybookbackend.Model.User;
@@ -16,6 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PostService {
@@ -24,9 +26,19 @@ public class PostService {
     @Autowired private UserRepository userRepository;
 
     private final String uploadDir = "uploads/posts/";
+    private final String baseUrl = "http://10.0.2.2:8080";
 
-    public List<Post> getMainFeed() {
-        return postRepository.findAllByOrderByCreatedAtDesc();
+    public List<PostResponse> getMainFeed() {
+        return postRepository.findAllByOrderByCreatedAtDesc().stream().map(post -> {
+            PostResponse response = new PostResponse();
+            response.setId(post.getId());
+            response.setContent(post.getContent());
+            response.setImagePath(post.getImagePath() != null ? baseUrl + post.getImagePath() : null);
+            response.setAudioPath(post.getAudioPath() != null ? baseUrl + post.getAudioPath() : null);
+            response.setAuthorName(post.getAuthor().getName());
+            response.setCreatedAt(post.getCreatedAt().toString());
+            return response;
+        }).collect(Collectors.toList());
     }
 
     @Transactional
@@ -39,13 +51,13 @@ public class PostService {
         post.setContent(req.getContent());
         post.setCreatedAt(LocalDateTime.now());
 
-        // Zapis zdjęcia
+        // Save image
         if (image != null && !image.isEmpty()) {
             String imagePath = saveFile(image, "images");
             post.setImagePath(imagePath);
         }
 
-        // Zapis nagrania głosowego
+        // Save audio
         if (audio != null && !audio.isEmpty()) {
             String audioPath = saveFile(audio, "audio");
             post.setAudioPath(audioPath);
@@ -62,6 +74,6 @@ public class PostService {
         String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
         Path filePath = uploadPath.resolve(fileName);
         Files.copy(file.getInputStream(), filePath);
-        return filePath.toString();
+        return "/posts/" + subDir + "/" + fileName; // Return shortened relative path
     }
 }
