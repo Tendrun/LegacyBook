@@ -115,7 +115,6 @@ id roleSpinner
 id scanQR
 id selectedImageView
 id sendResetButton
-id shareButton
 id spinnerText
 id welcome_screen
 layout activity_forgot_password

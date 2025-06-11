@@ -3475,7 +3475,6 @@ int id selected 0x7f0901a8
 int id selectedImageView 0x7f0901a9
 int id selection_type 0x7f0901aa
 int id sendResetButton 0x7f0901ab
-int id shareButton 0x7f0901ac
 int id shortcut 0x7f0901ad
 int id showCustom 0x7f0901ae
 int id showHome 0x7f0901af

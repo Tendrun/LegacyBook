@@ -92,15 +92,6 @@
             app:tint="#5C3B1E"
             android:src="@android:drawable/ic_dialog_email" />
 
-        <ImageButton
-            android:id="@+id/shareButton"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/share_button_desc"
-            app:tint="#5C3B1E"
-            android:src="@android:drawable/ic_menu_share" />
 
         <ImageButton
             android:id="@+id/audioButton"

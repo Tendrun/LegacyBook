@@ -3476,7 +3476,6 @@ id selected
 id selectedImageView
 id selection_type
 id sendResetButton
-id shareButton
 id shortcut
 id showCustom
 id showHome

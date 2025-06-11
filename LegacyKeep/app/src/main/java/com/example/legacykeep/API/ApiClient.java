@@ -23,4 +23,7 @@ public class ApiClient {
         }
         return retrofit.create(ApiService.class);
     }
+    public static String getBaseUrl() {
+        return BASE_URL;
+    }
 }
