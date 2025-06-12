@@ -153,12 +153,19 @@ public class FamilyGroupService {
         return familyGroupRepository.findGroupsByUserId(user.getId());
     }
     public FamilyGroupDTO getFamilyGroupById(long groupId) {
-        List<MemberDTO> members = List.of(
-                new MemberDTO("Owner", "Father", "Jan Kowalski", "jan@example.com"),
-                new MemberDTO("User", "Brother", "Piotr Nowak", "piotr@example.com")
-        );
+        FamilyGroup group = familyGroupRepository.findById(groupId)
+                .orElseThrow(() -> new FamilyGroupNotFoundException("Family group not found"));
 
-        return new FamilyGroupDTO(groupId, "Testowa Rodzina", members);
+        List<MemberDTO> memberDTOs = group.getMemberships().stream()
+                .map(m -> new MemberDTO(
+                        m.role.name(),
+                        m.familyRole != null ? m.familyRole.name() : "None",
+                        m.getUserName(),
+                        m.getUserEmail()
+                ))
+                .collect(Collectors.toList());
+
+        return new FamilyGroupDTO(group.getId(), group.getFamilyName(), memberDTOs);
     }
 
 }

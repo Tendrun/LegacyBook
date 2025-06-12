@@ -8,4 +8,11 @@ public class DeleteMemberRequest {
     public String getUserEmailToDelete() { return userEmailToDelete; }
     public void setUserEmailToDelete(String userEmailToDelete ) { this.userEmailToDelete  = userEmailToDelete ; }
 
+    @Override
+    public String toString() {
+        return "DeleteMemberRequest{" +
+                "userEmailToDelete='" + userEmailToDelete + '\'' +
+                ", groupId=" + groupId +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array family_roles
 array languages_array
 array roles_array
 color background_primary
@@ -86,8 +87,8 @@ id loginSubmitButton
 id logoImage
 id logoImageView
 id logoutRow
+id memberFamilyRoleSpinner
 id memberName
-id memberRole
 id nameInput
 id nav_create
 id nav_family

@@ -74,7 +74,12 @@ public class FamilyDetailsFragment extends Fragment {
 
         membersRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         membersList = new ArrayList<>();
-        adapter = new FamilyMemberAdapter(requireContext(), membersList, this::onDeleteMember);
+
+
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String authToken = sharedPreferences.getString("authToken", null);
+
+        adapter = new FamilyMemberAdapter(requireContext(), membersList, this::onDeleteMember, familyGroupId, authToken);
         membersRecyclerView.setAdapter(adapter);
 
         fetchFamilyMembers();
@@ -142,8 +147,9 @@ public class FamilyDetailsFragment extends Fragment {
                     membersList.clear();
                     for (UserGroupMembership membership : response.body().getMemberships()) {
                         membersList.add(new FamilyMemberModel(
-                                membership.getUserName(), // Use userName instead of userEmail
-                                membership.getRole()
+                                membership.getUserEmail(),
+                                membership.getRole(),
+                                membership.getFamilyRole() != null ? membership.getFamilyRole().name() : "None"
                         ));
                     }
                     adapter.notifyDataSetChanged();
@@ -170,7 +176,7 @@ public class FamilyDetailsFragment extends Fragment {
 
         ApiService apiService = ApiClient.getApiService();
         DeleteMemberRequest request = new DeleteMemberRequest();
-        request.setUserEmailToDelete(member.getName()); // Assuming name is the email
+        request.setUserEmailToDelete(member.getEmail()); // Assuming name is the email
         request.setGroupId(familyGroupId);
 
         Call<String> call = apiService.deleteMemberFromFamilyGroup("Bearer " + authToken, request);

@@ -76,8 +76,9 @@ int animator mtrl_fab_hide_motion_spec 0x7f02001e
 int animator mtrl_fab_show_motion_spec 0x7f02001f
 int animator mtrl_fab_transformation_sheet_collapse_spec 0x7f020020
 int animator mtrl_fab_transformation_sheet_expand_spec 0x7f020021
-int array languages_array 0x7f030000
-int array roles_array 0x7f030001
+int array family_roles 0x7f030000
+int array languages_array 0x7f030001
+int array roles_array 0x7f030002
 int attr actionBarDivider 0x7f040000
 int attr actionBarItemBackground 0x7f040001
 int attr actionBarPopupTheme 0x7f040002
@@ -3271,8 +3272,8 @@ int id material_timepicker_ok_button 0x7f090114
 int id material_timepicker_view 0x7f090115
 int id material_value_index 0x7f090116
 int id matrix 0x7f090117
-int id memberName 0x7f090118
-int id memberRole 0x7f090119
+int id memberFamilyRoleSpinner 0x7f090118
+int id memberName 0x7f090119
 int id message 0x7f09011a
 int id middle 0x7f09011b
 int id mini 0x7f09011c

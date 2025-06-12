@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="family_roles">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Grandfather</item>
+        <item>Grandma</item>
+        <item>None</item>
+    </string-array>
     <string-array name="languages_array">
         <item>English</item>
         <item>Polish</item>

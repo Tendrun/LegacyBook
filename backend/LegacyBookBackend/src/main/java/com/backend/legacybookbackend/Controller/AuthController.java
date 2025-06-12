@@ -92,7 +92,8 @@ public class AuthController {
 
     @PostMapping("/DeleteMemberToFamilyGroup")
     public ResponseEntity<String> DeleteMemberToFamilyGroup(@RequestBody DeleteMemberRequest request) {
-        String userEmail = SecurityContextHolder.getContext().getAuthentication().getName();
+        String userEmgit ail = SecurityContextHolder.getContext().getAuthentication().getName();
+        System.out.println("REQUEST: " + request);
 
         // Check if User is at least Owner or Admin
         boolean userIsAllowed = familyGroupService.hasHighLevelAccess(userEmail, request.getGroupId());

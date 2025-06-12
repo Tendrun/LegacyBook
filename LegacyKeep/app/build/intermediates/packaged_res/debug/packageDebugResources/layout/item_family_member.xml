@@ -27,7 +27,7 @@
         android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/memberRole"
+        android:id="@+id/memberFamilyRoleSpinner"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:background="@drawable/spinner_background"

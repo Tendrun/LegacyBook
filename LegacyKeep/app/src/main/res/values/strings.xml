@@ -84,4 +84,16 @@
         <item>Polish</item>
     </string-array>
 
+    <!-- DODANE: family_roles -->
+    <string-array name="family_roles">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Grandfather</item>
+        <item>Grandma</item>
+        <item>None</item>
+    </string-array>
+
+
 </resources>

@@ -1,23 +1,30 @@
 package com.example.legacykeep.model;
 
 public class FamilyMemberModel {
-    private String name;
+    private String email; // ← zamiast 'name'
     private String role;
+    private String familyRole;
 
-    public FamilyMemberModel(String name, String role) {
-        this.name = name;
+    public FamilyMemberModel(String email, String role, String familyRole) {
+        this.email = email;
         this.role = role;
+        this.familyRole = familyRole;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
     public String getRole() {
         return role;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public String getFamilyRole() {
+        return familyRole;
+    }
+
+    public void setFamilyRole(String familyRole) {
+        this.familyRole = familyRole;
     }
 }
+

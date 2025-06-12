@@ -3,29 +3,35 @@ package com.example.legacykeep.DTO;
 import com.google.gson.annotations.SerializedName;
 
 public class UserGroupMembership {
-    private long id;
-    private String userEmail;
-    private String userName;
+
+    @SerializedName("role")
     private String role;
 
-    // Add any additional fields returned by the API
-    @SerializedName("extraField")
-    private String extraField; // Example field
+    @SerializedName("familyRole")
+    private FamilyRole familyRole;
 
-    public long getId() {
-        return id;
+    @SerializedName("userName")
+    private String userName;
+
+    @SerializedName("userEmail")
+    private String userEmail;
+
+    // Gettery i settery
+
+    public String getRole() {
+        return role;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public FamilyRole getFamilyRole() {
+        return familyRole;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setFamilyRole(FamilyRole familyRole) {
+        this.familyRole = familyRole;
     }
 
     public String getUserName() {
@@ -36,19 +42,21 @@ public class UserGroupMembership {
         this.userName = userName;
     }
 
-    public String getRole() {
-        return role;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public String getExtraField() {
-        return extraField;
-    }
-
-    public void setExtraField(String extraField) {
-        this.extraField = extraField;
+    public enum FamilyRole {
+        Sister,
+        Brother,
+        Mom,
+        Father,
+        Grandfather,
+        Grandma,
+        None
     }
 }

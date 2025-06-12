@@ -11,7 +11,6 @@ public class DeleteMemberRequest {
     public void setUserEmailToDelete(String userEmailToDelete) {
         this.userEmailToDelete = userEmailToDelete;
     }
-
     public long getGroupId() {
         return groupId;
     }

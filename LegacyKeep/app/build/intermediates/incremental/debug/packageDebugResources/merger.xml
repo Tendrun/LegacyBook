@@ -9,6 +9,14 @@
     </string-array><string-array name="languages_array">
         <item>English</item>
         <item>Polish</item>
+    </string-array><string-array name="family_roles">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Grandfather</item>
+        <item>Grandma</item>
+        <item>None</item>
     </string-array></file><file path="C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\res\values\styles.xml" qualifiers=""><style name="ProfileRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
