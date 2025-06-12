@@ -1,6 +1,5 @@
 package com.backend.legacybookbackend.Authentication;
 
-
 import com.backend.legacybookbackend.Controller.AuthController;
 import com.backend.legacybookbackend.DTO.AuthResponse;
 import com.backend.legacybookbackend.DTO.LoginRequest;
@@ -14,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -34,10 +34,13 @@ class AuthControllerTest {
     @Mock
     private UserRepository userRepository;
 
+    @Mock
+    private PasswordEncoder passwordEncoder; // Dodano zmockowany PasswordEncoder
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        authController = new AuthController(authService, familyGroupService, userGroupMembershipService, userRepository);
+        authController = new AuthController(authService, familyGroupService, userGroupMembershipService, userRepository, passwordEncoder);
     }
 
     @Test

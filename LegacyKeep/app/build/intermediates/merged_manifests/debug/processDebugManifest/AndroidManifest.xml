@@ -68,6 +68,9 @@
         <activity
             android:name="com.example.legacykeep.ForgotPasswordActivity"
             android:exported="true" />
+        <activity
+            android:name="com.example.legacykeep.ForgotPasswordActivity"
+            android:exported="true" />
         <activity android:name="com.example.legacykeep.MainActivity" />
 
         <provider

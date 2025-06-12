@@ -3322,6 +3322,7 @@ id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
 id never
+id newPasswordInput
 id noScroll
 id none
 id normal

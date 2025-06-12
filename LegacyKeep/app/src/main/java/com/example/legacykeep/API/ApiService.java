@@ -16,6 +16,7 @@ import com.example.legacykeep.DTO.UserProfileDTO;
 import com.example.legacykeep.model.PostModel;
 
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -84,4 +85,7 @@ public interface ApiService {
 
     @GET("/api/auth/GetUserProfile")
     Call<UserProfileDTO> getUserProfile(@Header("Authorization") String token);
+
+    @POST("/api/auth/resetPassword")
+    Call<String> resetPassword(@Body Map<String, String> request);
 }
