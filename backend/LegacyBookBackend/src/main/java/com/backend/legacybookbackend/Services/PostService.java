@@ -76,4 +76,10 @@ public class PostService {
         Files.copy(file.getInputStream(), filePath);
         return "/posts/" + subDir + "/" + fileName; // Return shortened relative path
     }
+
+    @Autowired
+    public PostService(PostRepository postRepository, UserRepository userRepository) {
+        this.postRepository = postRepository;
+        this.userRepository = userRepository;
+    }
 }
