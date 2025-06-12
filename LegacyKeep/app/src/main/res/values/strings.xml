@@ -9,21 +9,23 @@
     <string name="log_in">Log In</string>
     <string name="create_account">Create Account</string>
 
-    <!-- Navigation -->
+    <!-- Navigation (bottom bar) -->
     <string name="nav_feed">Feed</string>
     <string name="nav_create">Post</string>
     <string name="nav_family">Family</string>
     <string name="nav_profile">Profile</string>
-    <string name="nav_notifications">Alerts</string>
+    <string name="nav_notifications">Notifications</string>
 
-    <!-- Family Group -->
+    <!-- Screen / section titles -->
+    <string name="feed_title">Feed</string>
+    <string name="notifications_title">Notifications</string>
     <string name="family_group">Family Group</string>
+
+    <!-- Family group helper texts -->
     <string name="hint_add_member">Add Member</string>
     <string name="qr_scan">Scan QR code</string>
-    <string name="profile_icon">Profile icon</string>
-    <string name="dropdown_icon">Dropdown icon</string>
 
-    <!-- Post -->
+    <!-- Post item -->
     <string name="post_image_desc">Post image</string>
     <string name="sample_post_description">This is a sample post description.</string>
     <string name="sample_location">Location</string>
@@ -43,7 +45,7 @@
     <string name="stop_recording">Stop Recording</string>
     <string name="audio_button_desc">Play audio</string>
 
-    <!-- Profile Screen -->
+    <!-- Profile screen -->
     <string name="profile_title">Profile</string>
     <string name="edit">EDIT</string>
     <string name="profile_name">John Doe</string>
@@ -55,7 +57,7 @@
     <string name="logout">Logout</string>
     <string name="bluetooth_share">Bluetooth Share</string>
 
-    <!-- Accessibility / Icons -->
+    <!-- Accessibility / icons -->
     <string name="desc_profile_picture">User profile picture</string>
     <string name="language_icon">Language icon</string>
     <string name="dark_mode_icon">Dark-mode icon</string>
@@ -64,22 +66,18 @@
     <string name="bluetooth_icon">Bluetooth share icon</string>
     <string name="notification_icon">Notification bell icon</string>
 
+    <!-- Misc -->
     <string name="create_family_group">Create</string>
 
-    <!-- Family Roles -->
+    <!-- Family roles -->
     <string-array name="roles_array">
-        <item>Grandfather</item>
-        <item>Grandmother</item>
-        <item>Father</item>
-        <item>Mother</item>
-        <item>Son</item>
-        <item>Daughter</item>
+        <item>Grandfather</item><item>Grandmother</item><item>Father</item>
+        <item>Mother</item><item>Son</item><item>Daughter</item>
     </string-array>
 
-    <!-- Supported Languages -->
+    <!-- Supported languages -->
     <string-array name="languages_array">
-        <item>English</item>
-        <item>Polish</item>
+        <item>English</item><item>Polish</item>
     </string-array>
 
 </resources>

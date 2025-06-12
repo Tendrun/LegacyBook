@@ -16,14 +16,16 @@
     <string name="nav_profile">Profil</string>
     <string name="nav_notifications">Powiadomienia</string>
 
-    <!-- Family Group -->
+    <!-- Screen / section titles -->
+    <string name="feed_title">Tablica</string>
+    <string name="notifications_title">Powiadomienia</string>
     <string name="family_group">Grupa rodzinna</string>
+
+    <!-- Family group helper texts -->
     <string name="hint_add_member">Dodaj członka</string>
     <string name="qr_scan">Skanuj kod QR</string>
-    <string name="profile_icon">Ikona profilu</string>
-    <string name="dropdown_icon">Ikona rozwijana</string>
 
-    <!-- Post -->
+    <!-- Post item -->
     <string name="post_image_desc">Obraz posta</string>
     <string name="sample_post_description">To jest przykładowy opis posta.</string>
     <string name="sample_location">Lokalizacja</string>
@@ -43,7 +45,7 @@
     <string name="stop_recording">Zatrzymaj nagrywanie</string>
     <string name="audio_button_desc">Odtwórz dźwięk</string>
 
-    <!-- Profile Screen -->
+    <!-- Profile screen -->
     <string name="profile_title">Profil</string>
     <string name="edit">EDYTUJ</string>
     <string name="profile_name">Jan Kowalski</string>
@@ -55,7 +57,7 @@
     <string name="logout">Wyloguj się</string>
     <string name="bluetooth_share">Udostępnij przez Bluetooth</string>
 
-    <!-- Accessibility / Icons -->
+    <!-- Accessibility / icons -->
     <string name="desc_profile_picture">Zdjęcie profilowe użytkownika</string>
     <string name="language_icon">Ikona języka</string>
     <string name="dark_mode_icon">Ikona trybu ciemnego</string>
@@ -64,22 +66,18 @@
     <string name="bluetooth_icon">Ikona Bluetooth</string>
     <string name="notification_icon">Ikona powiadomień</string>
 
+    <!-- Misc -->
     <string name="create_family_group">Utwórz</string>
 
-    <!-- Family Roles -->
+    <!-- Family roles -->
     <string-array name="roles_array">
-        <item>Dziadek</item>
-        <item>Babcia</item>
-        <item>Ojciec</item>
-        <item>Matka</item>
-        <item>Syn</item>
-        <item>Córka</item>
+        <item>Dziadek</item><item>Babcia</item><item>Ojciec</item>
+        <item>Matka</item><item>Syn</item><item>Córka</item>
     </string-array>
 
-    <!-- Supported Languages -->
+    <!-- Supported languages -->
     <string-array name="languages_array">
-        <item>Angielski</item>
-        <item>Polski</item>
+        <item>Angielski</item><item>Polski</item>
     </string-array>
 
 </resources>
