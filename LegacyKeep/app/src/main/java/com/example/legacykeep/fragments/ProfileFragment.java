@@ -48,19 +48,25 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Ekran profilu użytkownika.
+ * – zmiana języka
+ * – przełącznik trybu ciemnego
+ * – aktualizacja zdjęcia
+ */
 public class ProfileFragment extends Fragment {
 
-    /* -------------------- constants -------------------- */
+    /* -------------------- stałe -------------------- */
     private static final int STORAGE_PERMISSION_REQUEST = 2;
     private static final int CAMERA_PERMISSION_REQUEST  = 3;
 
-    /* -------------------- views -------------------- */
+    /* -------------------- widoki -------------------- */
     private TextView     profileName;
     private TextView     profileEmail;
     private ImageView    profileImage;
     private SwitchCompat darkModeSwitch;
 
-    /* -------------------- pickers -------------------- */
+    /* -------------------- pickery -------------------- */
     private ActivityResultLauncher<Intent> galleryLauncher;
     private ActivityResultLauncher<Intent> cameraLauncher;
 
@@ -123,13 +129,15 @@ public class ProfileFragment extends Fragment {
             AppCompatDelegate.setDefaultNightMode(
                     isChecked ? AppCompatDelegate.MODE_NIGHT_YES
                             : AppCompatDelegate.MODE_NIGHT_NO);
+            /* bez tego linijki UI nie odświeży się natychmiast */
+            requireActivity().recreate();
         });
 
-        /* ---- pickers ---- */
+        /* ---- pickery ---- */
         initPickers();
         profileImage.setOnClickListener(v -> showImageSourceOptions());
 
-        /* ---- profile data from backend ---- */
+        /* ---- pobierz dane profilu ---- */
         fetchUserProfile();
 
         return view;
@@ -143,7 +151,9 @@ public class ProfileFragment extends Fragment {
         galleryLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 res -> {
-                    if (res.getResultCode() == AppCompatActivity.RESULT_OK && res.getData() != null) {
+                    if (res.getResultCode() == AppCompatActivity.RESULT_OK &&
+                            res.getData()      != null) {
+
                         Uri uri = res.getData().getData();
                         if (uri != null) Glide.with(this).load(uri).into(profileImage);
                     }
@@ -152,7 +162,9 @@ public class ProfileFragment extends Fragment {
         cameraLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 res -> {
-                    if (res.getResultCode() == AppCompatActivity.RESULT_OK && res.getData() != null) {
+                    if (res.getResultCode() == AppCompatActivity.RESULT_OK &&
+                            res.getData()      != null) {
+
                         Bitmap bmp = (Bitmap) res.getData().getExtras().get("data");
                         Uri uri    = getImageUriFromBitmap(requireContext(), bmp);
                         if (uri != null) uploadProfilePicture(uri);
@@ -186,7 +198,8 @@ public class ProfileFragment extends Fragment {
     }
 
     private void openGallery() {
-        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        Intent i = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         galleryLauncher.launch(i);
     }
 

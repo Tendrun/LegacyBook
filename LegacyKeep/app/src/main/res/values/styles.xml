@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- ===================== Profile Fragment Styles ===================== -->
+    <!-- ======== A. MOTYW APLIKACJI (DayNight) ======== -->
+    <style name="Theme.LegacyKeep" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
 
-    <!-- Container row style -->
+        <!-- Secondary -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Tła / powierzchnie  (jasne / ciemne dzięki DayNight) -->
+        <item name="android:colorBackground">?attr/colorSurface</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@color/purple_700</item>
+
+        <!-- Systemowa czcionka -->
+        <item name="android:fontFamily">sans-serif</item>
+
+        <!-- Wyłącz systemowy „Force-Dark” od API 29 ↑.
+             Flaga tools:targetApi=29 usuwa ostrzeżenie przy minSdk=24 -->
+        <item
+            name="android:forceDarkAllowed"
+            tools:targetApi="29">false</item>
+    </style>
+
+
+    <!-- ======== B. STYLE UŻYWANE W  fragment_profile  ======== -->
+
+    <!-- Wiersz kontenera -->
     <style name="ProfileRow">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -14,7 +43,7 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
-    <!-- Icon in row -->
+    <!-- Ikona w wierszu -->
     <style name="ProfileIcon">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
@@ -22,7 +51,7 @@
         <item name="android:tint">#5C3B1E</item>
     </style>
 
-    <!-- Label text in row -->
+    <!-- Tekst etykiety -->
     <style name="ProfileLabel">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -31,7 +60,7 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <!-- Value or setting text (e.g., language value) -->
+    <!-- Tekst wartości -->
     <style name="ProfileValue">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

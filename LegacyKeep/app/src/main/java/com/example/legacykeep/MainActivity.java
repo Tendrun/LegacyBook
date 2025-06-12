@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
 
-    /** Ustaw lokalizację zanim załadujemy zasoby. */
+    /* gwarantujemy wybrany język przed inflacją zasobów */
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocaleHelper.setLocale(newBase));
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        /* ─── Tryb ciemny przed inflacją layoutu ─── */
+        /* motyw nocny – ustawiamy PRZED setContentView */
         SharedPreferences prefs = getSharedPreferences("LegacyKeepPrefs", MODE_PRIVATE);
         boolean darkEnabled = prefs.getBoolean("dark_mode", false);
         AppCompatDelegate.setDefaultNightMode(
@@ -39,36 +39,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        loadFragment(new FeedFragment());   // domyślnie
 
-        /* Domyślny fragment */
-        loadFragment(new FeedFragment());
-
-        /* Obsługa bottom-nav (if/else – brak problemu z const expr) */
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment selected;
-
             int id = item.getItemId();
-            if (id == R.id.nav_create) {
-                selected = new CreatePostFragment();
-            } else if (id == R.id.nav_family) {
-                selected = new FamilyGroupFragment();
-            } else if (id == R.id.nav_profile) {
-                selected = new ProfileFragment();
-            } else if (id == R.id.nav_notifications) {
-                selected = new NotificationsFragment();
-            } else {                        // R.id.nav_feed i fallback
-                selected = new FeedFragment();
-            }
+            if      (id == R.id.nav_create)       selected = new CreatePostFragment();
+            else if (id == R.id.nav_family)       selected = new FamilyGroupFragment();
+            else if (id == R.id.nav_profile)      selected = new ProfileFragment();
+            else if (id == R.id.nav_notifications) selected = new NotificationsFragment();
+            else                                   selected = new FeedFragment();
 
             loadFragment(selected);
             return true;
         });
     }
 
-    private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, fragment)
+    private void loadFragment(Fragment f) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, f)
                 .commit();
     }
 }
