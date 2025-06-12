@@ -21,35 +21,57 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Aktywność odpowiedzialna za logowanie użytkownika do aplikacji.
+ * Umożliwia wprowadzenie adresu e-mail, hasła oraz weryfikację reCAPTCHA.
+ * W przypadku poprawnych danych loguje użytkownika i zapisuje token autoryzacyjny.
+ */
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText emailInput, passwordInput;
+    /** Pole do wprowadzenia adresu e-mail */
+    private EditText emailInput;
+    /** Pole do wprowadzenia hasła */
+    private EditText passwordInput;
+    /** Przycisk do zatwierdzenia logowania */
     private Button loginSubmitButton;
+    /** Tekst umożliwiający przejście do odzyskiwania hasła */
     private TextView forgotPassword;
+    /** Checkbox do potwierdzenia reCAPTCHA */
     private CheckBox recaptchaCheckbox;
 
+    /**
+     * Metoda wywoływana przy tworzeniu aktywności.
+     * Inicjalizuje widoki i ustawia nasłuchiwanie zdarzeń.
+     *
+     * @param savedInstanceState zapisany stan aktywności
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize views
+        // Inicjalizacja widoków
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
         loginSubmitButton = findViewById(R.id.loginSubmitButton);
         forgotPassword = findViewById(R.id.forgotPassword);
         recaptchaCheckbox = findViewById(R.id.recaptchaCheckbox);
 
-        // Handle login button click
+        // Obsługa kliknięcia przycisku logowania
         loginSubmitButton.setOnClickListener(v -> loginUser());
 
-        // Handle forgot password click
+        // Obsługa kliknięcia "Zapomniałeś hasła?"
         forgotPassword.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
             startActivity(intent);
         });
     }
 
+    /**
+     * Metoda obsługująca proces logowania użytkownika.
+     * Sprawdza poprawność danych, weryfikuje reCAPTCHA i wysyła żądanie logowania do API.
+     * W przypadku sukcesu zapisuje dane użytkownika i przechodzi do głównej aktywności.
+     */
     private void loginUser() {
         String email = emailInput.getText().toString().trim();
         String password = passwordInput.getText().toString().trim();
@@ -76,6 +98,12 @@ public class LoginActivity extends AppCompatActivity {
         Call<AuthResponse> call = apiService.login(request);
 
         call.enqueue(new Callback<AuthResponse>() {
+            /**
+             * Obsługa odpowiedzi z serwera po próbie logowania.
+             *
+             * @param call wywołanie Retrofit
+             * @param response odpowiedź z serwera
+             */
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
                 // Logowanie odpowiedzi serwera (do debugowania)
@@ -85,8 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful() && response.body() != null) {
                     SharedPreferences sharedPreferences = getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("username", response.body().getUsername()); // Assuming the server returns the username
-                    editor.putString("email", request.getEmail()); // Save the email from the login request
+                    editor.putString("username", response.body().getUsername());
+                    editor.putString("email", request.getEmail());
                     editor.putString("authToken", response.body().getToken());
                     editor.apply();
 
@@ -105,11 +133,16 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
+            /**
+             * Obsługa błędu połączenia z serwerem.
+             *
+             * @param call wywołanie Retrofit
+             * @param t wyjątek opisujący błąd
+             */
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 }

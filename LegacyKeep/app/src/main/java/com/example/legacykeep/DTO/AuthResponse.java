@@ -1,22 +1,52 @@
 package com.example.legacykeep.DTO;
 
+/**
+ * Reprezentuje odpowiedź uwierzytelniania zawierającą token oraz nazwę użytkownika.
+ */
 public class AuthResponse {
+    /**
+     * Token uwierzytelniający użytkownika.
+     */
     private String token;
-    private String username; // Add this field
 
+    /**
+     * Nazwa użytkownika powiązana z tokenem.
+     */
+    private String username;
+
+    /**
+     * Zwraca token uwierzytelniający.
+     *
+     * @return token jako String
+     */
     public String getToken() {
         return token;
     }
 
+    /**
+     * Ustawia token uwierzytelniający.
+     *
+     * @param token nowy token jako String
+     */
     public void setToken(String token) {
         this.token = token;
     }
 
-    public String getUsername() { // Add getter
+    /**
+     * Zwraca nazwę użytkownika.
+     *
+     * @return nazwa użytkownika jako String
+     */
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) { // Add setter
+    /**
+     * Ustawia nazwę użytkownika.
+     *
+     * @param username nowa nazwa użytkownika jako String
+     */
+    public void setUsername(String username) {
         this.username = username;
     }
 }

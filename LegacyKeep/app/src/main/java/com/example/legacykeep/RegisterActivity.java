@@ -20,20 +20,30 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Aktywność rejestracji użytkownika w aplikacji LegacyKeep.
+ * Pozwala użytkownikowi wprowadzić dane i zarejestrować się w systemie.
+ */
 public class RegisterActivity extends AppCompatActivity {
 
+    // Pola interfejsu użytkownika
     private EditText nameInput, emailInput, passwordInput, confirmPasswordInput;
     private Spinner roleSpinner, languageSpinner;
     private ImageView addPhotoButton;
     private CheckBox recaptchaCheckbox;
     private Button registerButton;
 
+    /**
+     * Metoda uruchamiana podczas tworzenia aktywności.
+     *
+     * @param savedInstanceState Zapisany stan instancji (jeśli dotyczy).
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        // Initialize views
+        // Inicjalizacja widoków interfejsu użytkownika
         nameInput = findViewById(R.id.nameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
@@ -44,25 +54,39 @@ public class RegisterActivity extends AppCompatActivity {
         recaptchaCheckbox = findViewById(R.id.recaptchaCheckbox);
         registerButton = findViewById(R.id.registerButton);
 
-        // Handle register button click
+        // Ustawienie obsługi kliknięcia przycisku rejestracji
         registerButton.setOnClickListener(v -> registerUser());
     }
+
+    /**
+     * Sprawdza, czy podany adres e-mail jest zgodny z podstawowym wzorcem e-maila.
+     *
+     * @param email Adres e-mail do sprawdzenia.
+     * @return true jeśli e-mail jest poprawny, false w przeciwnym wypadku.
+     */
     private boolean isValidEmail(String email) {
         String emailPattern = "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$";
         return email.matches(emailPattern);
     }
 
+    /**
+     * Metoda odpowiedzialna za proces rejestracji użytkownika:
+     * - Waliduje dane wejściowe.
+     * - Tworzy żądanie rejestracyjne.
+     * - Wysyła dane do serwera za pomocą Retrofit.
+     * - Obsługuje odpowiedź z serwera.
+     */
     private void registerUser() {
         String name = nameInput.getText().toString().trim();
         String email = emailInput.getText().toString().trim();
         String password = passwordInput.getText().toString().trim();
         String confirmPassword = confirmPasswordInput.getText().toString().trim();
 
-        // Safely retrieve selected values from spinners
+        // Pobranie wartości z rozwijanych list (z obsługą null)
         String role = roleSpinner.getSelectedItem() != null ? roleSpinner.getSelectedItem().toString() : "";
         String language = languageSpinner.getSelectedItem() != null ? languageSpinner.getSelectedItem().toString() : "";
 
-        // Validate inputs
+        // Walidacja danych wejściowych
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show();
             return;
@@ -83,22 +107,25 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        // Create request object
+        // Utworzenie obiektu żądania
         RegisterRequest request = new RegisterRequest();
         request.setName(name);
         request.setEmail(email);
         request.setPassword(password);
 
-        // Send request to backend
+        // Wysłanie żądania do serwera
         ApiService apiService = ApiClient.getApiService();
         Call<RegisterResponse> call = apiService.register(request);
 
+        // Obsługa odpowiedzi z serwera
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     String message = response.body().getMessage();
                     Toast.makeText(RegisterActivity.this, message != null ? message : "Registration successful", Toast.LENGTH_SHORT).show();
+
+                    // Przejście do ekranu logowania po udanej rejestracji
                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
@@ -109,6 +136,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                // Obsługa błędów sieciowych lub innych problemów
                 Toast.makeText(RegisterActivity.this, "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

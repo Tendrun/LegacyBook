@@ -33,15 +33,30 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Fragment odpowiedzialny za wyświetlanie szczegółów grupy rodzinnej,
+ * zarządzanie członkami rodziny oraz obsługę dodawania i usuwania członków.
+ */
 public class FamilyDetailsFragment extends Fragment {
 
+    /** Klucz argumentu identyfikatora grupy rodzinnej */
     private static final String ARG_FAMILY_GROUP_ID = "familyGroupId";
+    /** Identyfikator grupy rodzinnej */
     private long familyGroupId;
+    /** RecyclerView do wyświetlania członków rodziny */
     private RecyclerView membersRecyclerView;
+    /** Adapter do obsługi listy członków */
     private FamilyMemberAdapter adapter;
+    /** Lista modeli członków rodziny */
     private List<FamilyMemberModel> membersList;
+    /** Przycisk dodawania członka */
     private Button addMemberButton;
 
+    /**
+     * Tworzy nową instancję fragmentu z przekazanym identyfikatorem grupy rodzinnej.
+     * @param familyGroupId identyfikator grupy rodzinnej
+     * @return nowa instancja FamilyDetailsFragment
+     */
     public static FamilyDetailsFragment newInstance(long familyGroupId) {
         FamilyDetailsFragment fragment = new FamilyDetailsFragment();
         Bundle args = new Bundle();
@@ -50,6 +65,10 @@ public class FamilyDetailsFragment extends Fragment {
         return fragment;
     }
 
+    /**
+     * Wywoływana przy tworzeniu fragmentu.
+     * @param savedInstanceState zapisany stan fragmentu
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,12 +77,25 @@ public class FamilyDetailsFragment extends Fragment {
         }
     }
 
+    /**
+     * Tworzy i zwraca widok hierarchii fragmentu.
+     * @param inflater obiekt do "nadmuchiwania" widoków
+     * @param container kontener widoku
+     * @param savedInstanceState zapisany stan fragmentu
+     * @return widok fragmentu
+     */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_family_details, container, false);
     }
 
+    /**
+     * Wywoływana po utworzeniu widoku fragmentu.
+     * Inicjalizuje widoki, adapter oraz pobiera listę członków rodziny.
+     * @param view widok fragmentu
+     * @param savedInstanceState zapisany stan fragmentu
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -74,7 +106,6 @@ public class FamilyDetailsFragment extends Fragment {
 
         membersRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         membersList = new ArrayList<>();
-
 
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String authToken = sharedPreferences.getString("authToken", null);
@@ -94,6 +125,18 @@ public class FamilyDetailsFragment extends Fragment {
         });
     }
 
+    /**
+     * Dodaje nowego członka do grupy rodzinnej na podstawie podanego adresu e-mail.
+     *
+     * <p>Metoda pobiera token uwierzytelniający z SharedPreferences. Jeśli użytkownik nie jest zalogowany,
+     * wyświetla komunikat i przerywa operację. W przeciwnym razie wywołuje endpoint API, który dodaje
+     * użytkownika do grupy rodzinnej o ID {@code familyGroupId}.
+     *
+     * <p>Po pomyślnym dodaniu członka następuje odświeżenie listy członków poprzez wywołanie
+     * {@link #fetchFamilyMembers()}, w przeciwnym wypadku wyświetlany jest komunikat o błędzie.
+     *
+     * @param email Adres e-mail użytkownika, który ma zostać dodany do grupy rodzinnej.
+     */
     private void addMemberToFamilyGroup(String email) {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String authToken = sharedPreferences.getString("authToken", null);
@@ -114,10 +157,9 @@ public class FamilyDetailsFragment extends Fragment {
             public void onResponse(Call<String> call, Response<String> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(requireContext(), "Member added successfully", Toast.LENGTH_SHORT).show();
-                    // Fetch updated family members list
                     fetchFamilyMembers();
                 } else {
-                    Toast.makeText(requireContext(), "Failed to add member: ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(requireContext(), "Failed to add member", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -128,6 +170,20 @@ public class FamilyDetailsFragment extends Fragment {
         });
     }
 
+
+    /**
+     * Pobiera szczegóły grupy rodzinnej wraz z listą członków z backendu.
+     *
+     * <p>Metoda odczytuje token uwierzytelniający z SharedPreferences. Jeśli użytkownik
+     * nie jest zalogowany, wyświetla odpowiedni komunikat i przerywa działanie.
+     *
+     * <p>W przeciwnym wypadku wykonuje asynchroniczne wywołanie API, które zwraca
+     * obiekt {@link FamilyGroup} zawierający listę członków grupy.
+     * Po poprawnym otrzymaniu danych czyści aktualną listę członków i uzupełnia ją nowymi
+     * danymi, a następnie odświeża adapter RecyclerView.
+     *
+     * <p>W przypadku błędu wyświetla odpowiedni komunikat Toast.
+     */
     private void fetchFamilyMembers() {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String authToken = sharedPreferences.getString("authToken", null);
@@ -165,6 +221,18 @@ public class FamilyDetailsFragment extends Fragment {
         });
     }
 
+
+    /**
+     * Usuwa wskazanego członka grupy rodzinnej.
+     *
+     * <p>Metoda pobiera token uwierzytelniający z SharedPreferences. Jeśli użytkownik nie jest zalogowany,
+     * wyświetla komunikat i przerywa operację. W przeciwnym wypadku wywołuje endpoint API do usunięcia
+     * członka na podstawie jego adresu e-mail i ID grupy rodzinnej.
+     *
+     * <p>W przypadku powodzenia operacji odświeża listę członków grupy, a w razie błędu wyświetla odpowiedni komunikat.
+     *
+     * @param member Obiekt FamilyMemberModel reprezentujący członka do usunięcia.
+     */
     private void onDeleteMember(FamilyMemberModel member) {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String authToken = sharedPreferences.getString("authToken", null);
@@ -176,7 +244,7 @@ public class FamilyDetailsFragment extends Fragment {
 
         ApiService apiService = ApiClient.getApiService();
         DeleteMemberRequest request = new DeleteMemberRequest();
-        request.setUserEmailToDelete(member.getEmail()); // Assuming name is the email
+        request.setUserEmailToDelete(member.getEmail());
         request.setGroupId(familyGroupId);
 
         Call<String> call = apiService.deleteMemberFromFamilyGroup("Bearer " + authToken, request);
@@ -185,7 +253,7 @@ public class FamilyDetailsFragment extends Fragment {
             public void onResponse(Call<String> call, Response<String> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(requireContext(), "Member removed successfully", Toast.LENGTH_SHORT).show();
-                    fetchFamilyMembers(); // Refresh the list
+                    fetchFamilyMembers();
                 } else {
                     Toast.makeText(requireContext(), "Failed to remove member", Toast.LENGTH_SHORT).show();
                 }
@@ -197,4 +265,5 @@ public class FamilyDetailsFragment extends Fragment {
             }
         });
     }
+
 }

@@ -29,30 +29,42 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
 import android.content.pm.PackageManager;
 import android.Manifest;
-import android.view.View;
-import android.widget.Toast;
-import androidx.core.content.FileProvider;
+
+/**
+ * Adapter do wyświetlania listy postów w RecyclerView.
+ * Obsługuje wyświetlanie obrazów, odtwarzanie audio oraz udostępnianie obrazów przez Bluetooth.
+ */
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
+    /** Lista postów do wyświetlenia */
     private List<PostModel> postList;
 
+    /**
+     * Konstruktor adaptera.
+     * @param postList lista postów do wyświetlenia
+     */
     public PostAdapter(List<PostModel> postList) {
         this.postList = postList;
     }
 
+    /**
+     * Aktualizuje listę postów i odświeża widok.
+     * @param newList nowa lista postów
+     */
     public void updateList(List<PostModel> newList) {
         this.postList = newList;
         notifyDataSetChanged();
     }
 
+    /**
+     * Tworzy nowy widok elementu listy.
+     * @param parent rodzic widoku
+     * @param viewType typ widoku
+     * @return nowy ViewHolder
+     */
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -61,18 +73,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return new PostViewHolder(view);
     }
 
-
+    /**
+     * Wypełnia widok danymi posta.
+     * @param holder ViewHolder
+     * @param position pozycja w liście
+     */
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
-        // 1. Pobierz post
+        // Pobierz post
         PostModel post = postList.get(position);
 
-        // 2. Ustaw teksty
+        // Ustaw teksty
         holder.description.setText(post.getContent());
         holder.location.setText(post.getAuthorName());
         holder.createdAt.setText(post.getCreatedAt());
 
-        // 3. Wczytaj obrazek przez Glide
+        // Wczytaj obrazek przez Glide
         String imageUrl = preprocessUrl(post.getImagePath());
         if (imageUrl != null) {
             Glide.with(holder.itemView.getContext())
@@ -80,12 +96,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                     .into(holder.imageView);
         }
 
-        // 4. Obsługa przycisku Bluetooth
+        // Obsługa przycisku Bluetooth
         holder.bluetoothButton.setVisibility(View.VISIBLE);
         holder.bluetoothButton.setOnClickListener(v -> {
             Context ctx = holder.itemView.getContext();
 
-            // 4a) Sprawdź uprawnienie BLUETOOTH_CONNECT na Android 12+
+            // Sprawdź uprawnienie BLUETOOTH_CONNECT na Android 12+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
                     ctx.checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT)
                             != PackageManager.PERMISSION_GRANTED) {
@@ -93,7 +109,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                 return;
             }
 
-            // 4b) Pobierz bitmapę z ImageView
+            // Pobierz bitmapę z ImageView
             BitmapDrawable drawable = (BitmapDrawable) holder.imageView.getDrawable();
             if (drawable == null) {
                 Toast.makeText(ctx, "Brak obrazu do wysłania", Toast.LENGTH_SHORT).show();
@@ -101,7 +117,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             }
             Bitmap bitmap = drawable.getBitmap();
 
-            // 4c) Zapisz bitmapę do pliku w cache/images
+            // Zapisz bitmapę do pliku w cache/images
             File imagesDir = new File(ctx.getCacheDir(), "images");
             if (!imagesDir.exists()) imagesDir.mkdirs();
             File imageFile = new File(imagesDir, "post_" + position + ".jpg");
@@ -113,25 +129,25 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
                 return;
             }
 
-            // 4d) Utwórz bezpieczny Uri przez FileProvider
+            // Utwórz bezpieczny Uri przez FileProvider
             Uri contentUri = FileProvider.getUriForFile(
                     ctx,
                     ctx.getPackageName() + ".fileprovider",
                     imageFile
             );
 
-            // 4e) Przygotuj Intent do wysyłki
+            // Przygotuj Intent do wysyłki
             Intent sendIntent = new Intent(Intent.ACTION_SEND);
             sendIntent.setType("image/jpeg");
             sendIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
             sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
-            // 4f) Wyświetl chooser (m.in. Bluetooth)
+            // Wyświetl chooser (m.in. Bluetooth)
             Intent chooser = Intent.createChooser(sendIntent, "Wyślij obraz przez:");
             ctx.startActivity(chooser);
         });
 
-        // 5. Obsługa przycisku audio
+        // Obsługa przycisku audio
         String audioUrl = preprocessUrl(post.getAudioPath());
         if (audioUrl != null) {
             holder.audioButton.setVisibility(View.VISIBLE);
@@ -152,32 +168,52 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         }
     }
 
+    /**
+     * Zwraca liczbę elementów w liście.
+     * @return liczba postów
+     */
     @Override
     public int getItemCount() {
         return postList.size();
     }
 
+    /**
+     * ViewHolder przechowujący referencje do widoków pojedynczego posta.
+     */
     public static class PostViewHolder extends RecyclerView.ViewHolder {
+        /** Widok obrazka posta */
         public ImageView imageView;
+        /** Widok opisu posta */
         public TextView description, location, createdAt;
+        /** Przycisk odtwarzania audio */
         public ImageButton audioButton;
+        /** Przycisk udostępniania przez Bluetooth */
         public ImageButton bluetoothButton;
+
+        /**
+         * Inicjalizuje referencje do widoków.
+         * @param itemView widok elementu listy
+         */
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             description = itemView.findViewById(R.id.postDescription);
             location = itemView.findViewById(R.id.postLocation);
             createdAt = itemView.findViewById(R.id.postCreatedAt);
             audioButton = itemView.findViewById(R.id.audioButton);
-            imageView = itemView.findViewById(R.id.postImageView); // Ensure this matches the ID in `item_post.xml`
+            imageView = itemView.findViewById(R.id.postImageView);
             bluetoothButton= itemView.findViewById(R.id.bluetoothButton);
         }
     }
 
+    /**
+     * Przetwarza URL, dodając bazowy adres jeśli potrzeba.
+     * @param url ścieżka do pliku
+     * @return pełny URL lub null
+     */
     private String preprocessUrl(String url) {
         if (url != null && !url.startsWith("http")) {
             return ApiClient.getBaseUrl() + (url.startsWith("/") ? url : "/" + url).replace("\\", "/");
         }
         return url;
     }
-
 }
