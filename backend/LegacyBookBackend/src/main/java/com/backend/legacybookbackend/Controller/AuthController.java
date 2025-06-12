@@ -200,10 +200,16 @@ public class AuthController {
         return ResponseEntity.ok(families);
     }
 
+
     @GetMapping("/GetFamilyGroupDetails")
-    public ResponseEntity<FamilyGroup> getFamilyGroupDetails(@RequestParam long groupId) {
-        FamilyGroup familyGroup = familyGroupService.getFamilyGroupById(groupId);
+    public ResponseEntity<FamilyGroupDTO> getFamilyGroupDetails(@RequestParam long groupId) {
+        FamilyGroupDTO familyGroup = familyGroupService.getFamilyGroupById(groupId);
         return ResponseEntity.ok(familyGroup);
+    }
+
+    @GetMapping("/GetTest")
+    public int test() {
+        return 1;
     }
 
     @PostMapping(value = "/updateProfilePicture", consumes = "multipart/form-data")

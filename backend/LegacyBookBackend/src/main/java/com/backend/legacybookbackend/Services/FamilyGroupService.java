@@ -1,5 +1,7 @@
 package com.backend.legacybookbackend.Services;
 
+import com.backend.legacybookbackend.DTO.FamilyGroup.FamilyGroupDTO;
+import com.backend.legacybookbackend.DTO.FamilyGroup.MemberDTO;
 import com.backend.legacybookbackend.Exception.FamilyGroupNotFoundException;
 import com.backend.legacybookbackend.Exception.UserNotFoundException;
 import com.backend.legacybookbackend.Model.*;
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class FamilyGroupService {
@@ -149,8 +152,13 @@ public class FamilyGroupService {
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
         return familyGroupRepository.findGroupsByUserId(user.getId());
     }
-    public FamilyGroup getFamilyGroupById(long groupId) {
-        return familyGroupRepository.findById(groupId)
-                .orElseThrow(() -> new FamilyGroupNotFoundException("Family group not found"));
+    public FamilyGroupDTO getFamilyGroupById(long groupId) {
+        List<MemberDTO> members = List.of(
+                new MemberDTO("Owner", "Father", "Jan Kowalski", "jan@example.com"),
+                new MemberDTO("User", "Brother", "Piotr Nowak", "piotr@example.com")
+        );
+
+        return new FamilyGroupDTO(groupId, "Testowa Rodzina", members);
     }
+
 }

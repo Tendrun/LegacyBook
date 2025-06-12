@@ -31,7 +31,7 @@ public class UserGroupMembership {
     @Enumerated(EnumType.STRING)
     public Role role;
     @Enumerated(EnumType.STRING)
-    FamilyRole familyRole;
+    public FamilyRole familyRole;
 
     public void setUser(User user){
         this.user = user;
@@ -44,6 +44,10 @@ public class UserGroupMembership {
     }
 
     public void setFamilyRole(FamilyRole familyRole){
+        this.familyRole = familyRole;
+    }
+
+    public void getFamilyRole(FamilyRole familyRole){
         this.familyRole = familyRole;
     }
 
