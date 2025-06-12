@@ -22,6 +22,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -48,229 +50,284 @@ import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
 
+    /* -------------------- constants -------------------- */
     private static final int STORAGE_PERMISSION_REQUEST = 2;
-    private static final int CAMERA_PERMISSION_REQUEST = 3;
+    private static final int CAMERA_PERMISSION_REQUEST  = 3;
 
-    private TextView profileName;
-    private TextView profileEmail;
-    private ImageView profileImage;
+    /* -------------------- views -------------------- */
+    private TextView     profileName;
+    private TextView     profileEmail;
+    private ImageView    profileImage;
+    private SwitchCompat darkModeSwitch;
+
+    /* -------------------- pickers -------------------- */
     private ActivityResultLauncher<Intent> galleryLauncher;
     private ActivityResultLauncher<Intent> cameraLauncher;
 
+    /* =========================================================
+       onCreateView
+       ========================================================= */
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        profileImage = view.findViewById(R.id.profileImage);
-        profileName = view.findViewById(R.id.profileName);
-        profileEmail = view.findViewById(R.id.profileEmail);
-        TextView editButton = view.findViewById(R.id.editButton);
-        LinearLayout logoutButton = view.findViewById(R.id.logoutRow);
+        /* ---- view-binding ---- */
+        profileImage   = view.findViewById(R.id.profileImage);
+        profileName    = view.findViewById(R.id.profileName);
+        profileEmail   = view.findViewById(R.id.profileEmail);
+        darkModeSwitch = view.findViewById(R.id.darkModeSwitch);
+
+        LinearLayout logoutRow   = view.findViewById(R.id.logoutRow);
         LinearLayout languageRow = view.findViewById(R.id.languageRow);
 
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
-        String username = sharedPreferences.getString("username", "Unknown User");
-        String email = sharedPreferences.getString("email", "Unknown Email");
+        /* ---- prefs ---- */
+        SharedPreferences prefs = requireContext()
+                .getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
 
-        profileName.setText(username);
-        profileEmail.setText(email);
+        profileName.setText(prefs.getString("username", "Unknown User"));
+        profileEmail.setText(prefs.getString("email",    "Unknown Email"));
 
-        logoutButton.setOnClickListener(v -> {
-            sharedPreferences.edit().clear().apply();
-            Intent intent = new Intent(requireContext(), WelcomeActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show();
+        /* ---- logout ---- */
+        logoutRow.setOnClickListener(v -> {
+            prefs.edit().clear().apply();
+            Intent i = new Intent(requireContext(), WelcomeActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+            Toast.makeText(requireContext(),
+                    "Logged out successfully", Toast.LENGTH_SHORT).show();
         });
 
+        /* ---- language picker ---- */
         languageRow.setOnClickListener(v -> {
-            final String[] languages = {"English", "Polski"};
-            final String[] codes = {"en", "pl"};
+            final String[] langs = {"English", "Polski"};
+            final String[] codes = {"en",      "pl"};
 
             new android.app.AlertDialog.Builder(requireContext())
                     .setTitle("Select Language")
-                    .setItems(languages, (dialog, which) -> {
-                        sharedPreferences.edit().putString("app_language", codes[which]).apply();
+                    .setItems(langs, (d, which) -> {
+                        prefs.edit().putString("app_language", codes[which]).apply();
                         LocaleHelper.setLocale(requireContext(), codes[which]);
-                        requireActivity().recreate(); // recreation causes detach temporarily
-                    })
-                    .show();
+                        requireActivity().recreate();
+                    }).show();
         });
+
+        /* ---- dark-mode switch ---- */
+        boolean darkEnabled = prefs.getBoolean("dark_mode", false);
+        darkModeSwitch.setChecked(darkEnabled);
+        darkModeSwitch.setOnCheckedChangeListener((btn, isChecked) -> {
+            prefs.edit().putBoolean("dark_mode", isChecked).apply();
+            AppCompatDelegate.setDefaultNightMode(
+                    isChecked ? AppCompatDelegate.MODE_NIGHT_YES
+                            : AppCompatDelegate.MODE_NIGHT_NO);
+        });
+
+        /* ---- pickers ---- */
+        initPickers();
+        profileImage.setOnClickListener(v -> showImageSourceOptions());
+
+        /* ---- profile data from backend ---- */
+        fetchUserProfile();
+
+        return view;
+    }
+
+    /* =========================================================
+       pickers helpers
+       ========================================================= */
+    private void initPickers() {
 
         galleryLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == AppCompatActivity.RESULT_OK && result.getData() != null) {
-                        Uri selectedImageUri = result.getData().getData();
-                        if (selectedImageUri != null) {
-                            Glide.with(requireContext()).load(selectedImageUri).into(profileImage);
-                        }
+                res -> {
+                    if (res.getResultCode() == AppCompatActivity.RESULT_OK && res.getData() != null) {
+                        Uri uri = res.getData().getData();
+                        if (uri != null) Glide.with(this).load(uri).into(profileImage);
                     }
                 });
 
         cameraLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == AppCompatActivity.RESULT_OK && result.getData() != null) {
-                        Bitmap imageBitmap = (Bitmap) result.getData().getExtras().get("data");
-                        Uri imageUri = getImageUriFromBitmap(requireContext(), imageBitmap);
-                        if (imageUri != null) {
-                            uploadProfilePicture(imageUri);
-                        } else {
-                            Toast.makeText(requireContext(), "Failed to capture image", Toast.LENGTH_SHORT).show();
-                        }
+                res -> {
+                    if (res.getResultCode() == AppCompatActivity.RESULT_OK && res.getData() != null) {
+                        Bitmap bmp = (Bitmap) res.getData().getExtras().get("data");
+                        Uri uri    = getImageUriFromBitmap(requireContext(), bmp);
+                        if (uri != null) uploadProfilePicture(uri);
+                        else Toast.makeText(requireContext(),
+                                "Failed to capture image", Toast.LENGTH_SHORT).show();
                     }
                 });
-
-        profileImage.setOnClickListener(v -> showImageSourceOptions());
-
-        fetchUserProfile();
-        return view;
     }
 
     private void showImageSourceOptions() {
-        String[] options = {"Camera", "Gallery"};
+        String[] opts = {"Camera", "Gallery"};
         new android.app.AlertDialog.Builder(requireContext())
                 .setTitle("Select Image Source")
-                .setItems(options, (dialog, which) -> {
-                    if (which == 0) {
+                .setItems(opts, (d, which) -> {
+                    if (which == 0) { // camera
                         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
                                 != PackageManager.PERMISSION_GRANTED) {
-                            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
-                        } else {
-                            openCamera();
-                        }
-                    } else {
+                            ActivityCompat.requestPermissions(requireActivity(),
+                                    new String[]{Manifest.permission.CAMERA},
+                                    CAMERA_PERMISSION_REQUEST);
+                        } else openCamera();
+                    } else {          // gallery
                         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                                 != PackageManager.PERMISSION_GRANTED) {
-                            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_REQUEST);
-                        } else {
-                            openGallery();
-                        }
+                            ActivityCompat.requestPermissions(requireActivity(),
+                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                    STORAGE_PERMISSION_REQUEST);
+                        } else openGallery();
                     }
-                })
-                .show();
+                }).show();
     }
 
     private void openGallery() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        galleryLauncher.launch(intent);
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        galleryLauncher.launch(i);
     }
 
     private void openCamera() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        cameraLauncher.launch(intent);
+        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraLauncher.launch(i);
     }
 
-    private Uri getImageUriFromBitmap(Context context, Bitmap bitmap) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "CapturedImage", null);
+    private Uri getImageUriFromBitmap(Context ctx, Bitmap bmp) {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, out);
+        String path = MediaStore.Images.Media.insertImage(
+                ctx.getContentResolver(), bmp, "CapturedImage", null);
         return Uri.parse(path);
     }
 
-    private void uploadProfilePicture(Uri imageUri) {
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
-        String authToken = sharedPreferences.getString("authToken", null);
-        if (authToken == null) {
-            Toast.makeText(requireContext(), "You must be logged in to update your profile picture", Toast.LENGTH_SHORT).show();
+    /* =========================================================
+       upload profile picture
+       ========================================================= */
+    private void uploadProfilePicture(Uri uri) {
+
+        SharedPreferences prefs = requireContext()
+                .getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String token = prefs.getString("authToken", null);
+        if (token == null) {
+            Toast.makeText(requireContext(),
+                    "You must be logged in to update your profile picture",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
         try {
-            byte[] imageData = readBytesFromInputStream(requireContext().getContentResolver().openInputStream(imageUri));
-            RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), imageData);
-            MultipartBody.Part body = MultipartBody.Part.createFormData("profilePicture", "profile.jpg", requestBody);
+            byte[] data = readBytesFromInputStream(
+                    requireContext().getContentResolver().openInputStream(uri));
 
-            ApiService apiService = ApiClient.getApiService();
-            Call<String> call = apiService.updateProfilePicture("Bearer " + authToken, body);
+            RequestBody body = RequestBody.create(MediaType.parse("image/*"), data);
+            MultipartBody.Part part =
+                    MultipartBody.Part.createFormData("profilePicture", "profile.jpg", body);
 
-            call.enqueue(new Callback<String>() {
-                @Override
-                public void onResponse(Call<String> call, Response<String> response) {
-                    if (response.isSuccessful()) {
-                        Toast.makeText(requireContext(), "Profile picture updated successfully", Toast.LENGTH_SHORT).show();
-                        fetchUserProfile();
-                    } else {
-                        Toast.makeText(requireContext(), "Failed to update profile picture", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<String> call, Throwable t) {
-                    Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            ApiService api = ApiClient.getApiService();
+            api.updateProfilePicture("Bearer " + token, part)
+                    .enqueue(new Callback<String>() {
+                        @Override public void onResponse(Call<String> c, Response<String> r) {
+                            if (r.isSuccessful()) {
+                                Toast.makeText(requireContext(),
+                                        "Profile picture updated successfully",
+                                        Toast.LENGTH_SHORT).show();
+                                fetchUserProfile();
+                            } else {
+                                Toast.makeText(requireContext(),
+                                        "Failed to update profile picture",
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        @Override public void onFailure(Call<String> c, Throwable t) {
+                            Toast.makeText(requireContext(),
+                                    "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
         } catch (IOException e) {
-            e.printStackTrace();
-            Toast.makeText(requireContext(), "Failed to read image data", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(),
+                    "Failed to read image data", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private byte[] readBytesFromInputStream(InputStream inputStream) throws IOException {
-        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
-        int bufferSize = 1024;
-        byte[] buffer = new byte[bufferSize];
+    private byte[] readBytesFromInputStream(InputStream in) throws IOException {
+        ByteArrayOutputStream buf = new ByteArrayOutputStream();
+        byte[] tmp = new byte[1024];
         int len;
-        while ((len = inputStream.read(buffer)) != -1) {
-            byteBuffer.write(buffer, 0, len);
-        }
-        return byteBuffer.toByteArray();
+        while ((len = in.read(tmp)) != -1) buf.write(tmp, 0, len);
+        return buf.toByteArray();
     }
 
+    /* =========================================================
+       permissions callback
+       ========================================================= */
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    public void onRequestPermissionsResult(int req,
+                                           @NonNull String[] perms,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(req, perms, grantResults);
 
-        if (requestCode == STORAGE_PERMISSION_REQUEST && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (req == STORAGE_PERMISSION_REQUEST &&
+                grantResults.length > 0 &&
+                grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             openGallery();
-        } else if (requestCode == CAMERA_PERMISSION_REQUEST && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        } else if (req == CAMERA_PERMISSION_REQUEST &&
+                grantResults.length > 0 &&
+                grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             openCamera();
         } else {
-            Toast.makeText(requireContext(), "Permission denied", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(),
+                    "Permission denied", Toast.LENGTH_SHORT).show();
         }
     }
 
+    /* =========================================================
+       fetch profile
+       ========================================================= */
     private void fetchUserProfile() {
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
-        String authToken = sharedPreferences.getString("authToken", null);
-        if (authToken == null) {
-            Toast.makeText(requireContext(), "You must be logged in to view your profile", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences prefs = requireContext()
+                .getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
+        String token = prefs.getString("authToken", null);
+        if (token == null) {
+            Toast.makeText(requireContext(),
+                    "You must be logged in to view your profile",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
-        ApiService apiService = ApiClient.getApiService();
-        Call<UserProfileDTO> call = apiService.getUserProfile("Bearer " + authToken);
-
-        call.enqueue(new Callback<UserProfileDTO>() {
-            @Override
-            public void onResponse(Call<UserProfileDTO> call, Response<UserProfileDTO> response) {
-                if (!isAdded()) return; // <-- FIX for recreate crash
-                if (response.isSuccessful() && response.body() != null) {
-                    UserProfileDTO userProfile = response.body();
-                    profileName.setText(userProfile.getName());
-                    profileEmail.setText(userProfile.getEmail());
-                    if (userProfile.getProfilePicture() != null) {
-                        Glide.with(requireContext())
-                                .load(userProfile.getProfilePicture())
-                                .placeholder(R.drawable.ic_profile)
-                                .error(R.drawable.ic_profile)
-                                .skipMemoryCache(true)
-                                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                                .into(profileImage);
+        ApiService api = ApiClient.getApiService();
+        api.getUserProfile("Bearer " + token)
+                .enqueue(new Callback<UserProfileDTO>() {
+                    @Override public void onResponse(Call<UserProfileDTO> c,
+                                                     Response<UserProfileDTO> r) {
+                        if (!isAdded()) return;
+                        if (r.isSuccessful() && r.body() != null) {
+                            UserProfileDTO u = r.body();
+                            profileName.setText(u.getName());
+                            profileEmail.setText(u.getEmail());
+                            if (u.getProfilePicture() != null) {
+                                Glide.with(requireContext())
+                                        .load(u.getProfilePicture())
+                                        .placeholder(R.drawable.ic_profile)
+                                        .error(R.drawable.ic_profile)
+                                        .skipMemoryCache(true)
+                                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                                        .into(profileImage);
+                            }
+                        } else {
+                            Toast.makeText(requireContext(),
+                                    "Failed to fetch profile", Toast.LENGTH_SHORT).show();
+                        }
                     }
-                } else {
-                    Toast.makeText(requireContext(), "Failed to fetch profile", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<UserProfileDTO> call, Throwable t) {
-                if (!isAdded()) return; // <-- also safeguard on failure
-                Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override public void onFailure(Call<UserProfileDTO> c, Throwable t) {
+                        if (!isAdded()) return;
+                        Toast.makeText(requireContext(),
+                                "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

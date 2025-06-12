@@ -53,7 +53,7 @@ public class UserGroupMembership {
     public enum FamilyRole {
         Sister,
         Brother,
-        Mom,
+        Mother,
         Father,
         Grandfather,
         Grandma,

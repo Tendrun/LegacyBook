@@ -79,7 +79,6 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array family_roles
 array languages_array
-array roles_array
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -3085,6 +3084,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id blocking
+id bluetoothButton
 id bluetoothShareRow
 id bottom
 id bottom_navigation
@@ -3765,6 +3765,7 @@ string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
 string audio_button_desc
+string bluetooth_button_desc
 string bluetooth_icon
 string bluetooth_share
 string bottom_sheet_behavior
@@ -5208,4 +5209,5 @@ styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
 xml backup_rules
 xml data_extraction_rules
+xml file_paths
 xml network_security_config

@@ -128,6 +128,10 @@
         "source": "com.example.legacykeep.app-main-6:/xml/network_security_config.xml"
     },
     {
+        "merged": "com.example.legacykeep.app-debug-4:/xml_file_paths.xml.flat",
+        "source": "com.example.legacykeep.app-main-6:/xml/file_paths.xml"
+    },
+    {
         "merged": "com.example.legacykeep.app-debug-4:/mipmap-hdpi_ic_launcher.webp.flat",
         "source": "com.example.legacykeep.app-main-6:/mipmap-hdpi/ic_launcher.webp"
     },

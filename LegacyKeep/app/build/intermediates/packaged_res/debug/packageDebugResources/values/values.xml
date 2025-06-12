@@ -13,14 +13,6 @@
         <item>English</item>
         <item>Polish</item>
     </string-array>
-    <string-array name="roles_array">
-        <item>Grandfather</item>
-        <item>Grandmother</item>
-        <item>Father</item>
-        <item>Mother</item>
-        <item>Son</item>
-        <item>Daughter</item>
-    </string-array>
     <color name="background_primary">#FFE59C</color>
     <color name="black">#FF000000</color>
     <color name="blue_primary">#1877F2</color>
@@ -41,6 +33,7 @@
     <string name="about_icon">Information icon</string>
     <string name="app_name">LegacyKeep</string>
     <string name="audio_button_desc">Play audio</string>
+    <string name="bluetooth_button_desc">Wyślij przez Bluetooth</string>
     <string name="bluetooth_icon">Bluetooth share icon</string>
     <string name="bluetooth_share">Bluetooth Share</string>
     <string name="comment_button_desc">Comment on post</string>

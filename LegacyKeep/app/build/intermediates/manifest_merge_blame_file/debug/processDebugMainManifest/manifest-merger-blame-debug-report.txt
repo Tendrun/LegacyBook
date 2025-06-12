@@ -43,161 +43,188 @@
 24    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 24-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:8:5-80
 24-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:8:22-77
-25
-26    <permission
-26-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-27        android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-27-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-28        android:protectionLevel="signature" />
-28-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-29
-30    <uses-permission android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-30-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-30-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-31
-32    <application
-32-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:5-57:19
-33        android:allowBackup="true"
-33-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:16:9-35
-34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-34-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-35        android:dataExtractionRules="@xml/data_extraction_rules"
-35-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:17:9-65
-36        android:debuggable="true"
-37        android:extractNativeLibs="false"
-38        android:fullBackupContent="@xml/backup_rules"
-38-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:9-54
-39        android:icon="@mipmap/ic_launcher"
-39-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:9-43
-40        android:label="@string/app_name"
-40-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:9-41
-41        android:networkSecurityConfig="@xml/network_security_config"
-41-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:25:9-69
-42        android:roundIcon="@mipmap/ic_launcher_round"
-42-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:21:9-54
-43        android:supportsRtl="true"
-43-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:22:9-35
-44        android:testOnly="true"
-45        android:theme="@style/Theme.LegacyKeep"
-45-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:23:9-48
-46        android:usesCleartextTraffic="true" >
-46-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:24:9-44
-47
-48        <!-- Welcome screen is the entry point -->
-49        <activity
-49-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:9-35:20
-50            android:name="com.example.legacykeep.WelcomeActivity"
-50-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:19-50
-51            android:exported="true" >
-51-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:13-36
-52            <intent-filter>
-52-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:13-34:29
-53                <action android:name="android.intent.action.MAIN" />
-53-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:32:17-69
-53-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:32:25-66
-54
-55                <category android:name="android.intent.category.LAUNCHER" />
-55-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:33:17-77
-55-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:33:27-74
-56            </intent-filter>
-57        </activity>
-58
-59        <!-- Login screen -->
-60        <activity
-60-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:9-40:39
-61            android:name="com.example.legacykeep.LoginActivity"
-61-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:39:13-42
-62            android:exported="true" />
-62-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:40:13-36
+25    <!-- Bluetooth (API < 31) -->
+26    <uses-permission android:name="android.permission.BLUETOOTH" />
+26-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:5-67
+26-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:22-65
+27    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+27-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:16:5-73
+27-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:16:22-71
+28    <!-- Bluetooth (API ≥ 31, Android 12+) -->
+29    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+29-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:5-75
+29-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:22-73
+30
+31    <permission
+31-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+32        android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+32-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+33        android:protectionLevel="signature" />
+33-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+34
+35    <uses-permission android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+35-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+35-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+36
+37    <application
+37-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:5-71:19
+38        android:allowBackup="true"
+38-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:21:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.9.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+40        android:dataExtractionRules="@xml/data_extraction_rules"
+40-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:22:9-65
+41        android:debuggable="true"
+42        android:extractNativeLibs="false"
+43        android:fullBackupContent="@xml/backup_rules"
+43-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:23:9-54
+44        android:icon="@mipmap/ic_launcher"
+44-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:24:9-43
+45        android:label="@string/app_name"
+45-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:25:9-41
+46        android:networkSecurityConfig="@xml/network_security_config"
+46-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:9-69
+47        android:roundIcon="@mipmap/ic_launcher_round"
+47-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:26:9-54
+48        android:supportsRtl="true"
+48-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:27:9-35
+49        android:testOnly="true"
+50        android:theme="@style/Theme.LegacyKeep"
+50-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:28:9-48
+51        android:usesCleartextTraffic="true" >
+51-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:9-44
+52
+53        <!-- Welcome screen is the entry point -->
+54        <activity
+54-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:34:9-40:20
+55            android:name="com.example.legacykeep.WelcomeActivity"
+55-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:34:19-50
+56            android:exported="true" >
+56-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:35:13-36
+57            <intent-filter>
+57-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:36:13-39:29
+58                <action android:name="android.intent.action.MAIN" />
+58-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:37:17-69
+58-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:37:25-66
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:17-77
+60-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:27-74
+61            </intent-filter>
+62        </activity>
 63
-64        <!-- Register screen -->
+64        <!-- Login screen -->
 65        <activity
 65-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:9-45:39
-66            android:name="com.example.legacykeep.RegisterActivity"
-66-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:44:13-45
+66            android:name="com.example.legacykeep.LoginActivity"
+66-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:44:13-42
 67            android:exported="true" />
 67-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:45:13-36
-68        <activity
-68-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:47:9-49:39
-69            android:name="com.example.legacykeep.ForgotPasswordActivity"
-69-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:13-51
-70            android:exported="true" />
-70-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:13-36
-71        <activity
-71-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:47:9-49:39
-72            android:name="com.example.legacykeep.ForgotPasswordActivity"
-72-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:13-51
-73            android:exported="true" />
-73-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:13-36
-74        <activity android:name="com.example.legacykeep.MainActivity" />
-74-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:55:9-50
-74-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:55:19-47
-75
-76        <provider
-76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-77            android:name="androidx.startup.InitializationProvider"
-77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-78            android:authorities="com.example.legacykeep.androidx-startup"
-78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-79            android:exported="false" >
-79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-80            <meta-data
-80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-81-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-82                android:value="androidx.startup" />
-82-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-83            <meta-data
-83-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-84-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
-85                android:value="androidx.startup" />
-85-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+68
+69        <!-- Register screen -->
+70        <activity
+70-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:9-50:39
+71            android:name="com.example.legacykeep.RegisterActivity"
+71-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:13-45
+72            android:exported="true" />
+72-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:13-36
+73        <activity
+73-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:52:9-54:39
+74            android:name="com.example.legacykeep.ForgotPasswordActivity"
+74-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:53:13-51
+75            android:exported="true" />
+75-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:54:13-36
+76        <activity
+76-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:52:9-54:39
+77            android:name="com.example.legacykeep.ForgotPasswordActivity"
+77-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:53:13-51
+78            android:exported="true" />
+78-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:54:13-36
+79        <activity android:name="com.example.legacykeep.MainActivity" />
+79-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:60:9-50
+79-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:60:19-47
+80
+81        <provider
+82            android:name="androidx.core.content.FileProvider"
+82-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:62:13-62
+83            android:authorities="com.example.legacykeep.fileprovider"
+83-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:63:13-64
+84            android:exported="false"
+84-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:64:13-37
+85            android:grantUriPermissions="true" >
+85-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:65:13-47
 86            <meta-data
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-88                android:value="androidx.startup" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+86-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:66:13-68:54
+87                android:name="android.support.FILE_PROVIDER_PATHS"
+87-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:67:17-67
+88                android:resource="@xml/file_paths" />
+88-->C:\Users\mikis\AndroidStudioProjects\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:68:17-51
 89        </provider>
-90
-91        <receiver
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-92            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-93            android:directBootAware="false"
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-94            android:enabled="true"
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-95            android:exported="true"
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-96            android:permission="android.permission.DUMP" >
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-98                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-99            </intent-filter>
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-101                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-104                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-107                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-108            </intent-filter>
-109        </receiver>
-110    </application>
-111
-112</manifest>
+90        <provider
+90-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+91            android:name="androidx.startup.InitializationProvider"
+91-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+92            android:authorities="com.example.legacykeep.androidx-startup"
+92-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+93            android:exported="false" >
+93-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+94            <meta-data
+94-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+95                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+95-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+96                android:value="androidx.startup" />
+96-->[androidx.emoji2:emoji2:1.2.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+97            <meta-data
+97-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+98                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+98-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+99                android:value="androidx.startup" />
+99-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+100            <meta-data
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+101                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+102                android:value="androidx.startup" />
+102-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+103        </provider>
+104
+105        <receiver
+105-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+106            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+106-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+107            android:directBootAware="false"
+107-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+108            android:enabled="true"
+108-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+109            android:exported="true"
+109-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+110            android:permission="android.permission.DUMP" >
+110-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+111            <intent-filter>
+111-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+112                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+112-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+113            </intent-filter>
+114            <intent-filter>
+114-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+115                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+115-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+116            </intent-filter>
+117            <intent-filter>
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+118                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+119            </intent-filter>
+120            <intent-filter>
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+121                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\mikis\Documents\WazneProgramy\Gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+122            </intent-filter>
+123        </receiver>
+124    </application>
+125
+126</manifest>

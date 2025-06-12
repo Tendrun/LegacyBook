@@ -2,7 +2,6 @@ R_DEF: Internal format may change without notice
 local
 array family_roles
 array languages_array
-array roles_array
 color background_primary
 color black
 color blue_primary
@@ -49,6 +48,7 @@ id addMemberEmailInput
 id addMemberInput
 id addPhotoButton
 id audioButton
+id bluetoothButton
 id bluetoothShareRow
 id bottom_navigation
 id buttonPickLocation
@@ -146,6 +146,7 @@ string about
 string about_icon
 string app_name
 string audio_button_desc
+string bluetooth_button_desc
 string bluetooth_icon
 string bluetooth_share
 string comment_button_desc
@@ -199,4 +200,5 @@ style ProfileValue
 style Theme.LegacyKeep
 xml backup_rules
 xml data_extraction_rules
+xml file_paths
 xml network_security_config

@@ -37,6 +37,7 @@
     <string name="comment_button_desc">Comment on post</string>
     <string name="share_button_desc">Share post</string>
     <string name="audio_button_desc">Play audio</string>
+    <string name="bluetooth_button_desc">Wyślij przez Bluetooth</string>
 
 
     <string name="upload_photo">Upload Photo</string>
@@ -69,15 +70,6 @@
     <string name="bluetooth_icon">Bluetooth share icon</string>
     <string name="notification_icon">Notification bell icon</string>
 
-
-    <string-array name="roles_array">
-        <item>Grandfather</item>
-        <item>Grandmother</item>
-        <item>Father</item>
-        <item>Mother</item>
-        <item>Son</item>
-        <item>Daughter</item>
-    </string-array>
 
     <string-array name="languages_array">
         <item>English</item>
