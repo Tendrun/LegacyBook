@@ -3323,9 +3323,12 @@ id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
 id navigation_header_container
 id never
+id newPasswordInput
 id noScroll
 id none
 id normal
+id notificationContainer
+id notificationText
 id notification_background
 id notification_main_column
 id notification_main_column_container
@@ -3381,6 +3384,7 @@ id ratio
 id recaptchaCheckbox
 id rectangles
 id recyclerViewFeed
+id recyclerViewNotifications
 id registerButton
 id registerHeader
 id report_drawn
@@ -3659,6 +3663,7 @@ layout fragment_notifications
 layout fragment_profile
 layout item_family_group
 layout item_family_member
+layout item_notification
 layout item_post
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

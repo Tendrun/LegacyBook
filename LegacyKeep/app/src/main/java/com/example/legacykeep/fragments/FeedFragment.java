@@ -60,6 +60,7 @@ public class FeedFragment extends Fragment {
         sharedPostViewModel.getPosts().observe(getViewLifecycleOwner(), posts -> {
             if (posts != null) {
                 postAdapter.updateList(posts);
+                sharedPostViewModel.updatePostCount(posts.size());
             }
         });
     }

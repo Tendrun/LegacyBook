@@ -17,6 +17,10 @@ import java.util.List;
 public class PostController {
 
     @Autowired private PostService postService;
+    @Autowired
+    public PostController(PostService postService) {
+        this.postService = postService;
+    }
 
     @PostMapping(consumes = {"multipart/form-data"})
     public ResponseEntity<PostResponse> addPost(
