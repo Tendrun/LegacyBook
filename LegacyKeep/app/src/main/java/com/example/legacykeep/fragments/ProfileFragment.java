@@ -31,6 +31,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.legacykeep.API.ApiClient;
 import com.example.legacykeep.API.ApiService;
 import com.example.legacykeep.DTO.UserProfileDTO;
+import com.example.legacykeep.LocaleHelper;
 import com.example.legacykeep.R;
 import com.example.legacykeep.WelcomeActivity;
 
@@ -49,9 +50,9 @@ public class ProfileFragment extends Fragment {
 
     private static final int STORAGE_PERMISSION_REQUEST = 2;
     private static final int CAMERA_PERMISSION_REQUEST = 3;
+
     private TextView profileName;
     private TextView profileEmail;
-
     private ImageView profileImage;
     private ActivityResultLauncher<Intent> galleryLauncher;
     private ActivityResultLauncher<Intent> cameraLauncher;
@@ -66,9 +67,8 @@ public class ProfileFragment extends Fragment {
         profileEmail = view.findViewById(R.id.profileEmail);
         TextView editButton = view.findViewById(R.id.editButton);
         LinearLayout logoutButton = view.findViewById(R.id.logoutRow);
+        LinearLayout languageRow = view.findViewById(R.id.languageRow); // Make sure this ID exists in XML
 
-
-        // Retrieve user data from SharedPreferences
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "Unknown User");
         String email = sharedPreferences.getString("email", "Unknown Email");
@@ -76,87 +76,75 @@ public class ProfileFragment extends Fragment {
         profileName.setText(username);
         profileEmail.setText(email);
 
-        // Handle logout button click
         logoutButton.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.clear();
-            editor.apply();
-
+            sharedPreferences.edit().clear().apply();
             Intent intent = new Intent(requireContext(), WelcomeActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-
             Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show();
         });
 
-        // Initialize the ActivityResultLaunchers
+        languageRow.setOnClickListener(v -> {
+            final String[] languages = {"English", "Polski"};
+            final String[] codes = {"en", "pl"};
+
+            new android.app.AlertDialog.Builder(requireContext())
+                    .setTitle("Select Language")
+                    .setItems(languages, (dialog, which) -> {
+                        sharedPreferences.edit().putString("app_language", codes[which]).apply();
+                        LocaleHelper.setLocale(requireContext(), codes[which]);
+                        requireActivity().recreate();
+                    })
+                    .show();
+        });
+
         galleryLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
                     if (result.getResultCode() == AppCompatActivity.RESULT_OK && result.getData() != null) {
                         Uri selectedImageUri = result.getData().getData();
                         if (selectedImageUri != null) {
-                            // Load the selected image into the profileImage using Glide
-                            Glide.with(requireContext())
-                                    .load(selectedImageUri)
-                                    .into(profileImage);
+                            Glide.with(requireContext()).load(selectedImageUri).into(profileImage);
                         }
                     }
-                }
-        );
+                });
 
         cameraLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
-                    if (result.getResultCode() == getActivity().RESULT_OK && result.getData() != null) {
-                        Bundle extras = result.getData().getExtras();
-                        if (extras != null) {
-                            Bitmap imageBitmap = (Bitmap) extras.get("data");
-                            Uri imageUri = getImageUriFromBitmap(requireContext(), imageBitmap);
-                            if (imageUri != null) {
-                                uploadProfilePicture(imageUri);
-                            } else {
-                                Toast.makeText(requireContext(), "Failed to capture image", Toast.LENGTH_SHORT).show();
-                            }
+                    if (result.getResultCode() == AppCompatActivity.RESULT_OK && result.getData() != null) {
+                        Bitmap imageBitmap = (Bitmap) result.getData().getExtras().get("data");
+                        Uri imageUri = getImageUriFromBitmap(requireContext(), imageBitmap);
+                        if (imageUri != null) {
+                            uploadProfilePicture(imageUri);
+                        } else {
+                            Toast.makeText(requireContext(), "Failed to capture image", Toast.LENGTH_SHORT).show();
                         }
                     }
-                }
-        );
+                });
 
-        // Set click listener for the profile image
         profileImage.setOnClickListener(v -> showImageSourceOptions());
+
         fetchUserProfile();
         return view;
     }
 
-    private Uri getImageUriFromBitmap(Context context, Bitmap bitmap) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "CapturedImage", null);
-        return Uri.parse(path);
-    }
-
     private void showImageSourceOptions() {
-        // Show options to choose between camera and gallery
         String[] options = {"Camera", "Gallery"};
         new android.app.AlertDialog.Builder(requireContext())
                 .setTitle("Select Image Source")
                 .setItems(options, (dialog, which) -> {
                     if (which == 0) {
-                        // Camera option selected
                         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
                                 != PackageManager.PERMISSION_GRANTED) {
-                            ActivityCompat.requestPermissions(requireActivity(),
-                                    new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
+                            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST);
                         } else {
                             openCamera();
                         }
-                    } else if (which == 1) {
-                        // Gallery option selected
+                    } else {
                         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                                 != PackageManager.PERMISSION_GRANTED) {
-                            ActivityCompat.requestPermissions(requireActivity(),
-                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_REQUEST);
+                            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_REQUEST);
                         } else {
                             openGallery();
                         }
@@ -175,20 +163,23 @@ public class ProfileFragment extends Fragment {
         cameraLauncher.launch(intent);
     }
 
+    private Uri getImageUriFromBitmap(Context context, Bitmap bitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "CapturedImage", null);
+        return Uri.parse(path);
+    }
+
     private void uploadProfilePicture(Uri imageUri) {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String authToken = sharedPreferences.getString("authToken", null);
-
         if (authToken == null) {
             Toast.makeText(requireContext(), "You must be logged in to update your profile picture", Toast.LENGTH_SHORT).show();
             return;
         }
 
         try {
-            // Read the InputStream into a byte array
             byte[] imageData = readBytesFromInputStream(requireContext().getContentResolver().openInputStream(imageUri));
-
-            // Create RequestBody
             RequestBody requestBody = RequestBody.create(MediaType.parse("image/*"), imageData);
             MultipartBody.Part body = MultipartBody.Part.createFormData("profilePicture", "profile.jpg", requestBody);
 
@@ -200,7 +191,7 @@ public class ProfileFragment extends Fragment {
                 public void onResponse(Call<String> call, Response<String> response) {
                     if (response.isSuccessful()) {
                         Toast.makeText(requireContext(), "Profile picture updated successfully", Toast.LENGTH_SHORT).show();
-                        fetchUserProfile(); // Refresh the profile data
+                        fetchUserProfile();
                     } else {
                         Toast.makeText(requireContext(), "Failed to update profile picture", Toast.LENGTH_SHORT).show();
                     }
@@ -211,6 +202,7 @@ public class ProfileFragment extends Fragment {
                     Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
+
         } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(requireContext(), "Failed to read image data", Toast.LENGTH_SHORT).show();
@@ -221,7 +213,6 @@ public class ProfileFragment extends Fragment {
         ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
         int bufferSize = 1024;
         byte[] buffer = new byte[bufferSize];
-
         int len;
         while ((len = inputStream.read(buffer)) != -1) {
             byteBuffer.write(buffer, 0, len);
@@ -233,25 +224,18 @@ public class ProfileFragment extends Fragment {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == STORAGE_PERMISSION_REQUEST) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                openGallery();
-            } else {
-                Toast.makeText(requireContext(), "Permission denied to access storage", Toast.LENGTH_SHORT).show();
-            }
-        } else if (requestCode == CAMERA_PERMISSION_REQUEST) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                openCamera();
-            } else {
-                Toast.makeText(requireContext(), "Permission denied to access camera", Toast.LENGTH_SHORT).show();
-            }
+        if (requestCode == STORAGE_PERMISSION_REQUEST && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            openGallery();
+        } else if (requestCode == CAMERA_PERMISSION_REQUEST && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            openCamera();
+        } else {
+            Toast.makeText(requireContext(), "Permission denied", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void fetchUserProfile() {
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String authToken = sharedPreferences.getString("authToken", null);
-
         if (authToken == null) {
             Toast.makeText(requireContext(), "You must be logged in to view your profile", Toast.LENGTH_SHORT).show();
             return;
@@ -272,8 +256,8 @@ public class ProfileFragment extends Fragment {
                                 .load(userProfile.getProfilePicture())
                                 .placeholder(R.drawable.ic_profile)
                                 .error(R.drawable.ic_profile)
-                                .skipMemoryCache(true) // Skip memory cache
-                                .diskCacheStrategy(DiskCacheStrategy.NONE) // Skip disk cache
+                                .skipMemoryCache(true)
+                                .diskCacheStrategy(DiskCacheStrategy.NONE)
                                 .into(profileImage);
                     }
                 } else {

@@ -4,7 +4,7 @@
             "outputFile": "com.example.legacykeep.app-mergeDebugResources-30:/values-watch-v21/values-watch-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Marcin\\.gradle\\caches\\transforms-4\\f4c27dc37d4108b51df892657a88d0aa\\transformed\\appcompat-1.7.0\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "source": "C:\\Users\\ASUS\\.gradle\\caches\\transforms-4\\25cbd791228d252a8ccbe155897a5e21\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",
