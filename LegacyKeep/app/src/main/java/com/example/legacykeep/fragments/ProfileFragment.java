@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
         profileEmail = view.findViewById(R.id.profileEmail);
         TextView editButton = view.findViewById(R.id.editButton);
         LinearLayout logoutButton = view.findViewById(R.id.logoutRow);
-        LinearLayout languageRow = view.findViewById(R.id.languageRow); // Make sure this ID exists in XML
+        LinearLayout languageRow = view.findViewById(R.id.languageRow);
 
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "Unknown User");
@@ -93,7 +93,7 @@ public class ProfileFragment extends Fragment {
                     .setItems(languages, (dialog, which) -> {
                         sharedPreferences.edit().putString("app_language", codes[which]).apply();
                         LocaleHelper.setLocale(requireContext(), codes[which]);
-                        requireActivity().recreate();
+                        requireActivity().recreate(); // recreation causes detach temporarily
                     })
                     .show();
         });
@@ -247,6 +247,7 @@ public class ProfileFragment extends Fragment {
         call.enqueue(new Callback<UserProfileDTO>() {
             @Override
             public void onResponse(Call<UserProfileDTO> call, Response<UserProfileDTO> response) {
+                if (!isAdded()) return; // <-- FIX for recreate crash
                 if (response.isSuccessful() && response.body() != null) {
                     UserProfileDTO userProfile = response.body();
                     profileName.setText(userProfile.getName());
@@ -267,6 +268,7 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onFailure(Call<UserProfileDTO> call, Throwable t) {
+                if (!isAdded()) return; // <-- also safeguard on failure
                 Toast.makeText(requireContext(), "Error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
