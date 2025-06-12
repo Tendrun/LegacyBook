@@ -102,5 +102,22 @@
             android:contentDescription="@string/audio_button_desc"
             app:tint="#5C3B1E"
             android:src="@android:drawable/ic_btn_speak_now" />
+
+        <ImageButton
+            android:id="@+id/bluetoothButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/bluetooth_button_desc"
+            app:tint="#5C3B1E"
+            android:src="@drawable/ic_bluetooth"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            />
+
+
+
     </LinearLayout>
 </LinearLayout>
