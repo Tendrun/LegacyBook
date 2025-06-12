@@ -1,4 +1,4 @@
-#Thu Jun 12 16:49:30 CEST 2025
+#Thu Jun 12 17:14:02 CEST 2025
 base.0=G\:\\Projekt Android\\LegacyBook\\LegacyKeep\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=G\:\\Projekt Android\\LegacyBook\\LegacyKeep\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=G\:\\Projekt Android\\LegacyBook\\LegacyKeep\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex

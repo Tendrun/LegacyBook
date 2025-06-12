@@ -14,9 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.legacykeep.R;
 import com.example.legacykeep.adapter.NotificationAdapter;
+import com.example.legacykeep.model.PostModel;
 import com.example.legacykeep.viewmodel.SharedPostViewModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class NotificationsFragment extends Fragment {
 
@@ -40,11 +42,13 @@ public class NotificationsFragment extends Fragment {
 
         SharedPostViewModel sharedPostViewModel = new ViewModelProvider(requireActivity()).get(SharedPostViewModel.class);
 
-        sharedPostViewModel.getPostCount().observe(getViewLifecycleOwner(), postCount -> {
-            if (postCount != null && postCount > 0) {
-                // Example: Add a notification for new posts
-                ArrayList<String> notifications = new ArrayList<>();
-                notifications.add("New posts available: " + postCount);
+        // Observe the list of posts and update the notifications
+        sharedPostViewModel.getPosts().observe(getViewLifecycleOwner(), posts -> {
+            if (posts != null) {
+                List<String> notifications = new ArrayList<>();
+                for (PostModel post : posts) {
+                    notifications.add("New post by " + post.getAuthorName() + ": " + post.getContent());
+                }
                 notificationAdapter.updateList(notifications);
             }
         });

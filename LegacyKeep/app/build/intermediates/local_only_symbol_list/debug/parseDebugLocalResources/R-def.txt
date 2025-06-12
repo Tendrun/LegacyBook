@@ -94,6 +94,8 @@ id nav_family
 id nav_feed
 id nav_notifications
 id nav_profile
+id notificationContainer
+id notificationText
 id notificationsLogo
 id notificationsTitle
 id passwordInput
@@ -108,6 +110,7 @@ id profileName
 id profileTitle
 id recaptchaCheckbox
 id recyclerViewFeed
+id recyclerViewNotifications
 id registerButton
 id registerHeader
 id resetConfirmationMessage
@@ -130,6 +133,7 @@ layout fragment_notifications
 layout fragment_profile
 layout item_family_group
 layout item_family_member
+layout item_notification
 layout item_post
 layout spinner_dropdown_item
 layout spinner_item
