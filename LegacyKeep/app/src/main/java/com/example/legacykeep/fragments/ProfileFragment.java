@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -50,18 +50,23 @@ import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
 
+    /* -------------------- constants -------------------- */
     private static final int STORAGE_PERMISSION_REQUEST = 2;
-    private static final int CAMERA_PERMISSION_REQUEST   = 3;
+    private static final int CAMERA_PERMISSION_REQUEST  = 3;
 
-    private TextView  profileName;
-    private TextView  profileEmail;
-    private ImageView profileImage;
-    private Switch    darkModeSwitch;
+    /* -------------------- views -------------------- */
+    private TextView     profileName;
+    private TextView     profileEmail;
+    private ImageView    profileImage;
+    private SwitchCompat darkModeSwitch;
 
+    /* -------------------- pickers -------------------- */
     private ActivityResultLauncher<Intent> galleryLauncher;
     private ActivityResultLauncher<Intent> cameraLauncher;
 
-    /* ───────────────────────── onCreateView ───────────────────────── */
+    /* =========================================================
+       onCreateView
+       ========================================================= */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -70,33 +75,36 @@ public class ProfileFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        profileImage  = view.findViewById(R.id.profileImage);
-        profileName   = view.findViewById(R.id.profileName);
-        profileEmail  = view.findViewById(R.id.profileEmail);
+        /* ---- view-binding ---- */
+        profileImage   = view.findViewById(R.id.profileImage);
+        profileName    = view.findViewById(R.id.profileName);
+        profileEmail   = view.findViewById(R.id.profileEmail);
         darkModeSwitch = view.findViewById(R.id.darkModeSwitch);
 
         LinearLayout logoutRow   = view.findViewById(R.id.logoutRow);
         LinearLayout languageRow = view.findViewById(R.id.languageRow);
 
+        /* ---- prefs ---- */
         SharedPreferences prefs = requireContext()
                 .getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
 
         profileName.setText(prefs.getString("username", "Unknown User"));
-        profileEmail.setText(prefs.getString("email", "Unknown Email"));
+        profileEmail.setText(prefs.getString("email",    "Unknown Email"));
 
-        /* ——— Wylogowanie ——— */
+        /* ---- logout ---- */
         logoutRow.setOnClickListener(v -> {
             prefs.edit().clear().apply();
             Intent i = new Intent(requireContext(), WelcomeActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
-            Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(),
+                    "Logged out successfully", Toast.LENGTH_SHORT).show();
         });
 
-        /* ——— Zmiana języka ——— */
+        /* ---- language picker ---- */
         languageRow.setOnClickListener(v -> {
-            final String[] langs  = {"English", "Polski"};
-            final String[] codes  = {"en",      "pl"};
+            final String[] langs = {"English", "Polski"};
+            final String[] codes = {"en",      "pl"};
 
             new android.app.AlertDialog.Builder(requireContext())
                     .setTitle("Select Language")
@@ -104,31 +112,34 @@ public class ProfileFragment extends Fragment {
                         prefs.edit().putString("app_language", codes[which]).apply();
                         LocaleHelper.setLocale(requireContext(), codes[which]);
                         requireActivity().recreate();
-                    })
-                    .show();
+                    }).show();
         });
 
-        /* ——— Dark-mode switch ——— */
+        /* ---- dark-mode switch ---- */
         boolean darkEnabled = prefs.getBoolean("dark_mode", false);
         darkModeSwitch.setChecked(darkEnabled);
         darkModeSwitch.setOnCheckedChangeListener((btn, isChecked) -> {
             prefs.edit().putBoolean("dark_mode", isChecked).apply();
             AppCompatDelegate.setDefaultNightMode(
                     isChecked ? AppCompatDelegate.MODE_NIGHT_YES
-                            : AppCompatDelegate.MODE_NIGHT_NO
-            );
+                            : AppCompatDelegate.MODE_NIGHT_NO);
         });
 
-        /* ——— Pickery zdjęć ——— */
+        /* ---- pickers ---- */
         initPickers();
         profileImage.setOnClickListener(v -> showImageSourceOptions());
 
+        /* ---- profile data from backend ---- */
         fetchUserProfile();
+
         return view;
     }
 
-    /* ───────────────────────── pickery ───────────────────────── */
+    /* =========================================================
+       pickers helpers
+       ========================================================= */
     private void initPickers() {
+
         galleryLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 res -> {
@@ -143,7 +154,7 @@ public class ProfileFragment extends Fragment {
                 res -> {
                     if (res.getResultCode() == AppCompatActivity.RESULT_OK && res.getData() != null) {
                         Bitmap bmp = (Bitmap) res.getData().getExtras().get("data");
-                        Uri uri = getImageUriFromBitmap(requireContext(), bmp);
+                        Uri uri    = getImageUriFromBitmap(requireContext(), bmp);
                         if (uri != null) uploadProfilePicture(uri);
                         else Toast.makeText(requireContext(),
                                 "Failed to capture image", Toast.LENGTH_SHORT).show();
@@ -152,18 +163,18 @@ public class ProfileFragment extends Fragment {
     }
 
     private void showImageSourceOptions() {
-        String[] options = {"Camera", "Gallery"};
+        String[] opts = {"Camera", "Gallery"};
         new android.app.AlertDialog.Builder(requireContext())
                 .setTitle("Select Image Source")
-                .setItems(options, (d, which) -> {
-                    if (which == 0) {     // Camera
+                .setItems(opts, (d, which) -> {
+                    if (which == 0) { // camera
                         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
                                 != PackageManager.PERMISSION_GRANTED) {
                             ActivityCompat.requestPermissions(requireActivity(),
                                     new String[]{Manifest.permission.CAMERA},
                                     CAMERA_PERMISSION_REQUEST);
                         } else openCamera();
-                    } else {              // Gallery
+                    } else {          // gallery
                         if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
                                 != PackageManager.PERMISSION_GRANTED) {
                             ActivityCompat.requestPermissions(requireActivity(),
@@ -192,8 +203,11 @@ public class ProfileFragment extends Fragment {
         return Uri.parse(path);
     }
 
-    /* ───────────────────────── upload zdjęcia ───────────────────────── */
+    /* =========================================================
+       upload profile picture
+       ========================================================= */
     private void uploadProfilePicture(Uri uri) {
+
         SharedPreferences prefs = requireContext()
                 .getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("authToken", null);
@@ -208,9 +222,9 @@ public class ProfileFragment extends Fragment {
             byte[] data = readBytesFromInputStream(
                     requireContext().getContentResolver().openInputStream(uri));
 
-            RequestBody reqBody = RequestBody.create(MediaType.parse("image/*"), data);
+            RequestBody body = RequestBody.create(MediaType.parse("image/*"), data);
             MultipartBody.Part part =
-                    MultipartBody.Part.createFormData("profilePicture", "profile.jpg", reqBody);
+                    MultipartBody.Part.createFormData("profilePicture", "profile.jpg", body);
 
             ApiService api = ApiClient.getApiService();
             api.updateProfilePicture("Bearer " + token, part)
@@ -239,7 +253,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    /* ───────────────────────── helper I/O ───────────────────────── */
     private byte[] readBytesFromInputStream(InputStream in) throws IOException {
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         byte[] tmp = new byte[1024];
@@ -248,7 +261,9 @@ public class ProfileFragment extends Fragment {
         return buf.toByteArray();
     }
 
-    /* ───────────────────────── permissions ───────────────────────── */
+    /* =========================================================
+       permissions callback
+       ========================================================= */
     @Override
     public void onRequestPermissionsResult(int req,
                                            @NonNull String[] perms,
@@ -269,8 +284,11 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    /* ───────────────────────── pobieranie profilu ───────────────────────── */
+    /* =========================================================
+       fetch profile
+       ========================================================= */
     private void fetchUserProfile() {
+
         SharedPreferences prefs = requireContext()
                 .getSharedPreferences("LegacyKeepPrefs", Context.MODE_PRIVATE);
         String token = prefs.getString("authToken", null);
