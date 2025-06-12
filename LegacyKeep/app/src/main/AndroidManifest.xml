@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!-- ===== PERMISSIONS ===== -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- alarmy dokładne (API 31↑ wymagają również USE_EXACT_ALARM) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+
+    <!-- zapis / odczyt (READ powtarzał się w starej wersji – zostaje tylko jeden) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- multimedia -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature     android:name="android.hardware.camera" android:required="false"/>
+
+    <!-- ===== APPLICATION ===== -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,30 +33,22 @@
         android:networkSecurityConfig="@xml/network_security_config"
         tools:targetApi="31">
 
-        <!-- Welcome screen is the entry point -->
-        <activity android:name=".WelcomeActivity"
+        <!-- ===== Entry point ===== -->
+        <activity
+            android:name=".WelcomeActivity"
             android:exported="true">
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <!-- Login screen -->
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true" />
-
-        <!-- Register screen -->
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="true" />
-
-        <activity
-            android:name=".ForgotPasswordActivity"
-            android:exported="true" />
-
-        <activity android:name=".MainActivity" />
+        <!-- ===== Simple screens (bez intent-filterów → exported domyślnie false) ===== -->
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".ForgotPasswordActivity"/>
+        <activity android:name=".MainActivity"/>
 
     </application>
 

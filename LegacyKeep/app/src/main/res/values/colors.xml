@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ====== PODSTAWOWE (jasny motyw / fallback) ====== -->
+    <!-- ===== PALETA GŁÓWNA (LIGHT) ===== -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
-    <!-- tła: w jasnym motywie są po prostu białe;
-         muszą istnieć, żeby system miał do czego spaść,
-         gdy konfiguracja ≠ -night -->
-    <color name="background_dark">#FFFFFF</color>
+    <!-- tła / powierzchnie -->
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_dark">#FFFFFF</color>   <!-- alias -->
     <color name="surface_dark">#FFFFFF</color>
 
-    <!-- kolory brand-owe -->
+    <!-- brand -->
     <color name="purple_200">#BB86FC</color>
     <color name="purple_500">#6200EE</color>
     <color name="purple_700">#3700B3</color>
-
     <color name="teal_200">#03DAC6</color>
     <color name="teal_700">#018786</color>
+
+    <!-- dodatkowe z layoutów/selectorów -->
+    <color name="blue_primary">#1976D2</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_button_dark">#FFFFFF</color>
+    <color name="button_orange">#FF9800</color>
+
+    <!-- brakujące -->
+    <color name="button_text">#FFFFFF</color>
+    <color name="button_brown">#6D4C41</color>
 
 </resources>

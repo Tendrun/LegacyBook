@@ -8,27 +8,31 @@
         android:minSdkVersion="24"
         android:targetSdkVersion="34" />
 
+    <!-- ===== PERMISSIONS ===== -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- alarmy dokładne (API 31↑ wymagają również USE_EXACT_ALARM) -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- zapis / odczyt (READ powtarzał się w starej wersji – zostaje tylko jeden) -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- multimedia -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <permission
         android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-
+    <uses-permission android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- ===== APPLICATION ===== -->
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -45,7 +49,7 @@
         android:theme="@style/Theme.LegacyKeep"
         android:usesCleartextTraffic="true" >
 
-        <!-- Welcome screen is the entry point -->
+        <!-- ===== Entry point ===== -->
         <activity
             android:name="com.example.legacykeep.WelcomeActivity"
             android:exported="true" >
@@ -56,18 +60,10 @@
             </intent-filter>
         </activity>
 
-        <!-- Login screen -->
-        <activity
-            android:name="com.example.legacykeep.LoginActivity"
-            android:exported="true" />
-
-        <!-- Register screen -->
-        <activity
-            android:name="com.example.legacykeep.RegisterActivity"
-            android:exported="true" />
-        <activity
-            android:name="com.example.legacykeep.ForgotPasswordActivity"
-            android:exported="true" />
+        <!-- ===== Simple screens (bez intent-filterów → exported domyślnie false) ===== -->
+        <activity android:name="com.example.legacykeep.LoginActivity" />
+        <activity android:name="com.example.legacykeep.RegisterActivity" />
+        <activity android:name="com.example.legacykeep.ForgotPasswordActivity" />
         <activity android:name="com.example.legacykeep.MainActivity" />
 
         <provider

@@ -3,24 +3,24 @@
 
     <!-- DZIEŃ -->
     <style name="Theme.LegacyKeep" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Twoje kolory dzienne -->
+        <!-- Primary -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
 
+        <!-- Secondary -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <!-- tło / powierzchnie -->
+        <!-- Tło / powierzchnie -->
         <item name="android:colorBackground">@color/white</item>
         <item name="colorSurface">@color/white</item>
 
-        <!-- status-bar -->
+        <!-- Status-bar -->
         <item name="android:statusBarColor">@color/purple_700</item>
 
-        <!-- wyłącz systemowy „force-dark” (API 29+) -->
-        <item
-            name="android:forceDarkAllowed"
+        <!-- Wyłącz force-dark (API 29↑) -->
+        <item name="android:forceDarkAllowed"
             tools:targetApi="29">false</item>
     </style>
 

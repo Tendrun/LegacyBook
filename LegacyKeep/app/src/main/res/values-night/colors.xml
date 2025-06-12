@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- ====== NOCNE WARIANTY ====== -->
+    <!-- ===== PALETA GŁÓWNA (DARK) ===== -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
-    <!-- ciemne tła / powierzchnie -->
-    <color name="background_dark">#121212</color>
+    <!-- tła / powierzchnie -->
+    <color name="background_primary">#121212</color>
+    <color name="background_dark">#121212</color>   <!-- alias -->
     <color name="surface_dark">#1E1E1E</color>
 
-    <!-- brand-owe, lekko przygaszone w ciemnym motywie -->
-    <color name="purple_200">#BB86FC</color>  <!-- zostaje -->
-    <color name="purple_500">#BB86FC</color>  <!-- jaśniejszy odcień, by był widoczny -->
+    <!-- brand -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#BB86FC</color>
     <color name="purple_700">#3700B3</color>
-
     <color name="teal_200">#03DAC6</color>
     <color name="teal_700">#03DAC6</color>
+
+    <!-- dodatkowe -->
+    <color name="blue_primary">#90CAF9</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_button_dark">#000000</color>
+    <color name="button_orange">#FFB74D</color>
+
+    <!-- brakujące -->
+    <color name="button_text">#000000</color>
+    <color name="button_brown">#8D6E63</color>
 
 </resources>
