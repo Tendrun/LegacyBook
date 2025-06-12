@@ -16,13 +16,13 @@
             android:id="@+id/profileTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="@string/profile_title"
             android:textSize="24sp"
-            android:textColor="#5C3B1E"
             android:textStyle="bold"
+            android:textColor="#5C3B1E"
             android:layout_marginBottom="16dp" />
 
-        <!-- Profile Image + Edit -->
+        <!-- Profile image & EDIT chip -->
         <FrameLayout
             android:layout_width="120dp"
             android:layout_height="120dp"
@@ -36,13 +36,13 @@
                 android:scaleType="centerCrop"
                 android:background="@drawable/circle_background"
                 android:padding="16dp"
-                android:contentDescription="@string/profile_icon" />
+                android:contentDescription="@string/desc_profile_picture" />
 
             <TextView
                 android:id="@+id/editButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EDIT"
+                android:text="@string/edit"
                 android:textColor="#5C3B1E"
                 android:textStyle="bold"
                 android:textSize="12sp"
@@ -53,58 +53,66 @@
                 android:layout_margin="4dp" />
         </FrameLayout>
 
-        <!-- Name -->
+        <!-- Name & e-mail -->
         <TextView
             android:id="@+id/profileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="John Doe"
+            android:text="@string/profile_name"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#5C3B1E" />
 
-        <!-- Email -->
         <TextView
             android:id="@+id/profileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="johndoe@example.com"
+            android:text="@string/profile_email"
             android:textSize="14sp"
             android:textColor="#7D5C3B"
             android:layout_marginBottom="24dp" />
 
-        <!-- Language -->
+        <!-- Language row -->
         <LinearLayout
             style="@style/ProfileRow"
             android:id="@+id/languageRow">
+
             <ImageView
                 android:src="@drawable/ic_language"
                 android:contentDescription="@string/language_icon"
                 style="@style/ProfileIcon" />
+
             <TextView
-                android:text="Language"
+                android:text="@string/language"
                 style="@style/ProfileLabel" />
+
             <TextView
                 android:id="@+id/currentLanguage"
-                android:text="English"
+                android:text="@string/current_language"
                 style="@style/ProfileValue" />
         </LinearLayout>
 
-        <!-- Dark Mode -->
+        <!-- Dark-mode row -->
         <LinearLayout
             style="@style/ProfileRow"
             android:id="@+id/darkModeRow">
+
             <ImageView
                 android:src="@drawable/ic_dark_mode"
                 android:contentDescription="@string/dark_mode_icon"
                 style="@style/ProfileIcon" />
+
             <TextView
-                android:text="Dark Mode"
+                android:text="@string/dark_mode"
                 style="@style/ProfileLabel" />
-            <Switch
+
+            <!-- SwitchCompat with 48 dp min touch target -->
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/darkModeSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
                 android:layout_gravity="center_vertical" />
         </LinearLayout>
 
@@ -117,7 +125,7 @@
                 android:contentDescription="@string/bluetooth_icon"
                 style="@style/ProfileIcon" />
             <TextView
-                android:text="Bluetooth Share"
+                android:text="@string/bluetooth_share"
                 style="@style/ProfileLabel" />
         </LinearLayout>
 
@@ -130,7 +138,7 @@
                 android:contentDescription="@string/about_icon"
                 style="@style/ProfileIcon" />
             <TextView
-                android:text="About"
+                android:text="@string/about"
                 style="@style/ProfileLabel" />
         </LinearLayout>
 
@@ -143,7 +151,7 @@
                 android:contentDescription="@string/logout_icon"
                 style="@style/ProfileIcon" />
             <TextView
-                android:text="Logout"
+                android:text="@string/logout"
                 style="@style/ProfileLabel" />
         </LinearLayout>
 

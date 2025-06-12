@@ -40,4 +40,13 @@ public class SharedPostViewModel extends ViewModel {
             }
         });
     }
+    private final MutableLiveData<Integer> postCount = new MutableLiveData<>(0);
+
+    public LiveData<Integer> getPostCount() {
+        return postCount;
+    }
+
+    public void updatePostCount(int count) {
+        postCount.setValue(count);
+    }
 }
