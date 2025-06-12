@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.legacykeep.app-mergeDebugResources-2:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "outputFile": "com.example.legacykeep.app-mergeDebugResources-30:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\mikis\\Documents\\WazneProgramy\\Gradle\\caches\\transforms-4\\caeba6b396a857021ccf422b72727ca7\\transformed\\material-1.10.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "source": "C:\\Users\\Marcin\\.gradle\\caches\\transforms-4\\caeba6b396a857021ccf422b72727ca7\\transformed\\material-1.10.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

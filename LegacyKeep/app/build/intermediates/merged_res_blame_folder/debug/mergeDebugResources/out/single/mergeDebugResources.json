@@ -1,234 +1,234 @@
 [
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_notifications_inactive.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_notifications_inactive.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_profile.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_profile.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_facebook.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_facebook.png"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_item_family_member.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/item_family_member.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_activity_main.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_fragment_create_post.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/fragment_create_post.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_spinner_background.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/spinner_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_activity_forgot_password.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/activity_forgot_password.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_item_notification.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/item_notification.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/menu_bottom_nav_menu.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/menu/bottom_nav_menu.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_family_group.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_family_group.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_fragment_feed.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/fragment_feed.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_edit_button_bg.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/edit_button_bg.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/xml_backup_rules.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/xml/backup_rules.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_item_family_member.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/item_family_member.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_logout.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_logout.png"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_spinner_item.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/spinner_item.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_edit_button_bg.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/edit_button_bg.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_logo_legacykeep.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/logo_legacykeep.png"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_notifications.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_notifications.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_fragment_notifications.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/fragment_notifications.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_facebook.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_facebook.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_logo_legacykeep_cropped.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/logo_legacykeep_cropped.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_family.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_family.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_nav_item_selector.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/nav_item_selector.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_activity_register.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/activity_register.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_fragment_family_group.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/fragment_family_group.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_item_family_group.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/item_family_group.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_item_notification.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/item_notification.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_circle_background.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/circle_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_notification_background.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/notification_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_info.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_info.png"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_create_post.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_create_post.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_dark_mode.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_dark_mode.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_launcher_background.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_activity_welcome.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/activity_welcome.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/xml/data_extraction_rules.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_profile.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_profile.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_activity_main.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/activity_main.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/xml_backup_rules.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_nav_item_selector.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/nav_item_selector.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_activity_forgot_password.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/activity_forgot_password.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_add_photo.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_add_photo.png"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_activity_login.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/activity_login.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_activity_welcome.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/activity_welcome.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_fragment_profile.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/fragment_profile.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_create.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_create.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_logout.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_logout.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/xml_network_security_config.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/xml/network_security_config.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/xml_network_security_config.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/xml/network_security_config.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/xml_file_paths.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/xml/file_paths.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_info.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_info.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_notifications_active.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_notifications_active.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_bluetooth.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_bluetooth.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_profile.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_profile.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_family.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_family.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_circle_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/circle_background.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_bluetooth.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_bluetooth.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_notifications_inactive.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_notifications_inactive.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_google.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_google.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_add_photo.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_add_photo.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_spinner_item.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/spinner_item.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_google.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_google.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_edittext_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/edittext_background.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_item_post.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/item_post.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_feed.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_feed.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_fragment_family_details.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/fragment_family_details.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_feed.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_feed.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.legacykeep.app-main-6:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_logo_legacykeep.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/logo_legacykeep.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_activity_register.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/activity_register.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/menu/bottom_nav_menu.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_spinner_dropdown_item.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/spinner_dropdown_item.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_spinner_dropdown_item.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/spinner_dropdown_item.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_notification_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/notification_background.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_fragment_family_details.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/fragment_family_details.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_spinner_background.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/spinner_background.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_activity_login.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/activity_login.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_edittext_background.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/edittext_background.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/layout_item_post.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/layout/item_post.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_logo_legacykeep_cropped.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/logo_legacykeep_cropped.png"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_language.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_language.png"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.example.legacykeep.app-debug-32:/layout_item_family_group.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/layout/item_family_group.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_create.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_create.png"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_dark_mode.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_dark_mode.png"
+        "merged": "com.example.legacykeep.app-debug-32:/xml_file_paths.xml.flat",
+        "source": "com.example.legacykeep.app-main-34:/xml/file_paths.xml"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_feed.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_feed.png"
+        "merged": "com.example.legacykeep.app-debug-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.legacykeep.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.legacykeep.app-debug-4:/drawable_ic_notifications_active.png.flat",
-        "source": "com.example.legacykeep.app-main-6:/drawable/ic_notifications_active.png"
+        "merged": "com.example.legacykeep.app-debug-32:/drawable_ic_language.png.flat",
+        "source": "com.example.legacykeep.app-main-34:/drawable/ic_language.png"
     }
 ]
