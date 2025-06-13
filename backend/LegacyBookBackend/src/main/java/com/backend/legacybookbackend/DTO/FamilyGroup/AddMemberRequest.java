@@ -1,12 +1,18 @@
 package com.backend.legacybookbackend.DTO.FamilyGroup;
 
 public class AddMemberRequest {
-    private String UserEmailToAdd;
+    private String UserEmailToAdd; // email użytkownika, którego chcemy dodać
+    private long groupId;          // ID grupy, do której dodajemy użytkownika
 
-    private long groupId;
+    public long getGroupId() {     // getter dla groupId
+        return groupId;
+    }
 
-    public long getGroupId(){ return groupId; }
+    public String getUserEmailToAdd() { // getter dla adresu e-mail do dodania
+        return UserEmailToAdd;
+    }
 
-    public String getUserEmailToAdd() { return UserEmailToAdd; }
-    public void setUserEmailToAdd(String UserEmailToAdd) { this.UserEmailToAdd = UserEmailToAdd; }
+    public void setUserEmailToAdd(String UserEmailToAdd) { // setter dla adresu e-mail
+        this.UserEmailToAdd = UserEmailToAdd;
+    }
 }

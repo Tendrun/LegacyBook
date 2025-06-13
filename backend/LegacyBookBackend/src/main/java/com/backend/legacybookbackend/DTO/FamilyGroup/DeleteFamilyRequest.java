@@ -1,7 +1,9 @@
 package com.backend.legacybookbackend.DTO.FamilyGroup;
 
 public class DeleteFamilyRequest {
-    private long groupId;
+    private long groupId; // ID grupy rodzinnej do usunięcia
 
-    public long getGroupId(){ return groupId; }
+    public long getGroupId() { // getter dla ID grupy
+        return groupId;
+    }
 }

@@ -10,177 +10,177 @@
 10
 11    <!-- ===== PERMISSIONS ===== -->
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:6:5-66
-12-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:6:22-64
+12-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:6:5-66
+12-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:6:22-64
 13    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-13-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:7:5-76
-13-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:7:22-74
+13-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:7:5-76
+13-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:7:22-74
 14
 15    <!-- alarmy dokładne (API 31↑ wymagają również USE_EXACT_ALARM) -->
 16    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-16-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:5-78
-16-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:22-76
+16-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:5-78
+16-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:10:22-76
 17    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
-17-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:5-73
-17-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:22-71
+17-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:5-73
+17-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:11:22-71
 18
 19    <!-- zapis / odczyt (READ powtarzał się w starej wersji – zostaje tylko jeden) -->
 20    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-20-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:14:5-79
-20-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:14:22-77
+20-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:14:5-79
+20-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:14:22-77
 21    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-21-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:5-80
-21-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:22-78
+21-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:5-80
+21-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:15:22-78
 22
 23    <!-- multimedia -->
 24    <uses-permission android:name="android.permission.CAMERA" />
-24-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:5-64
-24-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:22-62
+24-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:5-64
+24-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:18:22-62
 25    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-25-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:5-70
-25-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:22-68
+25-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:5-70
+25-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:19:22-68
 26
 27    <uses-feature
-27-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:5-88
+27-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:5-88
 28        android:name="android.hardware.camera"
-28-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:23-61
+28-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:23-61
 29        android:required="false" />
-29-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:62-86
+29-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:20:62-86
 30
 31    <permission
-31-->[androidx.core:core:1.9.0] C:\Users\ASUS\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+31-->[androidx.core:core:1.9.0] C:\Users\Admin\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
 32        android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-32-->[androidx.core:core:1.9.0] C:\Users\ASUS\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+32-->[androidx.core:core:1.9.0] C:\Users\Admin\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 33        android:protectionLevel="signature" />
-33-->[androidx.core:core:1.9.0] C:\Users\ASUS\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+33-->[androidx.core:core:1.9.0] C:\Users\Admin\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 34
 35    <uses-permission android:name="com.example.legacykeep.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- ===== APPLICATION ===== -->
-35-->[androidx.core:core:1.9.0] C:\Users\ASUS\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-35-->[androidx.core:core:1.9.0] C:\Users\ASUS\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+35-->[androidx.core:core:1.9.0] C:\Users\Admin\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+35-->[androidx.core:core:1.9.0] C:\Users\Admin\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 36    <application
-36-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:23:5-53:19
+36-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:23:5-53:19
 37        android:allowBackup="true"
-37-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:24:9-35
+37-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:24:9-35
 38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-38-->[androidx.core:core:1.9.0] C:\Users\ASUS\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+38-->[androidx.core:core:1.9.0] C:\Users\Admin\.gradle\caches\transforms-4\b8a085047d156a05acdc210ed96b2899\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 39        android:dataExtractionRules="@xml/data_extraction_rules"
-39-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:25:9-65
+39-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:25:9-65
 40        android:debuggable="true"
 41        android:extractNativeLibs="false"
 42        android:fullBackupContent="@xml/backup_rules"
-42-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:26:9-54
+42-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:26:9-54
 43        android:icon="@mipmap/ic_launcher"
-43-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:27:9-43
+43-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:27:9-43
 44        android:label="@string/app_name"
-44-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:28:9-41
+44-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:28:9-41
 45        android:networkSecurityConfig="@xml/network_security_config"
-45-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:33:9-69
+45-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:33:9-69
 46        android:roundIcon="@mipmap/ic_launcher_round"
-46-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:9-54
+46-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:29:9-54
 47        android:supportsRtl="true"
-47-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:9-35
+47-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:30:9-35
 48        android:testOnly="true"
 49        android:theme="@style/Theme.LegacyKeep"
-49-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:9-48
+49-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:31:9-48
 50        android:usesCleartextTraffic="true" >
-50-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:32:9-44
+50-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:32:9-44
 51
 52        <!-- ===== Entry point ===== -->
 53        <activity
-53-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:37:9-45:20
+53-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:37:9-45:20
 54            android:name="com.example.legacykeep.WelcomeActivity"
-54-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:13-44
+54-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:38:13-44
 55            android:exported="true" >
-55-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:39:13-36
+55-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:39:13-36
 56            <intent-filter>
-56-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:41:13-44:29
+56-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:41:13-44:29
 57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:42:17-68
-57-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:42:25-66
+57-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:42:17-68
+57-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:42:25-66
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:17-76
-59-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:27-74
+59-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:17-76
+59-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:43:27-74
 60            </intent-filter>
 61        </activity>
 62
 63        <!-- ===== Simple screens (bez intent-filterów → exported domyślnie false) ===== -->
 64        <activity android:name="com.example.legacykeep.LoginActivity" />
-64-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:9-50
-64-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:19-48
+64-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:9-50
+64-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:48:19-48
 65        <activity android:name="com.example.legacykeep.RegisterActivity" />
-65-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:9-53
-65-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:19-51
+65-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:9-53
+65-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:49:19-51
 66        <activity android:name="com.example.legacykeep.ForgotPasswordActivity" />
-66-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:9-59
-66-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:19-57
+66-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:9-59
+66-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:50:19-57
 67        <activity android:name="com.example.legacykeep.MainActivity" />
-67-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:51:9-49
-67-->C:\Users\ASUS\OneDrive\Documents\GitHub\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:51:19-47
+67-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:51:9-49
+67-->C:\Studia\semestr6\Mobilne\projekt3\LegacyBook\LegacyKeep\app\src\main\AndroidManifest.xml:51:19-47
 68
 69        <provider
-69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 70            android:name="androidx.startup.InitializationProvider"
-70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
 71            android:authorities="com.example.legacykeep.androidx-startup"
-71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
 72            android:exported="false" >
-72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
 73            <meta-data
-73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
 74                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
 75                android:value="androidx.startup" />
-75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ASUS\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Admin\.gradle\caches\transforms-4\a4bfc4f44c1de86168ad7a0f4eb9f5dc\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
 76            <meta-data
-76-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ASUS\.gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+76-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Admin\.gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
 77                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-77-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ASUS\.gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+77-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Admin\.gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
 78                android:value="androidx.startup" />
-78-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\ASUS\.gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+78-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\Admin\.gradle\caches\transforms-4\7d430dd4c133a7a0c653cd99d36bf240\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
 79            <meta-data
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
 80                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
 81                android:value="androidx.startup" />
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
 82        </provider>
 83
 84        <receiver
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
 85            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
 86            android:directBootAware="false"
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
 87            android:enabled="true"
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
 88            android:exported="true"
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
 89            android:permission="android.permission.DUMP" >
-89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
 90            <intent-filter>
-90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
 91                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
 92            </intent-filter>
 93            <intent-filter>
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
 94                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
 95            </intent-filter>
 96            <intent-filter>
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
 97                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
 98            </intent-filter>
 99            <intent-filter>
-99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+99-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
 100                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ASUS\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\Admin\.gradle\caches\transforms-4\7f02d1ed9bfd6c92ba82bfb09637a43b\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
 101            </intent-filter>
 102        </receiver>
 103    </application>
