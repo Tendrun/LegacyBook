@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="family_roles">
+        <item>Father</item>
+        <item>Mother</item>
+        <item>Sister</item>
+        <item>Brother</item>
+        <item>Grandfather</item>
+        <item>Grandma</item>
+        <item>None</item>
+    </string-array>
+    <string-array name="languages_array">
+        <item>English</item>
+        <item>Polish</item>
+    </string-array>
+    <color name="background_primary">#FFE59C</color>
+    <color name="black">#FF000000</color>
+    <color name="blue_primary">#1877F2</color>
+    <color name="button_brown">#5D4037</color>
+    <color name="button_orange">#F9A825</color>
+    <color name="button_text">#FFFFFF</color>
+    <color name="orange">#FFA726</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="text_button_dark">#4A2F1B</color>
+    <color name="text_primary">#4B2C12</color>
+    <color name="text_secondary">#8B5E3C</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="about">About</string>
+    <string name="about_icon">Information icon</string>
+    <string name="app_name">LegacyKeep</string>
+    <string name="audio_button_desc">Play audio</string>
+    <string name="bluetooth_button_desc">Wyślij przez Bluetooth</string>
+    <string name="bluetooth_icon">Bluetooth share icon</string>
+    <string name="bluetooth_share">Bluetooth Share</string>
+    <string name="comment_button_desc">Comment on post</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_family_group">Create</string>
+    <string name="create_post">Create Post</string>
+    <string name="current_language">English</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode_icon">Dark-mode icon</string>
+    <string name="desc_profile_picture">User profile picture</string>
+    <string name="description">Description</string>
+    <string name="dropdown_icon">Dropdown icon</string>
+    <string name="edit">EDIT</string>
+    <string name="family_group">Family Group</string>
+    <string name="feed_title">Feed</string>
+    <string name="hint_add_member">Add Member</string>
+    <string name="language">Language</string>
+    <string name="language_icon">Language icon</string>
+    <string name="like_button_desc">Like post</string>
+    <string name="location_icon_desc">Location icon</string>
+    <string name="log_in">Log In</string>
+    <string name="logo_description">LegacyKeep logo</string>
+    <string name="logout">Logout</string>
+    <string name="logout_icon">Logout icon</string>
+    <string name="nav_create">Post</string>
+    <string name="nav_family">Family</string>
+    <string name="nav_feed">Feed</string>
+    <string name="nav_notifications">Alerts</string>
+    <string name="nav_profile">Profile</string>
+    <string name="notification_icon">Notification bell icon</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="pick_location">Pick Location</string>
+    <string name="play_audio">Play Audio</string>
+    <string name="post_image_desc">Post image</string>
+    <string name="profile_email">johndoe@example.com</string>
+    <string name="profile_icon">Profile icon</string>
+    <string name="profile_name">John Doe</string>
+    <string name="profile_title">Profile</string>
+    <string name="qr_scan">Scan QR code</string>
+    <string name="record_voice">Record Voice</string>
+    <string name="sample_location">Location</string>
+    <string name="sample_post_description">This is a sample post description.</string>
+    <string name="share_button_desc">Share post</string>
+    <string name="stop_recording">Stop Recording</string>
+    <string name="submit_post">Submit Post</string>
+    <string name="upload_photo">Upload Photo</string>
+    <style name="ProfileIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:tint">#5C3B1E</item>
+    </style>
+    <style name="ProfileLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">#5C3B1E</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="ProfileRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">#FFF7D6</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="ProfileValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#5C3B1E</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Theme.LegacyKeep" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

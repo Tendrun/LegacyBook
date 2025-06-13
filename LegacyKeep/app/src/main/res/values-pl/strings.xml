@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">LegacyKeep</string>
+    <string name="logo_description">Logo LegacyKeep</string>
+
+
+    <string name="log_in">Zaloguj się</string>
+    <string name="create_account">Utwórz konto</string>
+
+
+    <string name="nav_feed">Tablica</string>
+    <string name="nav_create">Post</string>
+    <string name="nav_family">Rodzina</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_notifications">Powiadomienia</string>
+
+
+    <string name="feed_title">Tablica</string>
+    <string name="notifications_title">Powiadomienia</string>
+    <string name="family_group">Grupa rodzinna</string>
+    <string name="create_post">Utwórz post</string>
+    <string name="profile_title">Profil</string>
+
+
+    <string name="hint_add_member">Dodaj członka</string>
+    <string name="qr_scan">Skanuj kod QR</string>
+    <string name="create_family_group">Utwórz</string>
+
+
+    <string name="post_image_desc">Obraz posta</string>
+    <string name="sample_post_description">To jest przykładowy opis posta.</string>
+    <string name="sample_location">Lokalizacja</string>
+    <string name="location_icon_desc">Ikona lokalizacji</string>
+    <string name="like_button_desc">Polub post</string>
+    <string name="comment_button_desc">Skomentuj post</string>
+    <string name="share_button_desc">Udostępnij post</string>
+    <string name="audio_button_desc">Odtwórz dźwięk</string>
+
+
+    <string name="upload_photo">Dodaj zdjęcie</string>
+    <string name="record_voice">Nagraj głos</string>
+    <string name="description">Opis</string>
+    <string name="pick_location">Wybierz lokalizację</string>
+    <string name="submit_post">Opublikuj post</string>
+    <string name="play_audio">Odtwórz dźwięk</string>
+    <string name="stop_recording">Zatrzymaj nagrywanie</string>
+
+
+    <string name="edit">EDYTUJ</string>
+    <string name="profile_name">Jan Kowalski</string>
+    <string name="profile_email">jan.kowalski@example.com</string>
+    <string name="language">Język</string>
+    <string name="current_language">Polski</string>
+    <string name="dark_mode">Tryb ciemny</string>
+    <string name="about">O aplikacji</string>
+    <string name="logout">Wyloguj się</string>
+    <string name="bluetooth_share">Udostępnij przez Bluetooth</string>
+
+
+    <string name="profile_icon">Ikona profilu</string>
+    <string name="dropdown_icon">Ikona rozwijana</string>
+    <string name="desc_profile_picture">Zdjęcie profilowe użytkownika</string>
+    <string name="language_icon">Ikona języka</string>
+    <string name="dark_mode_icon">Ikona trybu ciemnego</string>
+    <string name="about_icon">Ikona informacji</string>
+    <string name="logout_icon">Ikona wylogowania</string>
+    <string name="bluetooth_icon">Ikona Bluetooth</string>
+    <string name="notification_icon">Ikona powiadomień</string>
+
+
+    <string-array name="roles_array">
+        <item>Dziadek</item>
+        <item>Babcia</item>
+        <item>Ojciec</item>
+        <item>Matka</item>
+        <item>Syn</item>
+        <item>Córka</item>
+    </string-array>
+
+
+    <string-array name="languages_array">
+        <item>Angielski</item>
+        <item>Polski</item>
+    </string-array>
+
+</resources>
